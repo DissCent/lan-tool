@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\User;
+use App\Models\UsersLans;
+use App\Models\Lan;
 use App\Models\UsersVerification;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -52,7 +54,13 @@ class LoginRegister extends Component
                 Auth::logout();
                 $this->addError('username', 'Bestätige zuerst deine E-Mail-Adresse!');
             } else {
-                return redirect('/lanregister');
+                $lan = Lan::whereRaw('id = (select max(`id`) from lans)')->get()[0];
+
+                if (count(UsersLans::where('user_id', Auth::user()->id)->where('lan_id', $lan->id)->get()) > 0) {
+                    return redirect('/lanedit');
+                } else {
+                    return redirect('/lanregister');
+                }
             }
         }
     }
