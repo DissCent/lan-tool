@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::get('/login', function () {
     return view('login');
-})->name('login');
+})->name('login')->middleware('autologin')->middleware('guest');
 
 Route::get('/registered', function() {
     return view('registered');
