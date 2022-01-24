@@ -1,3 +1,3 @@
 - Teilnehmerliste
-- Mitglieder-Freischaltung (inkl. Absicherung vor unbefugten Nutzern)
+- Mitglieder-Freischaltung
 - CSV-Export

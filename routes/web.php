@@ -71,6 +71,10 @@ Route::get('/info', function() {
     return view('info');
 });
 
+Route::get('/users', function() {
+    return view('users');
+})->middleware('adminsonly');
+
 Route::get('/account/verify/{token}',
     [VerificationController::class, 'verifyAccount']
 )->name('user.verify');
