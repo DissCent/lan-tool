@@ -32,6 +32,7 @@ class LanEdit extends Component
         'Ich esse vegetarisch' => 'vegetarian',
         'Ich esse vegan' => 'vegan'
     ];
+    public $lanOver = false;
 
     // form fields
     public $type;
@@ -59,6 +60,10 @@ class LanEdit extends Component
     public function mount()
     {
         $this->lan = Lan::whereRaw('id = (select max(`id`) from lans)')->get()[0];
+
+        if (date('Y-m-d') >= $this->lan->date_begin) {
+            $this->lanOver = true;
+        }
 
         $begin = new DateTime($this->lan->date_begin);
         $end = new DateTime($this->lan->date_end);
@@ -115,6 +120,10 @@ class LanEdit extends Component
 
     public function update()
     {
+        if ($this->lanOver) {
+            return;
+        }
+
         $this->validate([
             'type' => 'required|string',
             'arrival' => 'required|string',
