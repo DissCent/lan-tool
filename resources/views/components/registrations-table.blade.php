@@ -40,32 +40,32 @@
                                 <tr>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap">
                                         <div class="text-sm font-medium text-gray-900">
-                                            {{ $lan['name'] }}
+                                            {{ $lan->name }}
                                         </div>
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap hidden md:table-cell">
-                                        <div class="text-sm text-gray-900">{{ $lan['arrival'] }}</div>
+                                        <div class="text-sm text-gray-900">{{ (new DateTime($lan->arrival_date))->format('d.m.Y') }}</div>
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap hidden md:table-cell">
-                                        <div class="text-sm text-gray-900">{{ $lan['departure'] }}</div>
+                                        <div class="text-sm text-gray-900">{{ (new DateTime($lan->departure_date))->format('d.m.Y') }}</div>
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                        @if ($lan['type'] == 'binding')
+                                        @if ($lan->type == 'binding')
                                         <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                                             zugesagt
                                         </span>
-                                        @elseif ($lan['type'] == 'interested')
+                                        @elseif ($lan->type == 'interested')
                                         <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
                                             interessiert
                                         </span>
-                                        @elseif ($lan['type'] == 'cancelled')
+                                        @elseif ($lan->type == 'cancelled')
                                         <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
                                             abgesagt
                                         </span>
                                         @endif
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        @if ($lan['editable'])
+                                        @if ($lan->date_begin > date('Y-m-d'))
                                         <a href="/lanedit" class="text-indigo-600 hover:text-indigo-900">Ändern</a>
                                         @endif
                                     </td>

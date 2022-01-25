@@ -20,22 +20,12 @@ class RegistrationsTable extends Component
      */
     public function __construct()
     {
-        $lans = DB::table('users_lans')
+        $this->table = DB::table('users_lans')
             ->join('lans', 'users_lans.lan_id', '=', 'lans.id')
             ->select('lans.name', 'lans.date_begin', 'users_lans.arrival_date', 'users_lans.departure_date', 'users_lans.type')
             ->where('user_id', Auth::user()->id)
             ->orderBy('users_lans.id', 'desc')
             ->get();
-
-        foreach ($lans as $lan) {
-            $this->table[] = [
-                'name' => $lan->name,
-                'arrival' => (new DateTime($lan->arrival_date))->format('d.m.Y'),
-                'departure' => (new DateTime($lan->departure_date))->format('d.m.Y'),
-                'type' => $lan->type,
-                'editable' => $lan->date_begin > date('Y-m-d')
-            ];
-        }
 
         $this->lanAvailable = count(Lan::whereRaw('id = (select max(`id`) from lans)')->whereRaw('date_begin > date(now())')->get()) > 0;
     }
