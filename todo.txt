@@ -1,3 +1,2 @@
 - Teilnehmerliste
-- Mitglieder-Freischaltung
 - CSV-Export

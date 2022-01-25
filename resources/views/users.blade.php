@@ -5,7 +5,9 @@
 @endsection
 
 @section('content')
-lol
+<div class="min-h-full flex items-center justify-center py-12 px-1 sm:px-6 lg:px-8">
+    @livewire('users-table')
+</div>
 @endsection
 
 @section('footer')
