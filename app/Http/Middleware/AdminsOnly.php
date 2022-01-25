@@ -18,7 +18,7 @@ class AdminsOnly
     public function handle(Request $request, Closure $next)
     {
         if (! Auth::check() || ! Auth::user()->isadmin) {
-            return redirect('/profile');
+            return redirect('/registrations');
         }
 
         return $next($request);
