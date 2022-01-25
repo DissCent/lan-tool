@@ -28,8 +28,8 @@
                         {{ $lan->name }}
                     </div>
                 </div>
-                <div class="hidden sm:block sm:ml-6">
-                    <div class="flex space-x-4">
+                <div class="hidden sm:block sm:ml-2 md:ml-6">
+                    <div class="flex space-x-4 sm:space-x-1 md:space-x-4">
                         @include('components/navigation-items')
                     </div>
                 </div>
