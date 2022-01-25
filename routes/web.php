@@ -67,6 +67,10 @@ Route::get('/registrations', function() {
     return view('registrations');
 })->middleware('auth');
 
+Route::get('/participants', function() {
+    return view('participants');
+});
+
 Route::get('/info', function() {
     return view('info');
 });

@@ -57,7 +57,7 @@ class LoginRegister extends Component
                 $lan = Lan::whereRaw('id = (select max(`id`) from lans)')->get()[0];
 
                 if (count(UsersLans::where('user_id', Auth::user()->id)->where('lan_id', $lan->id)->get()) > 0) {
-                    return redirect('/lanedit');
+                    return redirect('/registrations');
                 } else {
                     return redirect('/lanregister');
                 }
