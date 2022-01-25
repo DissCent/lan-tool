@@ -6,7 +6,7 @@
             </h1>
             <p class="mt-2 text-center text-sm text-gray-600">
                 oder
-                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500" @click="showRegistration = true">
+                <a href="#!" class="font-medium text-indigo-600 hover:text-indigo-500" @click="showRegistration = true">
                     registriere einen neuen Account
                 </a>
             </p>
@@ -86,7 +86,7 @@
             </h1>
             <p class="mt-2 text-center text-sm text-gray-600">
                 oder
-                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500" @click="showRegistration = false">
+                <a href="#!" class="font-medium text-indigo-600 hover:text-indigo-500" @click="showRegistration = false">
                     melde dich an
                 </a>
             </p>

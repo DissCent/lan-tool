@@ -2,7 +2,7 @@
     <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
             <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
-                <a href="#" class="block" @click="open = !open">
+                <a href="#!" class="block" @click="open = !open">
                     Generelle Infos
 
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!open">
@@ -39,7 +39,7 @@
     <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6 relative" x-data="{ open: false }">
             <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
-                <a href="#" class="block" @click="open = !open">
+                <a href="#!" class="block" @click="open = !open">
                     Anfahrt
 
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!open">
@@ -84,7 +84,7 @@
     <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: false }">
             <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
-                <a href="#" class="block" @click="open = !open">
+                <a href="#!" class="block" @click="open = !open">
                     Checkliste
 
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!open">

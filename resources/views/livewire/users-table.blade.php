@@ -53,7 +53,7 @@
                                         <div class="text-sm text-gray-900">{{ $user->email }}</div>
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <a href="#" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" wire:click="unlock({{ $user->id }})">
+                                        <a href="#!" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" wire:click="unlock({{ $user->id }})">
                                             OK
                                         </a>
                                     </td>
