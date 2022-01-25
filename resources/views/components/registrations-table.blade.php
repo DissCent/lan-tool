@@ -1,3 +1,4 @@
+@if (count($table) > 0)
 <div>
     <div class="w-full space-y-8" x-show="!showRegistration">
         <div>
@@ -78,3 +79,13 @@
         </div>
     </div>
 </div>
+@else
+Du bist aktuell noch zu keiner LAN angemeldet.
+@if ($lanAvailable)
+<br/>
+<br/>
+<a href="/lanregister" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+    Zur LAN-Anmeldung
+</a>
+@endif
+@endif

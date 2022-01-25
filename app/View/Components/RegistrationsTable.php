@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Lan;
 use DateTime;
 use Illuminate\View\Component;
 use Illuminate\Support\Facades\Auth;
@@ -10,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 class RegistrationsTable extends Component
 {
     public $table = [];
+    public $lanAvailable = false;
 
     /**
      * Create a new component instance.
@@ -34,6 +36,8 @@ class RegistrationsTable extends Component
                 'editable' => $lan->date_begin > date('Y-m-d')
             ];
         }
+
+        $this->lanAvailable = count(Lan::whereRaw('id = (select max(`id`) from lans)')->whereRaw('date_begin > date(now())')->get()) > 0;
     }
 
     /**
