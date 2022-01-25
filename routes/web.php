@@ -79,6 +79,10 @@ Route::get('/users', function() {
     return view('users');
 })->middleware('adminsonly');
 
+Route::get('/csv', function() {
+    return view('csv');
+})->middleware('adminsonly');
+
 Route::get('/account/verify/{token}',
     [VerificationController::class, 'verifyAccount']
 )->name('user.verify');

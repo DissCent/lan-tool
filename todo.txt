@@ -1,2 +1,0 @@
-- Teilnehmerliste
-- CSV-Export
