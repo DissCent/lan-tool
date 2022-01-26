@@ -1,4 +1,4 @@
-<div class="max-w-md w-full space-y-8" x-data="
+<div class="max-w-xs w-full space-y-8" x-data="
     {
         typeValue: @entangle('type'),
         arrivalValue: @entangle('arrival'),
@@ -154,7 +154,7 @@
 
             <div>
                 <div class="relative"
-                    x-data="{ open: false, activeIndex: null, selectedIndex: 0, label: 'Abreise: {{ array_key_first($landays) }}' }" wire:ignore>
+                    x-data="{ open: false, activeIndex: null, selectedIndex: {{ (count($landays) - 1) }}, label: 'Abreise: {{ array_key_last($landays) }}' }" wire:ignore>
                     <button type="button"
                         class="relative w-full bg-white border border-gray-300 rounded-none shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         x-ref="button" @click="open = !open" aria-haspopup="listbox" :aria-expanded="open"
@@ -514,6 +514,31 @@
             {{ $message }}
         </div>
         @enderror
+
+        @if ($lan->covid_restrictions)
+        <div class="mb-2 mt-2 space-y-2">
+            <span class="text-sm font-bold">Dies ist eine sogenannte "2G-Veranstaltung"!</span>
+            <div class="flex items-start">
+                <div class="flex items-center h-5">
+                    <input id="covid_consent" name="covid_consent" type="checkbox" required
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                </div>
+                <div class="ml-3 text-sm">
+                    <label for="covid_consent" class="font-medium text-gray-700">
+                        Ich bestätige, während meiner Anwesen&shy;heit bei der {{ $lan->name }} entweder den Genesenenstatus oder Geimpftenstatus
+                        gemäß der aktuellen
+                        <a class="text-indigo-600 hover:text-indigo-900" href="https://www.hessen.de/Handeln/Corona-in-Hessen" target="_blank">
+                            Corona-Verordnung des Landes Hessen
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 -mt-0.5 -ml-0.5 inline" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                            </svg>
+                        </a> zu besitzen.
+                    </label>
+                </div>
+            </div>
+        </div>
+        @endif
 
         <div>
             @if (! $lanOver)

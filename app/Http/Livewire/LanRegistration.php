@@ -84,7 +84,7 @@ class LanRegistration extends Component
     public function render()
     {
         if (count(UsersLans::where('user_id', Auth::user()->id)->where('lan_id', $this->lan->id)->get()) > 0) {
-            return '';
+            //return '';
         }
 
         return view('livewire.lan-registration');
