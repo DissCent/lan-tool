@@ -16,8 +16,7 @@ class LanRegistration extends Component
     public $landays = [];
     public $typeValues = [
         'Feste Zusage' => 'binding',
-        'Interessiert' => 'interested',
-        'Absage' => 'cancelled'
+        'Interessiert' => 'interested'
     ];
     public $typeOfArrivalValues = [
         'Anreise mit Auto (voll)' => 'car_no_space',
