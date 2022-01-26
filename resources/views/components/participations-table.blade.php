@@ -91,7 +91,7 @@
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-sm hidden md:table-cell">
                                         @auth
-                                            @if ($user->show_zip_public || ($user->show_zip_registered && $verified) || Auth::user()->isadmin)
+                                            @if ($user->show_zip_public || ($user->show_zip_registered && $verified) || Auth::user()->isadmin || (Auth::user()->id == $user->id && $user->show_zip_registered))
                                             {{ $user->country_code }}-{{ $user->zip }}
                                             @else
                                             versteckt
