@@ -82,7 +82,9 @@
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap">
                                         <div class="text-sm text-gray-900">
+											@if ($user->clan_tag != '')
 											<span class="hidden sm:inline">[{{ $user->clan_tag }}]</span>
+											@endif
 											{{ $user->username }}
 										</div>
                                     </td>
