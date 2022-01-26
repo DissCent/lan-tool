@@ -81,7 +81,10 @@
                                         </div>
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-900">{{ $user->username }}</div>
+                                        <div class="text-sm text-gray-900">
+											<span class="hidden sm:inline">[{{ $user->clan_tag }}]</span>
+											{{ $user->username }}
+										</div>
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap">
                                         <div class="text-sm text-gray-900">{{ (new DateTime($user->arrival_date))->format('d.m.Y') }}</div>

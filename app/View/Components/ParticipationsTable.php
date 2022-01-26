@@ -35,7 +35,8 @@ class ParticipationsTable extends Component
                 'users_lans.type',
                 'users.country_code',
                 'users.user_verified_at',
-                'users.id')
+                'users.id',
+				'users.clan_tag')
             ->orderByRaw('FIELD(type, "binding", "interested", "cancelled")')
             ->get();
 
