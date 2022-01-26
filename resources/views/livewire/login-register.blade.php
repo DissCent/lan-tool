@@ -79,7 +79,7 @@
             </div>
         </form>
     </div>
-    <div class="max-w-md w-full space-y-8" x-show="showRegistration">
+    <div class="max-w-md w-full space-y-8" x-show="showRegistration" x-cloak>
         <div>
             <h1 class="text-center text-3xl font-extrabold text-gray-900 w-80">
                 Registriere dich

@@ -507,20 +507,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-6 {
   margin-bottom: 1.5rem;
 }
-.ml-2 {
-  margin-left: 0.5rem;
-}
 .-mt-0\.5 {
   margin-top: -0.125rem;
-}
-.-mt-0 {
-  margin-top: -0px;
 }
 .-ml-0\.5 {
   margin-left: -0.125rem;
 }
+.-mt-0 {
+  margin-top: -0px;
+}
 .-ml-0 {
   margin-left: -0px;
+}
+.ml-2 {
+  margin-left: 0.5rem;
 }
 .block {
   display: block;
