@@ -359,10 +359,10 @@
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="allergies" name="allergies" type="checkbox" checked wire:model="allergies"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="allergies" class="font-medium text-gray-700">Ich habe Allergien</label>
+                    <label for="allergies" class="font-medium text-gray-700 cursor-pointer">Ich habe Allergien</label>
                 </div>
             </div>
         </div>
@@ -395,55 +395,55 @@
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="league_descent_rebirth" name="league_descent_rebirth" type="checkbox" checked wire:model="league_descent_rebirth"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="league_descent_rebirth" class="font-medium text-gray-700">DXX-Rebirth</label>
+                    <label for="league_descent_rebirth" class="font-medium text-gray-700 cursor-pointer">DXX-Rebirth</label>
                 </div>
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="league_descent_3" name="league_descent_3" type="checkbox" checked wire:model="league_descent_3"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="league_descent_3" class="font-medium text-gray-700">Descent 3</label>
+                    <label for="league_descent_3" class="font-medium text-gray-700 cursor-pointer">Descent 3</label>
                 </div>
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="league_overload" name="league_overload" type="checkbox" checked wire:model="league_overload"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="league_overload" class="font-medium text-gray-700">Overload</label>
+                    <label for="league_overload" class="font-medium text-gray-700 cursor-pointer">Overload</label>
                 </div>
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="league_shootmania" name="league_shootmania" type="checkbox" checked wire:model="league_shootmania"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="league_shootmania" class="font-medium text-gray-700">Shootmania</label>
+                    <label for="league_shootmania" class="font-medium text-gray-700 cursor-pointer">Shootmania</label>
                 </div>
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="league_rocket_league" name="league_rocket_league" type="checkbox" checked wire:model="league_rocket_league"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="league_rocket_league" class="font-medium text-gray-700">Rocket League</label>
+                    <label for="league_rocket_league" class="font-medium text-gray-700 cursor-pointer">Rocket League</label>
                 </div>
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="league_csgo" name="league_csgo" type="checkbox" checked wire:model="league_csgo"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="league_csgo" class="font-medium text-gray-700">Counter Strike: Global Offensive</label>
+                    <label for="league_csgo" class="font-medium text-gray-700 cursor-pointer">Counter Strike: Global Offensive</label>
                 </div>
             </div>
         </div>
@@ -453,55 +453,55 @@
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="kitchen_duties_thu_ev" name="kitchen_duties_thu_ev" type="checkbox" checked wire:model="kitchen_duties_thu_ev"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="kitchen_duties_thu_ev" class="font-medium text-gray-700">Donnerstag abends</label>
+                    <label for="kitchen_duties_thu_ev" class="font-medium text-gray-700 cursor-pointer">Donnerstag abends</label>
                 </div>
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="kitchen_duties_fri_mo" name="kitchen_duties_fri_mo" type="checkbox" checked wire:model="kitchen_duties_fri_mo"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="kitchen_duties_fri_mo" class="font-medium text-gray-700">Freitag früh</label>
+                    <label for="kitchen_duties_fri_mo" class="font-medium text-gray-700 cursor-pointer">Freitag früh</label>
                 </div>
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="kitchen_duties_fri_ev" name="kitchen_duties_fri_ev" type="checkbox" checked wire:model="kitchen_duties_fri_ev"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="kitchen_duties_fri_ev" class="font-medium text-gray-700">Freitag abends</label>
+                    <label for="kitchen_duties_fri_ev" class="font-medium text-gray-700 cursor-pointer">Freitag abends</label>
                 </div>
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="kitchen_duties_sat_mo" name="kitchen_duties_sat_mo" type="checkbox" checked wire:model="kitchen_duties_sat_mo"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="kitchen_duties_sat_mo" class="font-medium text-gray-700">Samstag früh</label>
+                    <label for="kitchen_duties_sat_mo" class="font-medium text-gray-700 cursor-pointer">Samstag früh</label>
                 </div>
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="kitchen_duties_sat_ev" name="kitchen_duties_sat_ev" type="checkbox" checked wire:model="kitchen_duties_sat_ev"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="kitchen_duties_sat_ev" class="font-medium text-gray-700">Samstag abends</label>
+                    <label for="kitchen_duties_sat_ev" class="font-medium text-gray-700 cursor-pointer">Samstag abends</label>
                 </div>
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="kitchen_duties_sun_mo" name="kitchen_duties_sun_mo" type="checkbox" checked wire:model="kitchen_duties_sun_mo"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="kitchen_duties_sun_mo" class="font-medium text-gray-700">Sonntag früh</label>
+                    <label for="kitchen_duties_sun_mo" class="font-medium text-gray-700 cursor-pointer">Sonntag früh</label>
                 </div>
             </div>
         </div>
@@ -521,10 +521,10 @@
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="covid_consent" name="covid_consent" type="checkbox" required
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="covid_consent" class="font-medium text-gray-700">
+                    <label for="covid_consent" class="font-medium text-gray-700 cursor-pointer">
                         Ich bestätige, während meiner Anwesen&shy;heit bei der {{ $lan->name }} entweder den Genesenenstatus oder Geimpftenstatus
                         gemäß der aktuellen
                         <a class="text-indigo-600 hover:text-indigo-900" href="https://www.hessen.de/Handeln/Corona-in-Hessen" target="_blank">
