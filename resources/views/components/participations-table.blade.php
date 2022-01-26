@@ -51,7 +51,7 @@
                                 @endphp
                                 @foreach ($table as $user)
                                 @php
-                                    if ($user->user_verified_at == null && $user->id != Auth::user()->id) {
+                                    if ($user->user_verified_at == null && (! Auth::check() || $user->id != Auth::user()->id)) {
                                         continue;
                                     }
 
