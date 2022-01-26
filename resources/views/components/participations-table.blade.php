@@ -133,7 +133,7 @@
             </div>
         </div>
     </div>
-    @if (Auth::user()->isadmin)
+    @if (Auth::check() && Auth::user()->isadmin)
     <div class="text-center mt-8">
         <a href="/csv" class="m-auto inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
