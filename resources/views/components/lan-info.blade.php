@@ -28,7 +28,7 @@
                 <br/>
                 Im Preis enthalten sind Frühstück und Abendessen, mit Ausnahme von Donnerstagabend - hier wird traditionellerweise bestellt. Diese Kosten sind nicht gedeckt.
                 <br/>
-                Die Teilnahmegebühr beinhaltet außerdem Strom, Sitzplatz und Infrastruktur. PC und Ein-/Ausgabegeräte sind selbst mitzubringen, mehr unter "Checkliste".
+                Die Teilnahmegebühr beinhaltet außerdem Strom, Sitzplatz und Infrastruktur. PC, Kabel und Ein-/Ausgabegeräte sind selbst mitzubringen, mehr unter "Checkliste".
                 <br/>
                 <br/>
                 Getränke werden angeboten, hier wird einzeln abgerechnet. Eigene Getränke sind gestattet.
@@ -51,7 +51,7 @@
                 </a>
             </h3>
             <div class="mt-1 text-sm text-gray-500" x-show="open">
-                Sportverein 1930 Erbacg eV
+                Sportverein 1930 Erbach eV
                 <br/>
                 Straße ist nicht verzeichnet
                 <br/>
@@ -108,6 +108,7 @@
                 <strong>Bitte unbedingt mitnehmen:</strong>
                 <ul class="list-disc pl-6">
                     <li>Steckdosenleiste - bitte mit mehr Anschlüssen, als ihr benötigt. Also lieber größere als kleinere Steckdosenleisten</li>
+					<li>Netzwerkkabel - besser lang und gerne mehr als eines, um notfalls aushelfen zu können</li>
                     <li>Schlafsack (oder was ihr benötigt, um schlafen zu können) - es wird euch ein Bodenplatz angeboten, also empfehlen wir auch eine geeignete Unterlage</li>
                     <li>Köpferhörer/Headset, keine Boxen!</li>
                     <li>PC/Notebook mit allem, was ihr zum Zocken braucht</li>
