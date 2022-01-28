@@ -449,19 +449,19 @@
                 <div class="flex items-start">
                     <div class="flex items-center h-5">
                         <input id="show_zip_registered" name="show_zip_registered" type="checkbox" checked wire:model="show_zip_registered"
-                            class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                            class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                     </div>
                     <div class="ml-3 text-sm">
-                        <label for="show_zip_registered" class="font-medium text-gray-700">Meine PLZ verifizierten Benutzern anzeigen</label>
+                        <label for="show_zip_registered" class="font-medium text-gray-700 cursor-pointer">Meine PLZ verifizierten Benutzern anzeigen</label>
                     </div>
                 </div>
                 <div class="flex items-start">
                     <div class="flex items-center h-5">
                         <input id="show_zip_public" name="show_zip_public" type="checkbox" wire:model="show_zip_public"
-                            class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                            class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                     </div>
                     <div class="ml-3 text-sm">
-                        <label for="show_zip_public" class="font-medium text-gray-700">Meine PLZ öffentlich anzeigen</label>
+                        <label for="show_zip_public" class="font-medium text-gray-700 cursor-pointer">Meine PLZ öffentlich anzeigen</label>
                     </div>
                 </div>
             </div>
