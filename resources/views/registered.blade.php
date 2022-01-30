@@ -11,7 +11,7 @@
             Vielen Dank für deine Registrierung!
         </h3>
         <p class="mt-1 max-w-2xl text-sm text-gray-500">
-            Zur Bestätigung deiner E-Mail-Adresse haben wir dir eine E-Mail mit einem Bestätigungslink gesendet.
+			<strong>In 1-2 Minuten</strong> erhältst du zur Bestätigung deiner E-Mail-Adresse einen Bestätigungslink per E-Mail.
             <br/>
             Nach erfolgter Bestätigung kannst du dich anmelden und anschließend auch für die LAN registrieren.
         </p>

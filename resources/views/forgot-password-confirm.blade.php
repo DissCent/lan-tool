@@ -11,7 +11,7 @@
             Anfrage erfolgreich!
         </h3>
         <p class="mt-1 max-w-2xl text-sm text-gray-500">
-            Sofern wir diese E-Mail-Adresse in unserem System finden konnten, haben wir dir soeben eine E-Mail geschickt.
+			<strong>In 1-2 Minuten</strong> erhältst du von uns eine E-Mail, sofern wir die eingegebene Adresse in unserem System finden konnten.
             <br/>
             In dieser E-Mail findest du einen Link zum Zurücksetzen deines Passworts.
         </p>
