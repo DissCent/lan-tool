@@ -49,7 +49,7 @@ class LoginRegister extends Component
             || substr(strtolower($this->username), 0, 5) == '<vex>'
             || substr(strtolower($this->username), 0, 2) == 'do'
             || substr(strtolower($this->username), 0, 4) == 'oots') {
-            $this->addError('username', 'Bitte keinen Clantag im Namen!');
+            $this->addError('username', 'Bitte keinen Clannamen im Namen!');
             return;
         }
 
@@ -101,7 +101,7 @@ class LoginRegister extends Component
             || substr(strtolower($this->new_username), 0, 5) == '<vex>'
             || substr(strtolower($this->new_username), 0, 2) == 'do'
             || substr(strtolower($this->new_username), 0, 4) == 'oots') {
-            $this->addError('new_username', 'Bitte keine Clantags im Namen!');
+            $this->addError('new_username', 'Bitte keinen Clannamen im Namen!');
             return;
         }
 
