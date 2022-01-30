@@ -61,11 +61,23 @@
                                 @if ($curType != $user->type)
                                 <tr class="@if ($rowcount % 2 == 0) bg-gray-50 @endif">
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap" colspan="6">
-                                        <div class="text-center text-sm font-medium text-gray-900">
+                                        <div class="text-sm font-medium text-gray-900 flex justify-center">
                                             @if ($user->type == 'interested')
-                                                🠗 interessiert 🠗
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1 mt-1" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M14.707 12.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                            </svg>
+                                            interessiert
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1 mt-1" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M14.707 12.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                            </svg>
                                             @else
-                                                🠗 abgesagt 🠗
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1 mt-1" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M14.707 12.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                            </svg>
+                                            abgesagt
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1 mt-1" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M14.707 12.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                            </svg>
                                             @endif
                                         </div>
                                     </td>
