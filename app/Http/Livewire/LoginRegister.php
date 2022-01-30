@@ -45,6 +45,14 @@ class LoginRegister extends Component
             'password' => 'string|required',
         ]);
 
+        if (substr(strtolower($this->username), 0, 3) == 'vex'
+            || substr(strtolower($this->username), 0, 5) == '<vex>'
+            || substr(strtolower($this->username), 0, 2) == 'do'
+            || substr(strtolower($this->username), 0, 4) == 'oots') {
+            $this->addError('username', 'Bitte keinen Clantag im Namen!');
+            return;
+        }
+
         $credentials = $this->only(['username', 'password']);
 
         if (! Auth::attempt($credentials, $this->remember_me)) {
@@ -86,6 +94,14 @@ class LoginRegister extends Component
 
         if (count(User::whereRaw('lower(email) = ?', [strtolower($this->email)])->get()) > 0) {
             $this->addError('new_username', 'Diese E-Mail-Adresse ist schon registriert.');
+            return;
+        }
+
+        if (substr(strtolower($this->new_username), 0, 3) == 'vex'
+            || substr(strtolower($this->new_username), 0, 5) == '<vex>'
+            || substr(strtolower($this->new_username), 0, 2) == 'do'
+            || substr(strtolower($this->new_username), 0, 4) == 'oots') {
+            $this->addError('new_username', 'Bitte keine Clantags im Namen!');
             return;
         }
 
