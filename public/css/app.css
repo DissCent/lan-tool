@@ -1100,10 +1100,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: none;
 }
 
-.text {
-    text-align: center;
-}
-
 .hover\:bg-indigo-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(67 56 202 / var(--tw-bg-opacity));
