@@ -1,7 +1,7 @@
 <div x-data="{ countryCodeValue: @entangle('country_code'), clanTagValue: @entangle('clan_tag'), success: @entangle('success') }">
     <div class="max-w-md w-full space-y-8">
         <div>
-            <h1 class="text-center text-3xl font-extrabold text-gray-900 w-80">
+            <h1 class="text-center text-3xl font-extrabold text-gray-900 w-auto sm:w-80">
                 Profil bearbeiten
             </h1>
         </div>

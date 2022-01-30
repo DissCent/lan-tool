@@ -7,7 +7,7 @@
         mealInfoValue: @entangle('meal_info')
     }">
     <div>
-        <h1 class="text-center text-3xl font-extrabold text-gray-900 w-80">
+        <h1 class="text-center text-3xl font-extrabold text-gray-900 w-auto sm:w-80">
             Deine Daten
         </h1>
         <p class="mt-2 text-center text-sm text-gray-600">

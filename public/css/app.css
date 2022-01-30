@@ -603,6 +603,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-3 {
   width: 0.75rem;
 }
+.w-auto {
+  width: auto;
+}
 .min-w-full {
   min-width: 100%;
 }
@@ -1265,6 +1268,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .sm\:hidden {
     display: none;
+  }
+
+  .sm\:w-80 {
+    width: 20rem;
   }
 
   .sm\:max-w-lg {

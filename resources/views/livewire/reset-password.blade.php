@@ -1,6 +1,6 @@
 <div class="max-w-md w-full space-y-8">
     <div>
-        <h1 class="text-center text-3xl font-extrabold text-gray-900 w-80">
+        <h1 class="text-center text-3xl font-extrabold text-gray-900 w-auto sm:w-80">
             Neues Passwort vergeben
         </h1>
         <p class="mt-2 text-center text-sm text-gray-600">
