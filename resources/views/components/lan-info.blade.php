@@ -16,7 +16,7 @@
             <div class="mt-1 text-sm text-gray-500" x-show="open">
                 Die <strong>{{ $lan->name }}</strong> findet <strong>vom {{ date('d.m.', strtotime($lan->date_begin)) }} - {{ date('d.m.Y', strtotime($lan->date_end)) }}</strong> statt.
                 <br/>
-                Die Kosten hängen von der Teilnehmeranzahl ab und belaufen sich in etwa auf:
+                Die Kosten hängen von der Teilnehmeranzahl ab. <u>Eine endgültige Schätzung der Preise steht noch aus</u> - basierend auf den Kosten der letzten Jahre belaufen sich diese aber in etwa auf:
                 <br/>
                 <br/>
                 <ul class="list-disc pl-6">
