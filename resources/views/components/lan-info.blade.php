@@ -102,7 +102,7 @@
                 <br/>
                 Stühle/Tische sind vorhanden, aber die Mitnahme eigener Stühle ist erlaubt.
                 <br/>
-                LAN-Kabel-Mitnahme ist nicht notwendig, aber ein Reserve-Kabel schadet nie. PC bitte unbedingt auf DCHP stellen.
+                Die LAN-Kabel-Mitnahme ist notwendig, auch ein Reserve-Kabel schadet nie. PC bitte unbedingt auf DCHP stellen.
                 <br/>
                 <br/>
                 <strong>Bitte unbedingt mitnehmen:</strong>
