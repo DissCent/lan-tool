@@ -23,8 +23,8 @@ class LanEdit extends Component
         'Anreise mit Auto (voll)' => 'car_no_space',
         'Anreise mit Auto (biete MFG)' => 'car_space',
         'Anreise per MFG' => 'joining_other',
-        'Anreise mit Zug (brauche Abholung)' => 'train_no_ride',
-        'Anreise mit Zug (ohne Abholung)' => 'train_need_ride',
+        'Anreise mit Zug (brauche Abholung)' => 'train_need_ride',
+        'Anreise mit Zug (ohne Abholung)' => 'train_no_ride',
         'Noch nicht bekannt' => 'unknown'
     ];
     public $mealInfoValues = [
