@@ -56,6 +56,7 @@ class LanEdit extends Component
     public $league_shootmania;
     public $league_rocket_league;
     public $league_csgo;
+    public $descentforum_login;
 
     public function mount()
     {
@@ -106,6 +107,7 @@ class LanEdit extends Component
             $this->league_shootmania = $lan->league_shootmania;
             $this->league_rocket_league = $lan->league_rocket_league;
             $this->league_csgo = $lan->league_csgo;
+            $this->descentforum_login = $lan->descentforum_login;
         }
     }
 
@@ -129,10 +131,11 @@ class LanEdit extends Component
             'arrival' => 'required|string',
             'departure' => 'required|string',
             'type_of_arrival' => 'required|string',
-            'meal_info' => 'required|string',
+            'meal_info' => 'string',
             'comment' => 'string',
             'wish_drinks' => 'string',
-            'wish_games' => 'string'
+            'wish_games' => 'string',
+            'descentforum_login' => 'string'
         ]);
 
         if ($this->departure < $this->arrival) {
@@ -165,6 +168,7 @@ class LanEdit extends Component
         $lan->league_shootmania = $this->league_shootmania;
         $lan->league_rocket_league = $this->league_rocket_league;
         $lan->league_csgo = $this->league_csgo;
+        $lan->descentforum_login = $this->descentforum_login;
 
         $lan->save();
 

@@ -55,6 +55,7 @@ class LanRegistration extends Component
     public $league_shootmania = false;
     public $league_rocket_league = false;
     public $league_csgo = false;
+    public $descentforum_login = '';
 
     public function mount()
     {
@@ -100,10 +101,11 @@ class LanRegistration extends Component
             'arrival' => 'required|string',
             'departure' => 'required|string',
             'type_of_arrival' => 'required|string',
-            'meal_info' => 'required|string',
+            'meal_info' => 'string',
             'comment' => 'string',
             'wish_drinks' => 'string',
-            'wish_games' => 'string'
+            'wish_games' => 'string',
+            'descentforum_login' => 'string'
         ]);
 
         if ($this->departure < $this->arrival) {
@@ -134,7 +136,8 @@ class LanRegistration extends Component
             'league_overload' => $this->league_overload,
             'league_shootmania' => $this->league_shootmania,
             'league_rocket_league' => $this->league_rocket_league,
-            'league_csgo' => $this->league_csgo
+            'league_csgo' => $this->league_csgo,
+            'descentforum_login' => $this->descentforum_login
         ]);
 
         return redirect('/lanregister-done');

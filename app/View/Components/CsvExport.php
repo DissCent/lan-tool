@@ -5,6 +5,7 @@ namespace App\View\Components;
 use DateTime;
 use Illuminate\View\Component;
 use Illuminate\Support\Facades\DB;
+use App\Models\Lan;
 
 class CsvExport extends Component
 {
@@ -18,6 +19,7 @@ class CsvExport extends Component
     public function __construct()
     {
         $table = DB::table('users_lans')
+            ->where('lan_id', Lan::whereRaw('id = (select max(`id`) from lans)')->get()[0]->id)
             ->join('users', 'users_lans.user_id', '=', 'users.id')
             ->select('users.username',
                 'users_lans.created_at',
@@ -47,7 +49,8 @@ class CsvExport extends Component
                 'users_lans.league_rocket_league',
                 'users_lans.league_csgo',
                 'users_lans.wish_games',
-                'users_lans.wish_drinks')
+                'users_lans.wish_drinks',
+                'users_lans.descentforum_login')
             ->orderBy('users_lans.id', 'ASC')
             ->get();
 
@@ -64,6 +67,8 @@ class CsvExport extends Component
             'Art der Anmeldung',
             'Anreise',
             'Abreise',
+            'DescentForum-Benutzername'
+            /*
             'Küchendienst Do. Abend',
             'Küchendienst Fr. früh',
             'Küchendienst Fr. Abend',
@@ -82,6 +87,7 @@ class CsvExport extends Component
             'Liga-Wunsch CS: GO',
             'Spielewunsch',
             'Getränkewunsch'
+            */
         ]);
         $this->csv .= "\"\n";
 
@@ -108,6 +114,8 @@ class CsvExport extends Component
                 ($row->type == 'binding' ? 'Anmeldung' : ($row->type == 'interested' ? 'interessiert' : 'Absage')),
                 (new DateTime($row->arrival_date))->format('d.m.Y'),
                 (new DateTime($row->departure_date))->format('d.m.Y'),
+                $row->descentforum_login
+                /*
                 $row->kitchen_duties_thu_ev ? 'Ja' : 'Nein',
                 $row->kitchen_duties_fri_mo ? 'Ja' : 'Nein',
                 $row->kitchen_duties_fri_ev ? 'Ja' : 'Nein',
@@ -126,6 +134,7 @@ class CsvExport extends Component
                 $row->league_csgo ? 'Ja' : 'Nein',
                 $row->wish_games,
                 $row->wish_drinks
+                */
             ]);
             $this->csv .= "\"\n";
         }

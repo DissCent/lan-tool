@@ -24,6 +24,7 @@ class ParticipationsTable extends Component
         $this->lan = Lan::whereRaw('id = (select max(`id`) from lans)')->get()[0];
 
         $this->table = DB::table('users_lans')
+            ->where('lan_id', $this->lan->id)
             ->join('users', 'users_lans.user_id', '=', 'users.id')
             ->select('users.username',
                 'users_lans.arrival_date',

@@ -34,6 +34,7 @@ class UsersLans extends Model
         'league_overload',
         'league_shootmania',
         'league_rocket_league',
-        'league_csgo'
+        'league_csgo',
+        'descentforum_login'
     ];
 }

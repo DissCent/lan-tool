@@ -331,6 +331,14 @@
             </div>
 
             <div>
+                <label for="descentforum_login" class="sr-only">DescentForum-Benutzername</label>
+                <input id="descentforum_login" name="descentforum_login" type="text" wire:model="descentforum_login"
+                    class="appearance-none rounded-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    placeholder="DescentForum-Benutzername" />
+            </div>
+
+            {{--
+            <div>
                 @php
                     $selectedIndex = 0;
 
@@ -407,9 +415,10 @@
                     </ul>
                 </div>
             </div>
-
+            --}}
         </div>
 
+        {{--
         <div class="mt-4 space-y-4">
             <div class="flex items-start">
                 <div class="flex items-center h-5">
@@ -560,6 +569,7 @@
                 </div>
             </div>
         </div>
+        --}}
 
         @error('departure')
         <div class="p-2 mb-2 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 flex" role="alert">
