@@ -73,7 +73,6 @@
                 <br/>
                 <br/>
 				Vorsicht bei der Anfahrt: Bei der Einfahrt in den Ort über die L3030 befindet sich die Ausfahrt zum Sportverein direkt hinter der Bahnüberführung!
-                Direkt beim Abstieg der L3030 die erste Ausfahrt links nehmen, gleich nach der Bahnüberführung, wo die Hof-Gnadenthal-Straße beginnt.
                 <br/>
                 Direkt vor dem Vereinshaus befinden sich einige Parkplätze, welche zur freien Verfügung stehen.
                 <br/>
