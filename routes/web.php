@@ -90,3 +90,11 @@ Route::get('/account/verify/{token}',
 Route::get('/logout',
     [LogoutController::class, 'logout']
 );
+
+Route::get('/imprint', function() {
+    return view('imprint');
+});
+
+Route::get('/data-privacy', function() {
+    return view('data-privacy');
+});
