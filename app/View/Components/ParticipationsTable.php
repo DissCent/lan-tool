@@ -37,8 +37,8 @@ class ParticipationsTable extends Component
                 'users.country_code',
                 'users.user_verified_at',
                 'users.id',
-				'users.clan_tag')
-            ->orderByRaw('FIELD(type, "binding", "interested", "cancelled"), id')
+                'users.clan_tag')
+            ->orderByRaw('FIELD(type, "binding", "interested", "cancelled"), users_lans.id')
             ->get();
 
         if (Auth::check()) {
