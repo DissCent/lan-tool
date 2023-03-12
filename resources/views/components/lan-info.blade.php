@@ -21,9 +21,9 @@
                 <br/>
                 <ul class="list-disc pl-6">
                     <li>Ein Tag ca. <strong>25 €</strong></li>
-                    <li>Zwei Tage ca. <strong>45 €</strong></li>
-                    <li>Drei Tage ca. <strong>60 €</strong></li>
-                    <li>Vier Tage ca. <strong>70 €</strong></li>
+                    <li>Zwei Tage ca. <strong>50 €</strong></li>
+                    <li>Drei Tage ca. <strong>75 €</strong></li>
+                    <li>Vier Tage ca. <strong>100 €</strong></li>
                 </ul>
                 <br/>
                 Im Preis enthalten sind Frühstück und Abendessen, mit Ausnahme von Donnerstagabend - hier bestellen wir bei einem Lieferdienst, wobei jeder seine eigenen Kosten trägt.
@@ -106,13 +106,12 @@
                 <br/>
                 Wir verwenden die Tische und Stühle des Vereinshauses, allerdings können auch eigene Stühle mitgebracht werden.
                 <br/>
-                Die LAN-Kabel-Mitnahme ist notwendig, auch ein Reserve-Kabel schadet nie. PC bitte unbedingt auf DCHP stellen.
+                Die LAN-Kabel-Mitnahme ist nicht notwendig, es werden Kabel für alle Teilnehmer gestellt. PC bitte unbedingt auf DHCP stellen.
                 <br/>
                 <br/>
                 <strong>Bitte unbedingt mitnehmen:</strong>
                 <ul class="list-disc pl-6">
                     <li>Steckdosenleiste - bitte mit ausreichend Anschlüssen, sodass ggf. auch der Nachbar sich noch mit einstecken kann</li>
-					<li>Netzwerkkabel - besser lang und gerne mehr als eines, um notfalls aushelfen zu können</li>
                     <li>Schlafsack/Feldbett/Luftmatratze - eben was ihr benötigt, um auf dem Boden (oder darüber) schlafen zu können</li>
                     <li>Köpferhörer/Headset - bitte verzichtet auf die Mitnahme von Lautsprechern!</li>
                     <li>PC/Notebook mit allem, was ihr zum Zocken braucht - idealerweise ist alles auf dem neuesten Stand</li>
