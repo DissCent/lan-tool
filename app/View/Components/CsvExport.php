@@ -67,9 +67,8 @@ class CsvExport extends Component
             'Art der Anmeldung',
             'Anreise',
             'Abreise',
-            /*
             'DescentForum-Benutzername'
-            */
+            /*
             'Küchendienst Do. Abend',
             'Küchendienst Fr. früh',
             'Küchendienst Fr. Abend',
@@ -80,16 +79,15 @@ class CsvExport extends Component
             'Ernährung',
             'Allergien',
             'Anmerkungen',
-            /*
             'Liga-Wunsch DXX-Rebirth',
             'Liga-Wunsch Descent 3',
             'Liga-Wunsch Overload',
             'Liga-Wunsch Shootmania',
             'Liga-Wunsch Rocket League',
             'Liga-Wunsch CS: GO',
-            */
             'Spielewunsch',
             'Getränkewunsch'
+            */
         ]);
         $this->csv .= "\"\n";
 
@@ -116,9 +114,8 @@ class CsvExport extends Component
                 ($row->type == 'binding' ? 'Anmeldung' : ($row->type == 'interested' ? 'interessiert' : 'Absage')),
                 (new DateTime($row->arrival_date))->format('d.m.Y'),
                 (new DateTime($row->departure_date))->format('d.m.Y'),
+                $row->descentforum_login,
                 /*
-                $row->descentforum_login
-                */
                 $row->kitchen_duties_thu_ev ? 'Ja' : 'Nein',
                 $row->kitchen_duties_fri_mo ? 'Ja' : 'Nein',
                 $row->kitchen_duties_fri_ev ? 'Ja' : 'Nein',
@@ -129,16 +126,15 @@ class CsvExport extends Component
                 $row->meal_info == 'omnivorous' ? 'Allesesser' : ($row->meal_info == 'vegetarian' ? 'vegetarisch' : 'vegan'),
                 $row->allergies ? 'Ja' : 'Nein',
                 $row->comment,
-                /*
                 $row->league_descent_rebirth ? 'Ja' : 'Nein',
                 $row->league_descent_3 ? 'Ja' : 'Nein',
                 $row->league_overload ? 'Ja' : 'Nein',
                 $row->league_shootmania ? 'Ja' : 'Nein',
                 $row->league_rocket_league ? 'Ja' : 'Nein',
                 $row->league_csgo ? 'Ja' : 'Nein',
-                */
                 $row->wish_games,
                 $row->wish_drinks
+                */
             ]);
             $this->csv .= "\"\n";
         }
