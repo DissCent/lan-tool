@@ -13,8 +13,6 @@
 
         {{-- Styles --}}
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-
-        @livewireStyles
     </head>
     <body class="flex flex-col min-h-screen bg-gray-100">
         @yield('header')
@@ -22,7 +20,5 @@
             @yield('content')
         </main>
         @yield('footer')
-
-        @livewireScripts
     </body>
 </html>

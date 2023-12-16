@@ -1,11 +1,11 @@
-<div x-data="{ countryCodeValue: @entangle('country_code'), clanTagValue: @entangle('clan_tag'), success: @entangle('success') }">
+<div x-data="{ countryCodeValue: @entangle('country_code').live, clanTagValue: @entangle('clan_tag').live, success: @entangle('success').live }">
     <div class="max-w-md w-full space-y-8">
         <div>
             <h1 class="text-center text-3xl font-extrabold text-gray-900 w-auto sm:w-80">
                 Profil bearbeiten
             </h1>
         </div>
-        <form class="mt-8 space-y-6" action="#" method="POST" wire:submit.prevent="updateProfile">
+        <form class="mt-8 space-y-6" action="#" method="POST" wire:submit="updateProfile">
             @csrf
 
             <div class="rounded-md shadow-sm -space-y-px mb-6">
@@ -18,14 +18,14 @@
                 @enderror
                 <div>
                     <label for="new_password" class="sr-only">Passwort</label>
-                    <input id="new_password" name="new_password" type="password" autocomplete="current-password" wire:model="new_password"
+                    <input id="new_password" name="new_password" type="password" autocomplete="current-password" wire:model.live="new_password"
                         class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                         placeholder="Passwort" />
                 </div>
                 <div>
                     <label for="new_password_confirm" class="sr-only">Passwort wiederholen</label>
                     <input id="new_password_confirm" name="new_password_confirm" type="password"
-                        autocomplete="current-password" wire:model="new_password_confirm"
+                        autocomplete="current-password" wire:model.live="new_password_confirm"
                         class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                         placeholder="Passwort (Wiederholung)" />
                 </div>
@@ -203,7 +203,7 @@
                 </div>
                 <div>
                     <label for="age" class="sr-only">Alter</label>
-                    <input id="age" name="age" type="number" required wire:model="age"
+                    <input id="age" name="age" type="number" required wire:model.live="age"
                         class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                         placeholder="Alter (Jahre)" />
                 </div>
@@ -359,13 +359,13 @@
                 </div>
                 <div>
                     <label for="zip" class="sr-only">Postleitzahl</label>
-                    <input id="zip" name="zip" type="number" required wire:model="zip"
+                    <input id="zip" name="zip" type="number" required wire:model.live="zip"
                         class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                         placeholder="Postleitzahl" />
                 </div>
                 <div>
                     <label for="city" class="sr-only">Ortschaft</label>
-                    <input id="city" name="city" type="text" required wire:model="city"
+                    <input id="city" name="city" type="text" required wire:model.live="city"
                         class="appearance-none rounded-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                         placeholder="Ortschaft" />
                 </div>
@@ -374,7 +374,7 @@
             <div class="mt-4 space-y-4">
                 <div class="flex items-start">
                     <div class="flex items-center h-5">
-                        <input id="show_zip_registered" name="show_zip_registered" type="checkbox" checked wire:model="show_zip_registered"
+                        <input id="show_zip_registered" name="show_zip_registered" type="checkbox" checked wire:model.live="show_zip_registered"
                             class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                     </div>
                     <div class="ml-3 text-sm">
@@ -383,7 +383,7 @@
                 </div>
                 <div class="flex items-start">
                     <div class="flex items-center h-5">
-                        <input id="show_zip_public" name="show_zip_public" type="checkbox" wire:model="show_zip_public"
+                        <input id="show_zip_public" name="show_zip_public" type="checkbox" wire:model.live="show_zip_public"
                             class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                     </div>
                     <div class="ml-3 text-sm">

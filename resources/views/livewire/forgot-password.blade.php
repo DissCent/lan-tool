@@ -10,7 +10,7 @@
             </a>
         </p>
     </div>
-    <form class="mt-8 space-y-6" action="#" method="POST" wire:submit.prevent="submitForm">
+    <form class="mt-8 space-y-6" action="#" method="POST" wire:submit="submitForm">
         @csrf
 
         <div class="rounded-md shadow-sm -space-y-px">
@@ -24,7 +24,7 @@
             @enderror
             <div>
                 <label for="email" class="sr-only">E-Mail-Adresse</label>
-                <input id="email" name="email" type="text" required wire:model="email"
+                <input id="email" name="email" type="text" required wire:model.live="email"
                     class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="E-Mail-Adresse" />
             </div>

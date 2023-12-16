@@ -1,6 +1,6 @@
 @if (count($table) > 0)
 <div>
-    <div class="w-full space-y-8" x-show="!showRegistration">
+    <div class="w-full space-y-8">
         <div>
             <h1 class="text-center text-3xl font-extrabold text-gray-900">
                 Wartende Benutzer

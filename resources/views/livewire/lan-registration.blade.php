@@ -1,10 +1,10 @@
 <div class="max-w-xs w-full space-y-8" x-data="
     {
-        typeValue: @entangle('type'),
-        arrivalValue: @entangle('arrival'),
-        departureValue: @entangle('departure'),
-        typeOfArrivalValue: @entangle('type_of_arrival'),
-        mealInfoValue: @entangle('meal_info')
+        typeValue: @entangle('type').live,
+        arrivalValue: @entangle('arrival').live,
+        departureValue: @entangle('departure').live,
+        typeOfArrivalValue: @entangle('type_of_arrival').live,
+        mealInfoValue: @entangle('meal_info').live
     }">
     <div>
         <h1 class="text-center text-3xl font-extrabold text-gray-900 w-auto sm:w-80">
@@ -14,7 +14,7 @@
             für die {{ $lan->name }}
         </p>
     </div>
-    <form class="mt-8 space-y-6" action="#" method="POST" wire:submit.prevent="register">
+    <form class="mt-8 space-y-6" action="#" method="POST" wire:submit="register">
         @csrf
 
         <div class="rounded-md shadow-sm -space-y-px mb-6">
@@ -288,7 +288,7 @@
 
             <div>
                 <label for="descentforum_login" class="sr-only">DescentForum-Benutzername</label>
-                <input id="descentforum_login" descentforum_login="wish_games" type="text" wire:model="descentforum_login"
+                <input id="descentforum_login" descentforum_login="wish_games" type="text" wire:model.live="descentforum_login"
                     class="appearance-none rounded-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="DescentForum-Benutzername" />
             </div>
@@ -367,7 +367,7 @@
         <div class="mt-4 space-y-4">
             <div class="flex items-start">
                 <div class="flex items-center h-5">
-                    <input id="allergies" name="allergies" type="checkbox" checked wire:model="allergies"
+                    <input id="allergies" name="allergies" type="checkbox" checked wire:model.live="allergies"
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
@@ -380,19 +380,19 @@
             <div class="rounded-md shadow-sm -space-y-px mb-6">
                 <div>
                     <label for="comment" class="sr-only">Anmerkungen</label>
-                    <input id="comment" name="comment" type="text" wire:model="comment"
+                    <input id="comment" name="comment" type="text" wire:model.live="comment"
                         class="appearance-none rounded-none rounded-t-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                         placeholder="Anmerkungen (optional)" />
                 </div>
                 <div>
                     <label for="wish_drinks" class="sr-only">Getränkewunsch</label>
-                    <input id="wish_drinks" name="wish_drinks" type="text" wire:model="wish_drinks"
+                    <input id="wish_drinks" name="wish_drinks" type="text" wire:model.live="wish_drinks"
                         class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                         placeholder="Getränkewunsch (optional)" />
                 </div>
                 <div>
                     <label for="wish_games" class="sr-only">Spielewunsch</label>
-                    <input id="wish_games" name="wish_games" type="text" wire:model="wish_games"
+                    <input id="wish_games" name="wish_games" type="text" wire:model.live="wish_games"
                         class="appearance-none rounded-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                         placeholder="Spielewunsch (optional)" />
                 </div>
@@ -403,7 +403,7 @@
             <span class="text-sm">Interesse an Liga in folgenden Spielen:</span>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
-                    <input id="league_descent_rebirth" name="league_descent_rebirth" type="checkbox" checked wire:model="league_descent_rebirth"
+                    <input id="league_descent_rebirth" name="league_descent_rebirth" type="checkbox" checked wire:model.live="league_descent_rebirth"
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
@@ -412,7 +412,7 @@
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
-                    <input id="league_descent_3" name="league_descent_3" type="checkbox" checked wire:model="league_descent_3"
+                    <input id="league_descent_3" name="league_descent_3" type="checkbox" checked wire:model.live="league_descent_3"
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
@@ -421,7 +421,7 @@
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
-                    <input id="league_overload" name="league_overload" type="checkbox" checked wire:model="league_overload"
+                    <input id="league_overload" name="league_overload" type="checkbox" checked wire:model.live="league_overload"
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
@@ -430,7 +430,7 @@
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
-                    <input id="league_shootmania" name="league_shootmania" type="checkbox" checked wire:model="league_shootmania"
+                    <input id="league_shootmania" name="league_shootmania" type="checkbox" checked wire:model.live="league_shootmania"
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
@@ -439,7 +439,7 @@
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
-                    <input id="league_rocket_league" name="league_rocket_league" type="checkbox" checked wire:model="league_rocket_league"
+                    <input id="league_rocket_league" name="league_rocket_league" type="checkbox" checked wire:model.live="league_rocket_league"
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
@@ -448,7 +448,7 @@
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
-                    <input id="league_csgo" name="league_csgo" type="checkbox" checked wire:model="league_csgo"
+                    <input id="league_csgo" name="league_csgo" type="checkbox" checked wire:model.live="league_csgo"
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
@@ -461,7 +461,7 @@
             <span class="text-sm">Ich übernehme den Küchendienst an<br/>folgenden Tagen:</span>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
-                    <input id="kitchen_duties_thu_ev" name="kitchen_duties_thu_ev" type="checkbox" checked wire:model="kitchen_duties_thu_ev"
+                    <input id="kitchen_duties_thu_ev" name="kitchen_duties_thu_ev" type="checkbox" checked wire:model.live="kitchen_duties_thu_ev"
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
@@ -470,7 +470,7 @@
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
-                    <input id="kitchen_duties_fri_mo" name="kitchen_duties_fri_mo" type="checkbox" checked wire:model="kitchen_duties_fri_mo"
+                    <input id="kitchen_duties_fri_mo" name="kitchen_duties_fri_mo" type="checkbox" checked wire:model.live="kitchen_duties_fri_mo"
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
@@ -479,7 +479,7 @@
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
-                    <input id="kitchen_duties_fri_ev" name="kitchen_duties_fri_ev" type="checkbox" checked wire:model="kitchen_duties_fri_ev"
+                    <input id="kitchen_duties_fri_ev" name="kitchen_duties_fri_ev" type="checkbox" checked wire:model.live="kitchen_duties_fri_ev"
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
@@ -488,7 +488,7 @@
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
-                    <input id="kitchen_duties_sat_mo" name="kitchen_duties_sat_mo" type="checkbox" checked wire:model="kitchen_duties_sat_mo"
+                    <input id="kitchen_duties_sat_mo" name="kitchen_duties_sat_mo" type="checkbox" checked wire:model.live="kitchen_duties_sat_mo"
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
@@ -497,7 +497,7 @@
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
-                    <input id="kitchen_duties_sat_ev" name="kitchen_duties_sat_ev" type="checkbox" checked wire:model="kitchen_duties_sat_ev"
+                    <input id="kitchen_duties_sat_ev" name="kitchen_duties_sat_ev" type="checkbox" checked wire:model.live="kitchen_duties_sat_ev"
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
@@ -506,7 +506,7 @@
             </div>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
-                    <input id="kitchen_duties_sun_mo" name="kitchen_duties_sun_mo" type="checkbox" checked wire:model="kitchen_duties_sun_mo"
+                    <input id="kitchen_duties_sun_mo" name="kitchen_duties_sun_mo" type="checkbox" checked wire:model.live="kitchen_duties_sun_mo"
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">

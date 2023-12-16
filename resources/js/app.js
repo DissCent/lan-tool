@@ -1,11 +1,5 @@
 require('./bootstrap');
 
-import Alpine from 'alpinejs'
-
-window.Alpine = Alpine
-
-Alpine.start()
-
 window.rotate = function(str) {
     var input     = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
     var output    = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
