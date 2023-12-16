@@ -33,7 +33,7 @@
                 <div class="relative"
                     x-data="{ open: false, activeIndex: null, selectedIndex: {{ $selectedIndex }}, label: '{{ array_search($type, $typeValues); }}' }" wire:ignore>
                     <button type="button"
-                        class="relative w-full bg-white border border-gray-300 rounded-t-md shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        class="relative w-full bg-white border border-gray-300 rounded-t-md shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
                         x-ref="button" @click="open = !open" aria-haspopup="listbox" :aria-expanded="open"
                         aria-labelledby="listbox-label">
                         <span class="flex items-center">
@@ -111,7 +111,7 @@
                 <div class="relative"
                     x-data="{ open: false, activeIndex: null, selectedIndex: {{ $selectedIndex }}, label: 'Anreise: {{ array_search($arrival, $landays); }}' }" wire:ignore>
                     <button type="button"
-                        class="relative w-full bg-white border border-gray-300 rounded-none shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        class="relative w-full bg-white border border-gray-300 rounded-none shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
                         x-ref="button" @click="open = !open" aria-haspopup="listbox" :aria-expanded="open"
                         aria-labelledby="listbox-label">
                         <span class="flex items-center">
@@ -189,7 +189,7 @@
                 <div class="relative"
                     x-data="{ open: false, activeIndex: null, selectedIndex: {{ $selectedIndex }}, label: 'Abreise: {{ array_search($departure, $landays); }}' }" wire:ignore>
                     <button type="button"
-                        class="relative w-full bg-white border border-gray-300 rounded-none shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        class="relative w-full bg-white border border-gray-300 rounded-none shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
                         x-ref="button" @click="open = !open" aria-haspopup="listbox" :aria-expanded="open"
                         aria-labelledby="listbox-label">
                         <span class="flex items-center">
@@ -267,7 +267,7 @@
                 <div class="relative"
                     x-data="{ open: false, activeIndex: null, selectedIndex: {{ $selectedIndex }}, label: '{{ array_search($type_of_arrival, $typeOfArrivalValues); }}' }" wire:ignore>
                     <button type="button"
-                        class="relative w-full bg-white border border-gray-300 rounded-none shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        class="relative w-full bg-white border border-gray-300 rounded-none shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
                         x-ref="button" @click="open = !open" aria-haspopup="listbox" :aria-expanded="open"
                         aria-labelledby="listbox-label">
                         <span class="flex items-center">
@@ -286,7 +286,7 @@
 
                     <ul x-show="open" x-transition:leave="transition ease-in duration-100"
                         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-                        class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
+                        class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-none py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
                         x-max="1" @click.away="open = false"
                         x-description="Select popover, show/hide based on select state."
                         @keydown.escape="open = false" x-ref="listbox" tabindex="-1" role="listbox"
@@ -330,14 +330,15 @@
                 </div>
             </div>
 
+            {{--
             <div>
                 <label for="descentforum_login" class="sr-only">DescentForum-Benutzername</label>
                 <input id="descentforum_login" name="descentforum_login" type="text" wire:model.live="descentforum_login"
-                    class="appearance-none rounded-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    class="appearance-none rounded-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="DescentForum-Benutzername" />
             </div>
+            --}}
 
-            {{--
             <div>
                 @php
                     $selectedIndex = 0;
@@ -353,7 +354,7 @@
                 <div class="relative"
                     x-data="{ open: false, activeIndex: null, selectedIndex: {{ $selectedIndex }}, label: '{{ array_search($meal_info, $mealInfoValues); }}' }" wire:ignore>
                     <button type="button"
-                        class="relative w-full bg-white border border-gray-300 rounded-b-md shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        class="relative w-full bg-white border border-gray-300 rounded-none shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
                         x-ref="button" @click="open = !open" aria-haspopup="listbox" :aria-expanded="open"
                         aria-labelledby="listbox-label">
                         <span class="flex items-center">
@@ -415,10 +416,15 @@
                     </ul>
                 </div>
             </div>
-            --}}
+
+            <div>
+                <label for="comment" class="sr-only">Anmerkungen</label>
+                <input id="comment" name="comment" type="text" wire:model.live="comment"
+                    class="appearance-none rounded-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:z-10 sm:text-sm"
+                    placeholder="Anmerkungen (optional)" />
+            </div>
         </div>
 
-        {{--
         <div class="mt-4 space-y-4">
             <div class="flex items-start">
                 <div class="flex items-center h-5">
@@ -427,87 +433,6 @@
                 </div>
                 <div class="ml-3 text-sm">
                     <label for="allergies" class="font-medium text-gray-700 cursor-pointer">Ich habe Allergien</label>
-                </div>
-            </div>
-        </div>
-
-        <div class="rounded-md shadow-sm -space-y-px mb-6">
-            <div class="rounded-md shadow-sm -space-y-px mb-6">
-                <div>
-                    <label for="comment" class="sr-only">Anmerkungen</label>
-                    <input id="comment" name="comment" type="text" wire:model.live="comment"
-                        class="appearance-none rounded-none rounded-t-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        placeholder="Anmerkungen (optional)" />
-                </div>
-                <div>
-                    <label for="wish_drinks" class="sr-only">Getränkewunsch</label>
-                    <input id="wish_drinks" name="wish_drinks" type="text" wire:model.live="wish_drinks"
-                        class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        placeholder="Getränkewunsch (optional)" />
-                </div>
-                <div>
-                    <label for="wish_games" class="sr-only">Spielewunsch</label>
-                    <input id="wish_games" name="wish_games" type="text" wire:model.live="wish_games"
-                        class="appearance-none rounded-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        placeholder="Spielewunsch (optional)" />
-                </div>
-            </div>
-        </div>
-
-        <div class="mt-4 space-y-2">
-            <span class="text-sm">Interesse an Liga in folgenden Spielen:</span>
-            <div class="flex items-start">
-                <div class="flex items-center h-5">
-                    <input id="league_descent_rebirth" name="league_descent_rebirth" type="checkbox" checked wire:model.live="league_descent_rebirth"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
-                </div>
-                <div class="ml-3 text-sm">
-                    <label for="league_descent_rebirth" class="font-medium text-gray-700 cursor-pointer">DXX-Rebirth</label>
-                </div>
-            </div>
-            <div class="flex items-start">
-                <div class="flex items-center h-5">
-                    <input id="league_descent_3" name="league_descent_3" type="checkbox" checked wire:model.live="league_descent_3"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
-                </div>
-                <div class="ml-3 text-sm">
-                    <label for="league_descent_3" class="font-medium text-gray-700 cursor-pointer">Descent 3</label>
-                </div>
-            </div>
-            <div class="flex items-start">
-                <div class="flex items-center h-5">
-                    <input id="league_overload" name="league_overload" type="checkbox" checked wire:model.live="league_overload"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
-                </div>
-                <div class="ml-3 text-sm">
-                    <label for="league_overload" class="font-medium text-gray-700 cursor-pointer">Overload</label>
-                </div>
-            </div>
-            <div class="flex items-start">
-                <div class="flex items-center h-5">
-                    <input id="league_shootmania" name="league_shootmania" type="checkbox" checked wire:model.live="league_shootmania"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
-                </div>
-                <div class="ml-3 text-sm">
-                    <label for="league_shootmania" class="font-medium text-gray-700 cursor-pointer">Shootmania</label>
-                </div>
-            </div>
-            <div class="flex items-start">
-                <div class="flex items-center h-5">
-                    <input id="league_rocket_league" name="league_rocket_league" type="checkbox" checked wire:model.live="league_rocket_league"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
-                </div>
-                <div class="ml-3 text-sm">
-                    <label for="league_rocket_league" class="font-medium text-gray-700 cursor-pointer">Rocket League</label>
-                </div>
-            </div>
-            <div class="flex items-start">
-                <div class="flex items-center h-5">
-                    <input id="league_csgo" name="league_csgo" type="checkbox" checked wire:model.live="league_csgo"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
-                </div>
-                <div class="ml-3 text-sm">
-                    <label for="league_csgo" class="font-medium text-gray-700 cursor-pointer">Counter Strike: Global Offensive</label>
                 </div>
             </div>
         </div>
@@ -569,7 +494,6 @@
                 </div>
             </div>
         </div>
-        --}}
 
         @error('departure')
         <div class="p-2 mb-2 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 flex" role="alert">
@@ -583,7 +507,7 @@
         <div>
             @if (! $lanOver)
             <button type="submit"
-                class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-indigo-500">
                 <span class="absolute left-0 inset-y-0 flex items-center pl-3">
                     <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
@@ -597,7 +521,7 @@
             </button>
             @else
             <button type="button"
-                class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-red-500">
                 <span class="absolute left-0 inset-y-0 flex items-center pl-3">
                     <svg class="h-5 w-5 text-red-500 group-hover:text-red-400"
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"

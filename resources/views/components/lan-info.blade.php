@@ -1,4 +1,5 @@
 <div>
+    {{--
     <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
             <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
@@ -179,8 +180,8 @@
             </div>
         </div>
     </div>
+    --}}
 
-	{{--
     <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
             <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
@@ -202,10 +203,10 @@
                 <br/>
                 <br/>
                 <ul class="list-disc pl-6">
-                    <li>Ein Tag ca. <strong>25 €</strong></li>
-                    <li>Zwei Tage ca. <strong>50 €</strong></li>
-                    <li>Drei Tage ca. <strong>75 €</strong></li>
-                    <li>Vier Tage ca. <strong>100 €</strong></li>
+                    <li>Ein Tag ca. <strong>20 €</strong></li>
+                    <li>Zwei Tage ca. <strong>40 €</strong></li>
+                    <li>Drei Tage ca. <strong>60 €</strong></li>
+                    <li>Vier Tage ca. <strong>80 €</strong></li>
                 </ul>
                 <br/>
                 Im Preis enthalten sind Frühstück und Abendessen, mit Ausnahme von Donnerstagabend - hier bestellen wir bei einem Lieferdienst, wobei jeder seine eigenen Kosten trägt.
@@ -301,5 +302,4 @@
             </div>
         </div>
     </div>
-	--}}
 </div>

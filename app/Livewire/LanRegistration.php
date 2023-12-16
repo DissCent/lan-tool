@@ -49,19 +49,17 @@ class LanRegistration extends Component
     public $kitchen_duties_sat_mo = false;
     public $kitchen_duties_sat_ev = false;
     public $kitchen_duties_sun_mo = false;
-    public $league_descent_rebirth = false;
-    public $league_descent_3 = false;
-    public $league_overload = false;
-    public $league_shootmania = false;
-    public $league_rocket_league = false;
-    public $league_csgo = false;
     public $descentforum_login = '';
 
     public function mount()
     {
         $this->lan = Lan::whereRaw('id = (select max(`id`) from lans)')->get()[0];
 
-        if (date('Y-m-d') >= $this->lan->date_begin) {
+        if (count(UsersLans::where('lan_id', $this->lan->id)->where('user_id', Auth::user()->id)->get())) {
+            return redirect('/lanedit');
+        }
+
+        if (date('Y-m-d') >= $this->lan->date_end) {
             $this->lanOver = true;
         }
 
@@ -131,12 +129,12 @@ class LanRegistration extends Component
             'kitchen_duties_sat_mo' => $this->kitchen_duties_sat_mo,
             'kitchen_duties_sat_ev' => $this->kitchen_duties_sat_ev,
             'kitchen_duties_sun_mo' => $this->kitchen_duties_sun_mo,
-            'league_descent_rebirth' => $this->league_descent_rebirth,
-            'league_descent_3' => $this->league_descent_3,
-            'league_overload' => $this->league_overload,
-            'league_shootmania' => $this->league_shootmania,
-            'league_rocket_league' => $this->league_rocket_league,
-            'league_csgo' => $this->league_csgo,
+            'league_descent_rebirth' => 0,
+            'league_descent_3' => 0,
+            'league_overload' => 0,
+            'league_shootmania' => 0,
+            'league_rocket_league' => 0,
+            'league_csgo' => 0,
             'descentforum_login' => $this->descentforum_login
         ]);
 

@@ -50,19 +50,17 @@ class LanEdit extends Component
     public $kitchen_duties_sat_mo;
     public $kitchen_duties_sat_ev;
     public $kitchen_duties_sun_mo;
-    public $league_descent_rebirth;
-    public $league_descent_3;
-    public $league_overload;
-    public $league_shootmania;
-    public $league_rocket_league;
-    public $league_csgo;
     public $descentforum_login;
 
     public function mount()
     {
         $this->lan = Lan::whereRaw('id = (select max(`id`) from lans)')->get()[0];
 
-        if (date('Y-m-d') >= $this->lan->date_begin) {
+        if (! count(UsersLans::where('lan_id', $this->lan->id)->where('user_id', Auth::user()->id)->get())) {
+            return redirect('/lanregister');
+        }
+
+        if (date('Y-m-d') >= $this->lan->date_end) {
             $this->lanOver = true;
         }
 
@@ -91,22 +89,16 @@ class LanEdit extends Component
             $this->departure = $lan->departure_date;
             $this->type_of_arrival = $lan->type_of_arrival;
             $this->meal_info = $lan->meal_info;
-            $this->allergies = $lan->allergies;
+            $this->allergies = (bool)$lan->allergies;
             $this->comment = $lan->comment;
             $this->wish_drinks = $lan->wish_drinks;
             $this->wish_games = $lan->wish_games;
-            $this->kitchen_duties_thu_ev = $lan->kitchen_duties_thu_ev;
-            $this->kitchen_duties_fri_mo = $lan->kitchen_duties_fri_mo;
-            $this->kitchen_duties_fri_ev = $lan->kitchen_duties_fri_ev;
-            $this->kitchen_duties_sat_mo = $lan->kitchen_duties_sat_mo;
-            $this->kitchen_duties_sat_ev = $lan->kitchen_duties_sat_ev;
-            $this->kitchen_duties_sun_mo = $lan->kitchen_duties_sun_mo;
-            $this->league_descent_rebirth = $lan->league_descent_rebirth;
-            $this->league_descent_3 = $lan->league_descent_3;
-            $this->league_overload = $lan->league_overload;
-            $this->league_shootmania = $lan->league_shootmania;
-            $this->league_rocket_league = $lan->league_rocket_league;
-            $this->league_csgo = $lan->league_csgo;
+            $this->kitchen_duties_thu_ev = (bool)$lan->kitchen_duties_thu_ev;
+            $this->kitchen_duties_fri_mo = (bool)$lan->kitchen_duties_fri_mo;
+            $this->kitchen_duties_fri_ev = (bool)$lan->kitchen_duties_fri_ev;
+            $this->kitchen_duties_sat_mo = (bool)$lan->kitchen_duties_sat_mo;
+            $this->kitchen_duties_sat_ev = (bool)$lan->kitchen_duties_sat_ev;
+            $this->kitchen_duties_sun_mo = (bool)$lan->kitchen_duties_sun_mo;
             $this->descentforum_login = $lan->descentforum_login;
         }
     }
@@ -162,12 +154,12 @@ class LanEdit extends Component
         $lan->kitchen_duties_sat_mo = $this->kitchen_duties_sat_mo;
         $lan->kitchen_duties_sat_ev = $this->kitchen_duties_sat_ev;
         $lan->kitchen_duties_sun_mo = $this->kitchen_duties_sun_mo;
-        $lan->league_descent_rebirth = $this->league_descent_rebirth;
-        $lan->league_descent_3 = $this->league_descent_3;
-        $lan->league_overload = $this->league_overload;
-        $lan->league_shootmania = $this->league_shootmania;
-        $lan->league_rocket_league = $this->league_rocket_league;
-        $lan->league_csgo = $this->league_csgo;
+        $lan->league_descent_rebirth = 0;
+        $lan->league_descent_3 = 0;
+        $lan->league_overload = 0;
+        $lan->league_shootmania = 0;
+        $lan->league_rocket_league = 0;
+        $lan->league_csgo = 0;
         $lan->descentforum_login = $this->descentforum_login;
 
         $lan->save();

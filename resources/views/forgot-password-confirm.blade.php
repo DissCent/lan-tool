@@ -14,6 +14,8 @@
 			<strong>In 1-2 Minuten</strong> erhältst du von uns eine E-Mail, sofern wir die eingegebene Adresse in unserem System finden konnten.
             <br/>
             In dieser E-Mail findest du einen Link zum Zurücksetzen deines Passworts.
+            <br/>
+            Bitte prüfe auch deinen Spam-Ordner.
         </p>
     </div>
 </div>
