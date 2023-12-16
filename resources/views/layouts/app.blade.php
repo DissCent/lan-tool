@@ -9,10 +9,10 @@
         <title>LAN-Tool</title>
 
         {{-- Scripts --}}
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        @vite('resources/js/app.js')
 
         {{-- Styles --}}
-        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+        @vite('resources/css/app.css')
     </head>
     <body class="flex flex-col min-h-screen bg-gray-100">
         @yield('header')
