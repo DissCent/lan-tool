@@ -1,4 +1,4 @@
-require('./bootstrap');
+import './bootstrap';
 
 window.rotate = function(str) {
     var input     = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
