@@ -25,6 +25,9 @@
                 <div class="flex-shrink-0 flex items-center">
                     <div class="text-2xl font-extrabold text-white">
                         {{ $lan->name }}
+                        <span class="hidden md:inline">
+                            ({{ date('Y', strtotime($lan->date_begin)) }})
+                        </span>
                     </div>
                 </div>
                 <div class="hidden sm:block sm:ml-2 md:ml-6">

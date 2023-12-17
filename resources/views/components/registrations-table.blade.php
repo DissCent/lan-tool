@@ -40,9 +40,12 @@
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap">
                                         <div class="text-sm font-medium text-gray-900">
                                             {{ $lan->name }}
+                                            <span class="hidden sm:inline">
+                                                ({{ date('Y', strtotime($lan->date_begin)) }})
+                                            </span>
                                         </div>
                                     </td>
-                                    <td class="px-3 sm:px-6 py-4 whitespace-nowrap">
+                                    <td class="px-3 sm:px-6 py-4 whitespace-nowrap hidden md:table-cell">
                                         <div class="text-sm text-gray-900">
                                             @if (Session::get('locale') == 'de')
                                             {{ (new DateTime($lan->arrival_date))->format('d.m.Y') }}
@@ -51,7 +54,7 @@
                                             @endif
                                         </div>
                                     </td>
-                                    <td class="px-3 sm:px-6 py-4 whitespace-nowrap">
+                                    <td class="px-3 sm:px-6 py-4 whitespace-nowrap hidden md:table-cell">
                                         <div class="text-sm text-gray-900">
                                             @if (Session::get('locale') == 'de')
                                             {{ (new DateTime($lan->departure_date))->format('d.m.Y') }}

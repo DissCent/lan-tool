@@ -11,7 +11,7 @@
             {{ __('lan-forms.registration') }}
         </h1>
         <p class="mt-2 text-center text-sm text-gray-600">
-            {{ __('lan-forms.for-the') }} {{ $lan->name }}
+            {{ __('lan-forms.for-the') }} {{ $lan->name }} ({{ date('Y', strtotime($lan->date_begin)) }})
         </p>
     </div>
     <form class="mt-8 space-y-6" action="#" method="POST" wire:submit="register">

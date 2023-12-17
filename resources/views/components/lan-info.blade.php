@@ -198,7 +198,7 @@
                 </a>
             </h3>
             <div class="mt-1 text-sm text-gray-500" x-show="open">
-                Die <strong>{{ $lan->name }}</strong> findet <strong>vom {{ date('d.m.', strtotime($lan->date_begin)) }} - {{ date('d.m.Y', strtotime($lan->date_end)) }}</strong> statt.
+                Die <strong>{{ $lan->name }} ({{ date('Y', strtotime($lan->date_begin)) }})</strong> findet <strong>vom {{ date('d.m.', strtotime($lan->date_begin)) }} - {{ date('d.m.Y', strtotime($lan->date_end)) }}</strong> statt.
                 <br/>
                 Die Kosten hängen von der Teilnehmeranzahl ab. <u>Eine endgültige Schätzung der Preise steht noch aus</u> - basierend auf den Kosten der letzten Jahre belaufen sich diese aber in etwa auf:
                 <br/>
@@ -319,7 +319,7 @@
                 </a>
             </h3>
             <div class="mt-1 text-sm text-gray-500" x-show="open">
-                The <strong>{{ $lan->name }}</strong> will take place <strong>from {{ date('F d', strtotime($lan->date_begin)) }} until {{ date('F d Y', strtotime($lan->date_end)) }}</strong>.
+                The <strong>{{ $lan->name }} ({{ date('Y', strtotime($lan->date_begin)) }})</strong> will take place <strong>from {{ date('F d', strtotime($lan->date_begin)) }} until {{ date('F d Y', strtotime($lan->date_end)) }}</strong>.
                 <br/>
                 Costs depend on the number of participants. <u>A final estimate of the prices is still pending</u> - based on the costs of recent years, prices will approximately be:
                 <br/>

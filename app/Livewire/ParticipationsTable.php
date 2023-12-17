@@ -28,7 +28,7 @@ class ParticipationsTable extends Component
         $lans = Lan::orderBy('date_begin', 'desc')->get();
 
         foreach ($lans as $lan) {
-            $this->lans[$lan->id] = $lan->name;
+            $this->lans[$lan->id] = $lan->name . ' (' . date('Y', strtotime($lan->date_begin)) . ')';
         }
     }
 
