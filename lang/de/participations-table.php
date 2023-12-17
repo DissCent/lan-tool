@@ -17,5 +17,6 @@ return [
     'joining-other' => 'Auto (Mitfahrt)',
     'unknown' => 'Unbekannt',
     'csv-export' => 'CSV-Export',
+    'kitchen-export' => 'Küchendienst exportieren',
     'nobody-registered' => 'Niemand ist angemeldet.',
 ];

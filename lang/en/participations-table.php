@@ -17,5 +17,6 @@ return [
     'joining-other' => 'Carpool',
     'unknown' => 'Unknown',
     'csv-export' => 'Export as CSV',
+    'kitchen-export' => 'Export kitchen plan',
     'nobody-registered' => 'Nobody is registered.',
 ];
