@@ -74,7 +74,7 @@ class CsvExport extends Component
             __('csv-additional.type'),
             __('participations-table.approach'),
             __('registrations-table.departure'),
-            __('lan-forms.descentforum-login')
+            __('lan-forms.descentforum-login'),
             __('csv-additional.kitchen-service-1'),
             __('csv-additional.kitchen-service-2'),
             __('csv-additional.kitchen-service-3'),
