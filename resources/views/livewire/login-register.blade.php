@@ -375,21 +375,21 @@
                             </li>
 
                             <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
-                                id="listbox-option-0" role="option"
-                                @click="countryCodeValue = 'DK'; label='{{ __('login-register.living-in') }} {{ __('login-register.denmark') }}'; selectedIndex = 0; open = false"
-                                @mouseenter="activeIndex = 0" @mouseleave="activeIndex = null"
-                                :class="{ 'text-white bg-indigo-600': activeIndex === 0, 'text-gray-900': !(activeIndex === 0) }">
+                                id="listbox-option-1" role="option"
+                                @click="countryCodeValue = 'DK'; label='{{ __('login-register.living-in') }} {{ __('login-register.denmark') }}'; selectedIndex = 1; open = false"
+                                @mouseenter="activeIndex = 1" @mouseleave="activeIndex = null"
+                                :class="{ 'text-white bg-indigo-600': activeIndex === 1, 'text-gray-900': !(activeIndex === 1) }">
                                 <div class="flex items-center">
                                     <span x-state:on="Selected" x-state:off="Not Selected"
                                         class="font-normal block truncate"
-                                        :class="{ 'font-semibold': selectedIndex === 0, 'font-normal': !(selectedIndex === 0) }">
+                                        :class="{ 'font-semibold': selectedIndex === 1, 'font-normal': !(selectedIndex === 1) }">
                                         {{ __('login-register.living-in') }} {{ __('login-register.denmark') }}
                                     </span>
                                 </div>
 
                                 <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600"
-                                    :class="{ 'text-white': activeIndex === 0, 'text-indigo-600': !(activeIndex === 0) }"
-                                    x-show="selectedIndex === 0" style="display: none;">
+                                    :class="{ 'text-white': activeIndex === 1, 'text-indigo-600': !(activeIndex === 1) }"
+                                    x-show="selectedIndex === 1" style="display: none;">
                                     <svg class="h-5 w-5" x-description="Heroicon name: solid/check"
                                         xmlregisteredns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                         aria-hidden="true">
@@ -401,67 +401,15 @@
                             </li>
 
                             <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
-                                id="listbox-option-1" role="option"
-                                @click="countryCodeValue = 'CA'; label='{{ __('login-register.living-in') }} {{ __('login-register.canada') }}'; selectedIndex = 1; open = false"
-                                @mouseenter="activeIndex = 1" @mouseleave="activeIndex = null"
-                                :class="{ 'text-white bg-indigo-600': activeIndex === 1, 'text-gray-900': !(activeIndex === 1) }">
-                                <div class="flex items-center">
-                                    <span x-state:on="Selected" x-state:off="Not Selected"
-                                        class="font-normal block truncate"
-                                        :class="{ 'font-semibold': selectedIndex === 1, 'font-normal': !(selectedIndex === 1) }">
-                                        {{ __('login-register.living-in') }} {{ __('login-register.canada') }}
-                                    </span>
-                                </div>
-
-                                <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600"
-                                    :class="{ 'text-white': activeIndex === 1, 'text-indigo-600': !(activeIndex === 1) }"
-                                    x-show="selectedIndex === 1" style="display: none;">
-                                    <svg class="h-5 w-5" x-description="Heroicon name: solid/check"
-                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                        aria-hidden="true">
-                                        <path fill-rule="evenodd"
-                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                </span>
-                            </li>
-
-                            <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
-                                id="listbox-option-1" role="option"
-                                @click="countryCodeValue = 'LU'; label='{{ __('login-register.living-in') }} {{ __('login-register.luxemburg') }}'; selectedIndex = 1; open = false"
-                                @mouseenter="activeIndex = 1" @mouseleave="activeIndex = null"
-                                :class="{ 'text-white bg-indigo-600': activeIndex === 1, 'text-gray-900': !(activeIndex === 1) }">
-                                <div class="flex items-center">
-                                    <span x-state:on="Selected" x-state:off="Not Selected"
-                                        class="font-normal block truncate"
-                                        :class="{ 'font-semibold': selectedIndex === 1, 'font-normal': !(selectedIndex === 1) }">
-                                        {{ __('login-register.living-in') }} {{ __('login-register.luxemburg') }}
-                                    </span>
-                                </div>
-
-                                <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600"
-                                    :class="{ 'text-white': activeIndex === 1, 'text-indigo-600': !(activeIndex === 1) }"
-                                    x-show="selectedIndex === 1" style="display: none;">
-                                    <svg class="h-5 w-5" x-description="Heroicon name: solid/check"
-                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                        aria-hidden="true">
-                                        <path fill-rule="evenodd"
-                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                </span>
-                            </li>
-
-                            <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
                                 id="listbox-option-2" role="option"
-                                @click="countryCodeValue = 'AT'; label='{{ __('login-register.living-in') }} {{ __('login-register.austria') }}'; selectedIndex = 2; open = false"
+                                @click="countryCodeValue = 'CA'; label='{{ __('login-register.living-in') }} {{ __('login-register.canada') }}'; selectedIndex = 2; open = false"
                                 @mouseenter="activeIndex = 2" @mouseleave="activeIndex = null"
                                 :class="{ 'text-white bg-indigo-600': activeIndex === 2, 'text-gray-900': !(activeIndex === 2) }">
                                 <div class="flex items-center">
                                     <span x-state:on="Selected" x-state:off="Not Selected"
                                         class="font-normal block truncate"
                                         :class="{ 'font-semibold': selectedIndex === 2, 'font-normal': !(selectedIndex === 2) }">
-                                        {{ __('login-register.living-in') }} {{ __('login-register.austria') }}
+                                        {{ __('login-register.living-in') }} {{ __('login-register.canada') }}
                                     </span>
                                 </div>
 
@@ -480,14 +428,14 @@
 
                             <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
                                 id="listbox-option-3" role="option"
-                                @click="countryCodeValue = 'CH'; label='{{ __('login-register.living-in') }} {{ __('login-register.switzerland') }}'; selectedIndex = 3; open = false"
+                                @click="countryCodeValue = 'LU'; label='{{ __('login-register.living-in') }} {{ __('login-register.luxemburg') }}'; selectedIndex = 3; open = false"
                                 @mouseenter="activeIndex = 3" @mouseleave="activeIndex = null"
                                 :class="{ 'text-white bg-indigo-600': activeIndex === 3, 'text-gray-900': !(activeIndex === 3) }">
                                 <div class="flex items-center">
                                     <span x-state:on="Selected" x-state:off="Not Selected"
                                         class="font-normal block truncate"
                                         :class="{ 'font-semibold': selectedIndex === 3, 'font-normal': !(selectedIndex === 3) }">
-                                        {{ __('login-register.living-in') }} {{ __('login-register.switzerland') }}
+                                        {{ __('login-register.living-in') }} {{ __('login-register.luxemburg') }}
                                     </span>
                                 </div>
 
@@ -505,21 +453,73 @@
                             </li>
 
                             <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
-                                id="listbox-option-3" role="option"
-                                @click="countryCodeValue = 'US'; label='{{ __('login-register.living-in') }} {{ __('login-register.usa') }}'; selectedIndex = 3; open = false"
-                                @mouseenter="activeIndex = 3" @mouseleave="activeIndex = null"
-                                :class="{ 'text-white bg-indigo-600': activeIndex === 3, 'text-gray-900': !(activeIndex === 3) }">
+                                id="listbox-option-4" role="option"
+                                @click="countryCodeValue = 'AT'; label='{{ __('login-register.living-in') }} {{ __('login-register.austria') }}'; selectedIndex = 4; open = false"
+                                @mouseenter="activeIndex = 4" @mouseleave="activeIndex = null"
+                                :class="{ 'text-white bg-indigo-600': activeIndex === 4, 'text-gray-900': !(activeIndex === 4) }">
                                 <div class="flex items-center">
                                     <span x-state:on="Selected" x-state:off="Not Selected"
                                         class="font-normal block truncate"
-                                        :class="{ 'font-semibold': selectedIndex === 3, 'font-normal': !(selectedIndex === 3) }">
+                                        :class="{ 'font-semibold': selectedIndex === 4, 'font-normal': !(selectedIndex === 4) }">
+                                        {{ __('login-register.living-in') }} {{ __('login-register.austria') }}
+                                    </span>
+                                </div>
+
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600"
+                                    :class="{ 'text-white': activeIndex === 4, 'text-indigo-600': !(activeIndex === 4) }"
+                                    x-show="selectedIndex === 4" style="display: none;">
+                                    <svg class="h-5 w-5" x-description="Heroicon name: solid/check"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </span>
+                            </li>
+
+                            <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
+                                id="listbox-option-5" role="option"
+                                @click="countryCodeValue = 'CH'; label='{{ __('login-register.living-in') }} {{ __('login-register.switzerland') }}'; selectedIndex = 5; open = false"
+                                @mouseenter="activeIndex = 5" @mouseleave="activeIndex = null"
+                                :class="{ 'text-white bg-indigo-600': activeIndex === 5, 'text-gray-900': !(activeIndex === 5) }">
+                                <div class="flex items-center">
+                                    <span x-state:on="Selected" x-state:off="Not Selected"
+                                        class="font-normal block truncate"
+                                        :class="{ 'font-semibold': selectedIndex === 5, 'font-normal': !(selectedIndex === 5) }">
+                                        {{ __('login-register.living-in') }} {{ __('login-register.switzerland') }}
+                                    </span>
+                                </div>
+
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600"
+                                    :class="{ 'text-white': activeIndex === 5, 'text-indigo-600': !(activeIndex === 5) }"
+                                    x-show="selectedIndex === 5" style="display: none;">
+                                    <svg class="h-5 w-5" x-description="Heroicon name: solid/check"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </span>
+                            </li>
+
+                            <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
+                                id="listbox-option-6" role="option"
+                                @click="countryCodeValue = 'US'; label='{{ __('login-register.living-in') }} {{ __('login-register.usa') }}'; selectedIndex = 6; open = false"
+                                @mouseenter="activeIndex = 6" @mouseleave="activeIndex = null"
+                                :class="{ 'text-white bg-indigo-600': activeIndex === 6, 'text-gray-900': !(activeIndex === 6) }">
+                                <div class="flex items-center">
+                                    <span x-state:on="Selected" x-state:off="Not Selected"
+                                        class="font-normal block truncate"
+                                        :class="{ 'font-semibold': selectedIndex === 6, 'font-normal': !(selectedIndex === 6) }">
                                         {{ __('login-register.living-in') }} {{ __('login-register.usa') }}
                                     </span>
                                 </div>
 
                                 <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600"
-                                    :class="{ 'text-white': activeIndex === 3, 'text-indigo-600': !(activeIndex === 3) }"
-                                    x-show="selectedIndex === 3" style="display: none;">
+                                    :class="{ 'text-white': activeIndex === 6, 'text-indigo-600': !(activeIndex === 6) }"
+                                    x-show="selectedIndex === 6" style="display: none;">
                                     <svg class="h-5 w-5" x-description="Heroicon name: solid/check"
                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                         aria-hidden="true">
