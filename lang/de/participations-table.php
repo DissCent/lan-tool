@@ -2,7 +2,6 @@
 
 return [
     'participants' => 'Teilnehmer',
-    'of-the' => 'der',
     'player' => 'Spieler',
     'from' => 'von',
     'until' => 'bis',

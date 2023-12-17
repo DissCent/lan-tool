@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<x-participations-table />
+@livewire('participations-table')
 @endsection
 
 @section('footer')

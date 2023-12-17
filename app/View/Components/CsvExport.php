@@ -19,8 +19,14 @@ class CsvExport extends Component
      */
     public function __construct()
     {
+        $id = Lan::orderBy('date_begin', 'desc')->limit(1)->get()[0]->id;
+
+        if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+            $id = $_GET['id'];
+        }
+
         $table = DB::table('users_lans')
-            ->where('lan_id', Lan::whereRaw('id = (select max(`id`) from lans)')->get()[0]->id)
+            ->where('lan_id', $id)
             ->join('users', 'users_lans.user_id', '=', 'users.id')
             ->select('users.username',
                 'users_lans.created_at',
@@ -68,9 +74,7 @@ class CsvExport extends Component
             __('csv-additional.type'),
             __('participations-table.approach'),
             __('registrations-table.departure'),
-            /*
             __('lan-forms.descentforum-login')
-            */
             __('csv-additional.kitchen-service-1'),
             __('csv-additional.kitchen-service-2'),
             __('csv-additional.kitchen-service-3'),
@@ -107,9 +111,7 @@ class CsvExport extends Component
                 ($row->type == 'binding' ? __('lan-forms.type-binding') : ($row->type == 'interested' ? __('lan-forms.type-interested') : __('lan-forms.type-canceled'))),
                 Session::get('locale') == 'de' ? (new DateTime($row->arrival_date))->format('d.m.Y') : $row->arrival_date,
                 Session::get('locale') == 'de' ? (new DateTime($row->departure_date))->format('d.m.Y') : $row->departure_date,
-                /*
                 $row->descentforum_login,
-                */
                 $row->kitchen_duties_thu_ev ? __('misc.yes') : __('misc.no'),
                 $row->kitchen_duties_fri_mo ? __('misc.yes') : __('misc.no'),
                 $row->kitchen_duties_fri_ev ? __('misc.yes') : __('misc.no'),

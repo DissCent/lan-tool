@@ -2,7 +2,6 @@
 
 return [
     'participants' => 'Participants',
-    'of-the' => 'of the',
     'player' => 'Player',
     'from' => 'from',
     'until' => 'until',
