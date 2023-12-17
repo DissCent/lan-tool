@@ -36,4 +36,5 @@ return [
 	'registered-headline' => 'Daten gespeichert!',
 	'registered-thank-you' => 'Vielen Dank, deine Daten wurden gespeichert.',
 	'registered-hint' => 'Bitte beachte, dass deine Anmeldung ggf. erst dann öffentlich sichtbar ist, wenn ein Administrator dein Benutzerkonto verifiziert hat.',
+    'volunteers' => '{0} Bisher 0 andere Freiwillige|{1} Bisher ein anderer Freiwilliger|[2,*] Bisher :count andere Freiwillige',
 ];

@@ -18,6 +18,7 @@ class LanEdit extends Component
     public $typeOfArrivalValues = [];
     public $mealInfoValues = [];
     public $lanOver = false;
+    public $kitchen_duty_count = [];
 
     // form fields
     public $type;
@@ -107,6 +108,13 @@ class LanEdit extends Component
             $this->kitchen_duties_sun_mo = (bool)$lan->kitchen_duties_sun_mo;
             $this->descentforum_login = $lan->descentforum_login;
         }
+
+        $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_thu_ev');
+        $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_fri_mo');
+        $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_fri_ev');
+        $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_sat_mo');
+        $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_sat_ev');
+        $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_sun_mo');
     }
 
     public function render()

@@ -36,4 +36,7 @@ return [
 	'registered-headline' => 'Data saved!',
 	'registered-thank-you' => 'Thank you, your data has been saved.',
 	'registered-hint' => 'Please note that your registration may not be publicly visible until an administrator has verified your user account.',
+    'volunteers-1' => '',
+    'volunteers-2' => 'volunteer(s) at the moment',
+    'volunteers' => '{0} 0 other volunteers at the moment|{1} 1 other volunteer at the moment|[2,*] :count other volunteers at the moment',
 ];

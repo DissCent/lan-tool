@@ -18,6 +18,7 @@ class LanRegistration extends Component
     public $typeOfArrivalValues = [];
     public $mealInfoValues = [];
     public $lanOver = false;
+    public $kitchen_duty_count = [];
 
     // form fields
     public $type = 'binding';
@@ -83,14 +84,17 @@ class LanRegistration extends Component
             $this->landays[$begin->format('d.m.Y')] = $begin->format('Y-m-d');
             $begin->add(new DateInterval('P1D'));
         }
+
+        $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_thu_ev');
+        $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_fri_mo');
+        $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_fri_ev');
+        $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_sat_mo');
+        $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_sat_ev');
+        $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_sun_mo');
     }
 
     public function render()
     {
-        if (count(UsersLans::where('user_id', Auth::user()->id)->where('lan_id', $this->lan->id)->get()) > 0) {
-            //return '';
-        }
-
         return view('livewire.lan-registration');
     }
 

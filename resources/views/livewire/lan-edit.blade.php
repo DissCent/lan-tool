@@ -443,7 +443,13 @@
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="kitchen_duties_thu_ev" class="font-medium text-gray-700 cursor-pointer">{{ __('lan-forms.thursday') }} {{ __('lan-forms.evening') }}</label>
+                    <label for="kitchen_duties_thu_ev" class="font-medium text-gray-700 cursor-pointer">
+                        {{ __('lan-forms.thursday') }} {{ __('lan-forms.evening') }}
+                        <br/>
+                        <span class="@if ($kitchen_duty_count[0] == 0) text-red-500 @elseif ($kitchen_duty_count[0] < 3) text-yellow-600 @else text-green-600 @endif">
+                            {{ trans_choice('lan-forms.volunteers', $kitchen_duty_count[0]) }}
+                        </span>
+                    </label>
                 </div>
             </div>
             <div class="flex items-start">
@@ -452,7 +458,13 @@
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="kitchen_duties_fri_mo" class="font-medium text-gray-700 cursor-pointer">{{ __('lan-forms.friday') }} {{ __('lan-forms.morning') }}</label>
+                    <label for="kitchen_duties_fri_mo" class="font-medium text-gray-700 cursor-pointer">
+                        {{ __('lan-forms.friday') }} {{ __('lan-forms.morning') }}
+                        <br/>
+                        <span class="@if ($kitchen_duty_count[1] == 0) text-red-500 @elseif ($kitchen_duty_count[1] < 3) text-yellow-600 @else text-green-600 @endif">
+                            {{ trans_choice('lan-forms.volunteers', $kitchen_duty_count[1]) }}
+                        </span>
+                    </label>
                 </div>
             </div>
             <div class="flex items-start">
@@ -461,7 +473,13 @@
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="kitchen_duties_fri_ev" class="font-medium text-gray-700 cursor-pointer">{{ __('lan-forms.friday') }} {{ __('lan-forms.evening') }}</label>
+                    <label for="kitchen_duties_fri_ev" class="font-medium text-gray-700 cursor-pointer">
+                        {{ __('lan-forms.friday') }} {{ __('lan-forms.evening') }}
+                        <br/>
+                        <span class="@if ($kitchen_duty_count[2] == 0) text-red-500 @elseif ($kitchen_duty_count[2] < 3) text-yellow-600 @else text-green-600 @endif">
+                            {{ trans_choice('lan-forms.volunteers', $kitchen_duty_count[2]) }}
+                        </span>
+                    </label>
                 </div>
             </div>
             <div class="flex items-start">
@@ -470,7 +488,13 @@
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="kitchen_duties_sat_mo" class="font-medium text-gray-700 cursor-pointer">{{ __('lan-forms.saturday') }} {{ __('lan-forms.morning') }}</label>
+                    <label for="kitchen_duties_sat_mo" class="font-medium text-gray-700 cursor-pointer">
+                        {{ __('lan-forms.saturday') }} {{ __('lan-forms.morning') }}
+                        <br/>
+                        <span class="@if ($kitchen_duty_count[3] == 0) text-red-500 @elseif ($kitchen_duty_count[3] < 3) text-yellow-600 @else text-green-600 @endif">
+                            {{ trans_choice('lan-forms.volunteers', $kitchen_duty_count[3]) }}
+                        </span>
+                    </label>
                 </div>
             </div>
             <div class="flex items-start">
@@ -479,7 +503,13 @@
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="kitchen_duties_sat_ev" class="font-medium text-gray-700 cursor-pointer">{{ __('lan-forms.saturday') }} {{ __('lan-forms.evening') }}</label>
+                    <label for="kitchen_duties_sat_ev" class="font-medium text-gray-700 cursor-pointer">
+                        {{ __('lan-forms.saturday') }} {{ __('lan-forms.evening') }}
+                        <br/>
+                        <span class="@if ($kitchen_duty_count[4] == 0) text-red-500 @elseif ($kitchen_duty_count[4] < 3) text-yellow-600 @else text-green-600 @endif">
+                            {{ trans_choice('lan-forms.volunteers', $kitchen_duty_count[4]) }}
+                        </span>
+                    </label>
                 </div>
             </div>
             <div class="flex items-start">
@@ -488,7 +518,13 @@
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="kitchen_duties_sun_mo" class="font-medium text-gray-700 cursor-pointer">{{ __('lan-forms.sunday') }} {{ __('lan-forms.morning') }}</label>
+                    <label for="kitchen_duties_sun_mo" class="font-medium text-gray-700 cursor-pointer">
+                        {{ __('lan-forms.sunday') }} {{ __('lan-forms.morning') }}
+                        <br/>
+                        <span class="@if ($kitchen_duty_count[5] == 0) text-red-500 @elseif ($kitchen_duty_count[5] < 3) text-yellow-600 @else text-green-600 @endif">
+                            {{ trans_choice('lan-forms.volunteers', $kitchen_duty_count[5]) }}
+                        </span>
+                    </label>
                 </div>
             </div>
         </div>
