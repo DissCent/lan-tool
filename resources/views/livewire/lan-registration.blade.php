@@ -87,7 +87,7 @@
 
             <div>
                 <div class="relative"
-                    x-data="{ open: false, activeIndex: null, selectedIndex: 0, label: 'Anreise: {{ array_key_first($landays) }}' }" wire:ignore>
+                    x-data="{ open: false, activeIndex: null, selectedIndex: 0, label: '{{ __('lan-forms.arrival') }}: {{ Session::get('locale') == 'de' ? array_key_first($landays) : $landays[array_key_first($landays)] }}' }" wire:ignore>
                     <button type="button"
                         class="relative w-full bg-white border border-gray-300 rounded-none shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
                         x-ref="button" @click="open = !open" aria-haspopup="listbox" :aria-expanded="open"
@@ -121,14 +121,14 @@
                         @foreach ($landays as $dateGerman => $dateSql)
                         <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
                             id="listbox-option-{{ $entryCount }}" role="option"
-                            @click="arrivalValue = '{{ $dateSql }}'; label='Anreise: {{ $dateGerman }}'; selectedIndex = {{ $entryCount }}; open = false"
+                            @click="arrivalValue = '{{ $dateSql }}'; label='{{ __('lan-forms.arrival') }}: {{ Session::get('locale') == 'de' ? $dateGerman : $dateSql }}'; selectedIndex = {{ $entryCount }}; open = false"
                             @mouseenter="activeIndex = {{ $entryCount }}" @mouseleave="activeIndex = null"
                             :class="{ 'text-white bg-indigo-600': activeIndex === {{ $entryCount }}, 'text-gray-900': !(activeIndex === {{ $entryCount }}) }">
                             <div class="flex items-center">
                                 <span x-state:on="Selected" x-state:off="Not Selected"
                                     class="font-normal block truncate"
                                     :class="{ 'font-semibold': selectedIndex === {{ $entryCount }}, 'font-normal': !(selectedIndex === {{ $entryCount }}) }">
-                                    Anreise: {{ $dateGerman }}
+                                    {{ __('lan-forms.arrival') }}: {{ Session::get('locale') == 'de' ? $dateGerman : $dateSql }}
                                 </span>
                             </div>
 
@@ -154,7 +154,7 @@
 
             <div>
                 <div class="relative"
-                    x-data="{ open: false, activeIndex: null, selectedIndex: {{ (count($landays) - 1) }}, label: 'Abreise: {{ array_key_last($landays) }}' }" wire:ignore>
+                    x-data="{ open: false, activeIndex: null, selectedIndex: {{ (count($landays) - 1) }}, label: '{{ __('lan-forms.departure') }}: {{ Session::get('locale') == 'de' ? array_key_last($landays) : $landays[array_key_last($landays)] }}' }" wire:ignore>
                     <button type="button"
                         class="relative w-full bg-white border border-gray-300 rounded-none shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
                         x-ref="button" @click="open = !open" aria-haspopup="listbox" :aria-expanded="open"
@@ -188,14 +188,14 @@
                         @foreach ($landays as $dateGerman => $dateSql)
                         <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
                             id="listbox-option-{{ $entryCount }}" role="option"
-                            @click="departureValue = '{{ $dateSql }}'; label='Abreise: {{ $dateGerman }}'; selectedIndex = {{ $entryCount }}; open = false"
+                            @click="departureValue = '{{ $dateSql }}'; label='{{ __('lan-forms.departure') }}: {{ Session::get('locale') == 'de' ? $dateGerman : $dateSql }}'; selectedIndex = {{ $entryCount }}; open = false"
                             @mouseenter="activeIndex = {{ $entryCount }}" @mouseleave="activeIndex = null"
                             :class="{ 'text-white bg-indigo-600': activeIndex === {{ $entryCount }}, 'text-gray-900': !(activeIndex === {{ $entryCount }}) }">
                             <div class="flex items-center">
                                 <span x-state:on="Selected" x-state:off="Not Selected"
                                     class="font-normal block truncate"
                                     :class="{ 'font-semibold': selectedIndex === {{ $entryCount }}, 'font-normal': !(selectedIndex === {{ $entryCount }}) }">
-                                    Abreise: {{ $dateGerman }}
+                                    {{ __('lan-forms.departure') }}: {{ Session::get('locale') == 'de' ? $dateGerman : $dateSql }}
                                 </span>
                             </div>
 

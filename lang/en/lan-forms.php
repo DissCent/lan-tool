@@ -18,6 +18,8 @@ return [
 	'send' => 'Submit',
 	'closed' => 'Registration closed',
 	'registration' => 'Registration',
+    'arrival' => 'Arrival',
+    'departure' => 'Departure',
 	'type-binding' => 'Firm commitment',
 	'type-interested' => 'interested',
 	'type-canceled' => 'canceled',

@@ -18,6 +18,8 @@ return [
 	'send' => 'Absenden',
 	'closed' => 'Anmeldung vorbei',
 	'registration' => 'Anmeldung',
+    'arrival' => 'Anreise',
+    'departure' => 'Abreise',
 	'type-binding' => 'Feste Zusage',
 	'type-interested' => 'Interessiert',
 	'type-canceled' => 'Abgesagt',
