@@ -377,7 +377,7 @@
 				<a class="underline" href="https://www.openstreetmap.org/directions?from=&to=50.31063%2C8.25054#map=18/50.30972/8.25077" target="_blank">Open route planner in OpenStreetMap</a>
                 <br/>
                 <br/>
-				Be careful when approaching: When entering the village via the L3030, the exit to the location is located directly behind the railroad overpass!
+				Be careful when arriving: When entering the village via the L3030, the exit to the location is located directly behind the railroad overpass!
                 <br/>
                 There are several parking spaces directly in front of the location, which are freely available.
                 <br/>

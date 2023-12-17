@@ -4,7 +4,7 @@ return [
 	'request-new-password' => 'Request new password',
 	'or' => 'or',
 	'return-to-login' => 'back to login',
-	'email-address' => 'email address',
+	'email-address' => 'Email address',
 	'send-request' => 'Send request',
 	'success-headline' => 'Request successful!',
 	'success-few-minutes-1' => 'In a few minutes',
