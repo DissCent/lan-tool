@@ -14,23 +14,9 @@ class LanRegistration extends Component
     public $lan;
     public $lanname;
     public $landays = [];
-    public $typeValues = [
-        'Feste Zusage' => 'binding',
-        'Interessiert' => 'interested'
-    ];
-    public $typeOfArrivalValues = [
-        'Anreise mit Auto (voll)' => 'car_no_space',
-        'Anreise mit Auto (biete MFG)' => 'car_space',
-        'Anreise per MFG' => 'joining_other',
-        'Anreise mit Zug (brauche Abholung)' => 'train_need_ride',
-        'Anreise mit Zug (ohne Abholung)' => 'train_no_ride',
-        'Noch nicht bekannt' => 'unknown'
-    ];
-    public $mealInfoValues = [
-        'Ich bin ein Allesesser' => 'omnivorous',
-        'Ich esse vegetarisch' => 'vegetarian',
-        'Ich esse vegan' => 'vegan'
-    ];
+    public $typeValues = [];
+    public $typeOfArrivalValues = [];
+    public $mealInfoValues = [];
     public $lanOver = false;
 
     // form fields
@@ -53,6 +39,26 @@ class LanRegistration extends Component
 
     public function mount()
     {
+        $this->typeValues = [
+            __('lan-forms.type-binding') => 'binding',
+            __('lan-forms.type-interested') => 'interested',
+        ];
+
+        $this->typeOfArrivalValues = [
+            __('lan-forms.approach-car-no-space') => 'car_no_space',
+            __('lan-forms.approach-car-space') => 'car_space',
+            __('lan-forms.approach-joining-other') => 'joining_other',
+            __('lan-forms.approach-train-need-ride') => 'train_need_ride',
+            __('lan-forms.approach-train-no-ride') => 'train_no_ride',
+            __('lan-forms.approach-unknown') => 'unknown'
+        ];
+
+        $this->mealInfoValues = [
+            __('lan-forms.mealinfo-omnivorous') => 'omnivorous',
+            __('lan-forms.mealinfo-vegetarian') => 'vegetarian',
+            __('lan-forms.mealinfo-vegan') => 'vegan'
+        ];
+
         $this->lan = Lan::whereRaw('id = (select max(`id`) from lans)')->get()[0];
 
         if (count(UsersLans::where('lan_id', $this->lan->id)->where('user_id', Auth::user()->id)->get())) {
@@ -107,7 +113,7 @@ class LanRegistration extends Component
         ]);
 
         if ($this->departure < $this->arrival) {
-            $this->addError('departure', 'Abreise liegt vor der Anreise.');
+            $this->addError('departure', __('lan-forms.error-departure'));
             return;
         }
 

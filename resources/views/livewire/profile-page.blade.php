@@ -2,7 +2,7 @@
     <div class="max-w-md w-full space-y-8">
         <div>
             <h1 class="text-center text-3xl font-extrabold text-gray-900 w-auto sm:w-80">
-                Profil bearbeiten
+                {{ __('profile-page.edit-profile') }}
             </h1>
         </div>
         <form class="mt-8 space-y-6" action="#" method="POST" wire:submit="updateProfile">
@@ -10,30 +10,28 @@
 
             <div class="rounded-md shadow-sm -space-y-px mb-6">
                 <div class="font-bold font-md pb-2">
-                    Passwort ändern (oder leer lassen):
+                    {{ __('profile-page.change-password') }}:
                 </div>
 
                 @error('new_password')
                 <div class="text-xs text-red-600">{{ $message }}</div>
                 @enderror
                 <div>
-                    <label for="new_password" class="sr-only">Passwort</label>
                     <input id="new_password" name="new_password" type="password" autocomplete="current-password" wire:model.live="new_password"
                         class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        placeholder="Passwort" />
+                        placeholder="{{ __('profile-page.password') }}" />
                 </div>
                 <div>
-                    <label for="new_password_confirm" class="sr-only">Passwort wiederholen</label>
                     <input id="new_password_confirm" name="new_password_confirm" type="password"
                         autocomplete="current-password" wire:model.live="new_password_confirm"
                         class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        placeholder="Passwort (Wiederholung)" />
+                        placeholder="{{ __('profile-page.password') }} ({{ __('profile-page.repeat') }})" />
                 </div>
             </div>
 
             <div class="rounded-md shadow-sm -space-y-px mb-6">
                 <div class="font-bold font-md pb-2">
-                    Clan/Alter/Wohnort:
+                    {{ __('profile-page.clan-age-city') }}:
                 </div>
 
                 @error('clan_tag')
@@ -54,17 +52,17 @@
                 <div>
                     @php
                         $selectedIndex = 0;
-                        $label = 'Keinem Clan zugehörig';
+                        $label = __('profile-page.no-clan');
 
                         if ($clan_tag == 'Do') {
                             $selectedIndex = 1;
-                            $label = 'Mitglied im Do-Clan';
+                            $label = __('profile-page.member-of') . ' ' . 'Do-' . __('profile-page.clan');
                         } elseif ($clan_tag == 'OOTS') {
                             $selectedIndex = 2;
-                            $label = 'Mitglied im OOTS-Clan';
+                            $label = __('profile-page.member-of') . ' ' . 'OOTS-' . __('profile-page.clan');
                         } elseif ($clan_tag == 'VEX') {
                             $selectedIndex = 3;
-                            $label = 'Mitglied im VEX-Clan';
+                            $label = __('profile-page.member-of') . ' ' . 'VEX-' . __('profile-page.clan');
                         }
                     @endphp
                     <div class="relative"
@@ -97,14 +95,14 @@
 
                             <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
                                 id="listbox-option-0" role="option"
-                                @click="clanTagValue = ''; label='Keinem Clan zugehörig'; selectedIndex = 0; open = false"
+                                @click="clanTagValue = ''; label='{{ __('misc.no-clantag') }}'; selectedIndex = 0; open = false"
                                 @mouseenter="activeIndex = 0" @mouseleave="activeIndex = null"
                                 :class="{ 'text-white bg-indigo-600': activeIndex === 0, 'text-gray-900': !(activeIndex === 0) }">
                                 <div class="flex items-center">
                                     <span x-state:on="Selected" x-state:off="Not Selected"
                                         class="font-normal block truncate"
                                         :class="{ 'font-semibold': selectedIndex === 0, 'font-normal': !(selectedIndex === 0) }">
-                                        Keinem Clan zugehörig
+                                        {{ __('misc.no-clantag') }}
                                     </span>
                                 </div>
 
@@ -123,14 +121,14 @@
 
                             <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
                                 id="listbox-option-1" role="option"
-                                @click="clanTagValue = 'Do'; label='Mitglied im Do-Clan'; selectedIndex = 1; open = false"
+                                @click="clanTagValue = 'Do'; label='{{ __('profile-page.member-of') }} Do-{{ __('profile-page.clan') }}'; selectedIndex = 1; open = false"
                                 @mouseenter="activeIndex = 1" @mouseleave="activeIndex = null"
                                 :class="{ 'text-white bg-indigo-600': activeIndex === 1, 'text-gray-900': !(activeIndex === 1) }">
                                 <div class="flex items-center">
                                     <span x-state:on="Selected" x-state:off="Not Selected"
                                         class="font-normal block truncate"
                                         :class="{ 'font-semibold': selectedIndex === 1, 'font-normal': !(selectedIndex === 1) }">
-                                        Mitglied im Do-Clan
+                                        {{ __('profile-page.member-of') }} Do-{{ __('profile-page.clan') }}
                                     </span>
                                 </div>
 
@@ -149,14 +147,14 @@
 
                             <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
                                 id="listbox-option-2" role="option"
-                                @click="clanTagValue = 'OOTS'; label='Mitglied im OOTS-Clan'; selectedIndex = 2; open = false"
+                                @click="clanTagValue = 'OOTS'; label='{{ __('profile-page.member-of') }} OOTS-{{ __('profile-page.clan') }}'; selectedIndex = 2; open = false"
                                 @mouseenter="activeIndex = 2" @mouseleave="activeIndex = null"
                                 :class="{ 'text-white bg-indigo-600': activeIndex === 2, 'text-gray-900': !(activeIndex === 2) }">
                                 <div class="flex items-center">
                                     <span x-state:on="Selected" x-state:off="Not Selected"
                                         class="font-normal block truncate"
                                         :class="{ 'font-semibold': selectedIndex === 2, 'font-normal': !(selectedIndex === 2) }">
-                                        Mitglied im OOTS-Clan
+                                        {{ __('profile-page.member-of') }} OOTS-{{ __('profile-page.clan') }}
                                     </span>
                                 </div>
 
@@ -175,14 +173,14 @@
 
                             <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
                                 id="listbox-option-3" role="option"
-                                @click="clanTagValue = 'VEX'; label='Mitglied im VEX-Clan'; selectedIndex = 3; open = false"
+                                @click="clanTagValue = 'VEX'; label='{{ __('profile-page.member-of') }} VEX-{{ __('profile-page.clan') }}'; selectedIndex = 3; open = false"
                                 @mouseenter="activeIndex = 3" @mouseleave="activeIndex = null"
                                 :class="{ 'text-white bg-indigo-600': activeIndex === 3, 'text-gray-900': !(activeIndex === 3) }">
                                 <div class="flex items-center">
                                     <span x-state:on="Selected" x-state:off="Not Selected"
                                         class="font-normal block truncate"
                                         :class="{ 'font-semibold': selectedIndex === 3, 'font-normal': !(selectedIndex === 3) }">
-                                        Mitglied im VEX-Clan
+                                        {{ __('profile-page.member-of') }} VEX-{{ __('profile-page.clan') }}
                                     </span>
                                 </div>
 
@@ -202,25 +200,33 @@
                     </div>
                 </div>
                 <div>
-                    <label for="age" class="sr-only">Alter</label>
                     <input id="age" name="age" type="number" required wire:model.live="age"
                         class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        placeholder="Alter (Jahre)" />
+                        placeholder="{{ __('profile-page.age') }}" />
                 </div>
                 <div>
                     @php
                         $selectedIndex = 0;
-                        $label = 'Wohnhaft in Deutschland';
+                        $label = __('login-register.living-in') . ' ' . __('login-register.germany');
 
-                        if ($country_code == 'LU') {
+                        if ($country_code == 'DK') {
                             $selectedIndex = 1;
-                            $label = 'Wohnhaft in Luxemburg';
-                        } elseif ($country_code == 'AT') {
+                            $label = __('login-register.living-in') . ' ' . __('login-register.denmark');
+                        } elseif ($country_code == 'CA') {
                             $selectedIndex = 2;
-                            $label = 'Wohnhaft in Österreich';
-                        } elseif ($country_code == 'CH') {
+                            $label = __('login-register.living-in') . ' ' . __('login-register.canada');
+                        } elseif ($country_code == 'LU') {
                             $selectedIndex = 3;
-                            $label = 'Wohnhaft in der Schweiz';
+                            $label = __('login-register.living-in') . ' ' . __('login-register.luxemburg');
+                        }elseif ($country_code == 'AT') {
+                            $selectedIndex = 4;
+                            $label = __('login-register.living-in') . ' ' . __('login-register.austria');
+                        } elseif ($country_code == 'CH') {
+                            $selectedIndex = 5;
+                            $label = __('login-register.living-in') . ' ' . __('login-register.switzerland');
+                        } elseif ($country_code == 'US') {
+                            $selectedIndex = 6;
+                            $label = __('login-register.living-in') . ' ' . __('login-register.usa');
                         }
                     @endphp
                     <div class="relative"
@@ -253,14 +259,40 @@
 
                             <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
                                 id="listbox-option-0" role="option"
-                                @click="countryCodeValue = 'DE'; label='Wohnhaft in Deutschland'; selectedIndex = 0; open = false"
+                                @click="countryCodeValue = 'DE'; label='{{ __('login-register.living-in') }} {{ __('login-register.germany') }}'; selectedIndex = 0; open = false"
                                 @mouseenter="activeIndex = 0" @mouseleave="activeIndex = null"
                                 :class="{ 'text-white bg-indigo-600': activeIndex === 0, 'text-gray-900': !(activeIndex === 0) }">
                                 <div class="flex items-center">
                                     <span x-state:on="Selected" x-state:off="Not Selected"
                                         class="font-normal block truncate"
                                         :class="{ 'font-semibold': selectedIndex === 0, 'font-normal': !(selectedIndex === 0) }">
-                                        Wohnhaft in Deutschland
+                                        {{ __('login-register.living-in') }} {{ __('login-register.germany') }}
+                                    </span>
+                                </div>
+
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600"
+                                    :class="{ 'text-white': activeIndex === 0, 'text-indigo-600': !(activeIndex === 0) }"
+                                    x-show="selectedIndex === 0" style="display: none;">
+                                    <svg class="h-5 w-5" x-description="Heroicon name: solid/check"
+                                        xmlregisteredns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </span>
+                            </li>
+
+                            <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
+                                id="listbox-option-0" role="option"
+                                @click="countryCodeValue = 'DK'; label='{{ __('login-register.living-in') }} {{ __('login-register.denmark') }}'; selectedIndex = 0; open = false"
+                                @mouseenter="activeIndex = 0" @mouseleave="activeIndex = null"
+                                :class="{ 'text-white bg-indigo-600': activeIndex === 0, 'text-gray-900': !(activeIndex === 0) }">
+                                <div class="flex items-center">
+                                    <span x-state:on="Selected" x-state:off="Not Selected"
+                                        class="font-normal block truncate"
+                                        :class="{ 'font-semibold': selectedIndex === 0, 'font-normal': !(selectedIndex === 0) }">
+                                        {{ __('login-register.living-in') }} {{ __('login-register.denmark') }}
                                     </span>
                                 </div>
 
@@ -279,14 +311,40 @@
 
                             <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
                                 id="listbox-option-1" role="option"
-                                @click="countryCodeValue = 'LU'; label='Wohnhaft in Luxemburg'; selectedIndex = 1; open = false"
+                                @click="countryCodeValue = 'CA'; label='{{ __('login-register.living-in') }} {{ __('login-register.canada') }}'; selectedIndex = 1; open = false"
                                 @mouseenter="activeIndex = 1" @mouseleave="activeIndex = null"
                                 :class="{ 'text-white bg-indigo-600': activeIndex === 1, 'text-gray-900': !(activeIndex === 1) }">
                                 <div class="flex items-center">
                                     <span x-state:on="Selected" x-state:off="Not Selected"
                                         class="font-normal block truncate"
                                         :class="{ 'font-semibold': selectedIndex === 1, 'font-normal': !(selectedIndex === 1) }">
-                                        Wohnhaft in Luxemburg
+                                        {{ __('login-register.living-in') }} {{ __('login-register.canada') }}
+                                    </span>
+                                </div>
+
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600"
+                                    :class="{ 'text-white': activeIndex === 1, 'text-indigo-600': !(activeIndex === 1) }"
+                                    x-show="selectedIndex === 1" style="display: none;">
+                                    <svg class="h-5 w-5" x-description="Heroicon name: solid/check"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </span>
+                            </li>
+
+                            <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
+                                id="listbox-option-1" role="option"
+                                @click="countryCodeValue = 'LU'; label='{{ __('login-register.living-in') }} {{ __('login-register.luxemburg') }}'; selectedIndex = 1; open = false"
+                                @mouseenter="activeIndex = 1" @mouseleave="activeIndex = null"
+                                :class="{ 'text-white bg-indigo-600': activeIndex === 1, 'text-gray-900': !(activeIndex === 1) }">
+                                <div class="flex items-center">
+                                    <span x-state:on="Selected" x-state:off="Not Selected"
+                                        class="font-normal block truncate"
+                                        :class="{ 'font-semibold': selectedIndex === 1, 'font-normal': !(selectedIndex === 1) }">
+                                        {{ __('login-register.living-in') }} {{ __('login-register.luxemburg') }}
                                     </span>
                                 </div>
 
@@ -305,14 +363,14 @@
 
                             <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
                                 id="listbox-option-2" role="option"
-                                @click="countryCodeValue = 'AT'; label='Wohnhaft in Österreich'; selectedIndex = 2; open = false"
+                                @click="countryCodeValue = 'AT'; label='{{ __('login-register.living-in') }} {{ __('login-register.austria') }}'; selectedIndex = 2; open = false"
                                 @mouseenter="activeIndex = 2" @mouseleave="activeIndex = null"
                                 :class="{ 'text-white bg-indigo-600': activeIndex === 2, 'text-gray-900': !(activeIndex === 2) }">
                                 <div class="flex items-center">
                                     <span x-state:on="Selected" x-state:off="Not Selected"
                                         class="font-normal block truncate"
                                         :class="{ 'font-semibold': selectedIndex === 2, 'font-normal': !(selectedIndex === 2) }">
-                                        Wohnhaft in Österreich
+                                        {{ __('login-register.living-in') }} {{ __('login-register.austria') }}
                                     </span>
                                 </div>
 
@@ -331,14 +389,40 @@
 
                             <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
                                 id="listbox-option-3" role="option"
-                                @click="countryCodeValue = 'CH'; label='Wohnhaft in der Schweiz'; selectedIndex = 3; open = false"
+                                @click="countryCodeValue = 'CH'; label='{{ __('login-register.living-in') }} {{ __('login-register.switzerland') }}'; selectedIndex = 3; open = false"
                                 @mouseenter="activeIndex = 3" @mouseleave="activeIndex = null"
                                 :class="{ 'text-white bg-indigo-600': activeIndex === 3, 'text-gray-900': !(activeIndex === 3) }">
                                 <div class="flex items-center">
                                     <span x-state:on="Selected" x-state:off="Not Selected"
                                         class="font-normal block truncate"
                                         :class="{ 'font-semibold': selectedIndex === 3, 'font-normal': !(selectedIndex === 3) }">
-                                        Wohnhaft in der Schweiz
+                                        {{ __('login-register.living-in') }} {{ __('login-register.switzerland') }}
+                                    </span>
+                                </div>
+
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600"
+                                    :class="{ 'text-white': activeIndex === 3, 'text-indigo-600': !(activeIndex === 3) }"
+                                    x-show="selectedIndex === 3" style="display: none;">
+                                    <svg class="h-5 w-5" x-description="Heroicon name: solid/check"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </span>
+                            </li>
+
+                            <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
+                                id="listbox-option-3" role="option"
+                                @click="countryCodeValue = 'US'; label='{{ __('login-register.living-in') }} {{ __('login-register.usa') }}'; selectedIndex = 3; open = false"
+                                @mouseenter="activeIndex = 3" @mouseleave="activeIndex = null"
+                                :class="{ 'text-white bg-indigo-600': activeIndex === 3, 'text-gray-900': !(activeIndex === 3) }">
+                                <div class="flex items-center">
+                                    <span x-state:on="Selected" x-state:off="Not Selected"
+                                        class="font-normal block truncate"
+                                        :class="{ 'font-semibold': selectedIndex === 3, 'font-normal': !(selectedIndex === 3) }">
+                                        {{ __('login-register.living-in') }} {{ __('login-register.usa') }}
                                     </span>
                                 </div>
 
@@ -358,16 +442,14 @@
                     </div>
                 </div>
                 <div>
-                    <label for="zip" class="sr-only">Postleitzahl</label>
                     <input id="zip" name="zip" type="number" required wire:model.live="zip"
                         class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        placeholder="Postleitzahl" />
+                        placeholder="{{ __('profile-page.zip') }}" />
                 </div>
                 <div>
-                    <label for="city" class="sr-only">Ortschaft</label>
                     <input id="city" name="city" type="text" required wire:model.live="city"
                         class="appearance-none rounded-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                        placeholder="Ortschaft" />
+                        placeholder="{{ __('profile-page.city') }}" />
                 </div>
             </div>
 
@@ -378,7 +460,7 @@
                             class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                     </div>
                     <div class="ml-3 text-sm">
-                        <label for="show_zip_registered" class="font-medium text-gray-700 cursor-pointer">Meine PLZ verifizierten Benutzern anzeigen</label>
+                        <label for="show_zip_registered" class="font-medium text-gray-700 cursor-pointer">{{ __('profile-page.show-zip-registered') }}</label>
                     </div>
                 </div>
                 <div class="flex items-start">
@@ -387,7 +469,7 @@
                             class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                     </div>
                     <div class="ml-3 text-sm">
-                        <label for="show_zip_public" class="font-medium text-gray-700 cursor-pointer">Meine PLZ öffentlich anzeigen</label>
+                        <label for="show_zip_public" class="font-medium text-gray-700 cursor-pointer">{{ __('profile-page.show-zip-public') }}</label>
                     </div>
                 </div>
             </div>
@@ -404,7 +486,7 @@
                                 clip-rule="evenodd" />
                         </svg>
                     </span>
-                    Speichern
+                    {{ __('profile-page.save') }}
                 </button>
 
                 <button type="button" x-show="success"
@@ -414,7 +496,7 @@
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
                     </span>
-                    Erfolgreich gespeichert!
+                    {{ __('profile-page.saved') }}
                 </button>
             </div>
         </form>

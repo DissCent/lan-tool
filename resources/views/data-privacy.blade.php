@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+@if (Session::get('locale') == 'de')
 <div>
     <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6"">
@@ -18,6 +19,8 @@
                     <span class="personal">{{ str_rot13(strrev(base64_decode('NDIgLnJ0UyByZXJhbWllVwo' . '='))) }}</span>
                     <br />
                     <span class="personal">{{ str_rot13(strrev(base64_decode('cmFrY2VOIG1hIG5lZ25pbHNzRSAwMzczNwo' . '='))) }}</span>
+                    <br />
+                    <span class="personal">{{ str_rot13(strrev(base64_decode('eW5hbXJlRyAvIGRuYWxoY3N0dWVE'))) }}</span>
                     <br />
                     <br />
                     <span class="personal">{{ str_rot13(strrev(base64_decode('MjggNTMgMzQgMDUgMTE3ICkwKCA5NCsgOm5vZmVsZVQK'))) }}</span>
@@ -158,8 +161,6 @@
                 <h3 class="text-xl font-semibold text-gray-900 w-auto my-3">Art und Zweck der Verarbeitung:</h3>
                 <p class="mb-4">Für die Registrierung auf unserer Website benötigen wir einige personenbezogene Daten, die über eine Eingabemaske
                     an uns übermittelt werden. </p>
-                <p class="mb-4">Zum Zeitpunkt der Registrierung werden zusätzlich folgende Daten erhoben:</p>
-                <p class="mb-4"></p>
                 <p class="mb-4">Ihre Registrierung ist für das Bereithalten bestimmter Inhalte und Leistungen auf unserer Website erforderlich.
                 </p>
                 <h3 class="text-xl font-semibold text-gray-900 w-auto my-3">Rechtsgrundlage:</h3>
@@ -199,6 +200,8 @@
                     <br />
                     <span class="personal">{{ str_rot13(strrev(base64_decode('cmFrY2VOIG1hIG5lZ25pbHNzRSAwMzczNwo' . '='))) }}</span>
                     <br />
+                    <span class="personal">{{ str_rot13(strrev(base64_decode('eW5hbXJlRyAvIGRuYWxoY3N0dWVE'))) }}</span>
+                    <br />
                     <br />
                     <span class="personal">{{ str_rot13(strrev(base64_decode('MjggNTMgMzQgMDUgMTE3ICkwKCA5NCsgOm5vZmVsZVQK'))) }}</span>
                     <br />
@@ -218,6 +221,202 @@
         </div>
     </div>
 </div>
+@else
+<div>
+    <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+        <div class="px-4 py-5 sm:px-6"">
+            <div class="mt-1 text-sm text-gray-500" x-show="open">
+                <h1 class="text-center text-3xl font-extrabold text-gray-900 w-auto mb-4">Privacy Policy</h1>
+                <p class="mb-4">The controller within the meaning of data protection laws, in particular the EU General Data Protection Regulation (GDPR), is:
+                </p>
+                <p class="mb-4">
+                    <span class="personal">{{ str_rot13(strrev(base64_decode('em5lcm9MIHBwaWxpaFAK'))) }}</span>
+                    <br />
+                    <span class="personal">{{ str_rot13(strrev(base64_decode('NDIgLnJ0UyByZXJhbWllVwo' . '='))) }}</span>
+                    <br />
+                    <span class="personal">{{ str_rot13(strrev(base64_decode('cmFrY2VOIG1hIG5lZ25pbHNzRSAwMzczNwo' . '='))) }}</span>
+                    <br />
+                    <span class="personal">{{ str_rot13(strrev(base64_decode('eW5hbXJlRyAvIGRuYWxoY3N0dWVE'))) }}</span>
+                    <br />
+                    <br />
+                    <span class="personal">{{ str_rot13(strrev(base64_decode('MjggNTMgMzQgMDUgMTE3ICkwKCA5NCsgOm5vZmVsZVQK'))) }}</span>
+                    <br />
+                    <span class="personal">{!! str_rot13(strrev(base64_decode('ZW0ub2gtem5lcm9sOzQ2IyZsb290bmFsIDpsaWFNLUUK'))) !!}</span>
+                </p>
+                <h2 class="text-2xl font-bold text-gray-900 w-auto my-3">Your rights as a data subject</h2>
+                <p class="mb-4">You can exercise the following rights at any time using the contact details provided for our data protection officer:
+                </p>
+                <ul>
+                    <li>Information about your data stored by us and its processing (Art. 15 GDPR),</li>
+                    <li>Correction of incorrect personal data (Art. 16 GDPR),</li>
+                    <li>Deletion of your data stored by us (Art. 17 GDPR),</li>
+                    <li>Restriction of data processing if we are not yet allowed to delete your data due to legal obligations
+                        delete your data (Art. 18 GDPR),</li>
+                    <li>Objection to the processing of your data by us (Art. 21 GDPR) and</li>
+                    <li>Data portability, provided that you have consented to the data processing or have concluded a contract with us
+                        have concluded a contract with us (Art. 20 GDPR).</li>
+                </ul>
+                <p class="mb-4">If you have given us your consent, you can revoke it at any time with effect for the future.
+                    revoked.</p>
+                <p class="mb-4">You can lodge a complaint with a supervisory authority at any time, e.g. with the competent
+                    authority in the federal state of your place of residence or to the authority responsible for us as the controller.
+                    authority responsible for us.</p>
+                <p class="mb-4">A list of supervisory authorities (for the non-public sector) with addresses can be found at: <a
+                        href="https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html" target="_blank"
+                        rel="noopener nofollow" class="underline">https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html</a>.</p>
+                <p class="mb-4"></p>
+                <h2 class="text-2xl font-bold text-gray-900 w-auto my-3">Collection of general information when visiting our website</h2>
+                <h3 class="text-xl font-semibold text-gray-900 w-auto my-3">Nature and purpose of processing:</h3>
+                <p class="mb-4">When you access our website, i.e. if you do not register or otherwise transmit information, information of a general
+                    information, information of a general nature is automatically recorded. This information (server log files)
+                    include the type of web browser, the operating system used, the domain name of your internet service provider, your
+                    Internet service provider, your IP address and similar information.</p>
+                <p class="mb-4">In particular, they are processed for the following purposes:</p>
+                <ul>
+                    <li>Ensuring a problem-free connection to the website,</li>
+                    <li>Ensuring the smooth use of our website,</li>
+                    <li>Evaluation of system security and stability and</li>
+                    <li>to optimize our website.</li>
+                </ul>
+                <p class="mb-4">We do not use your data to draw conclusions about your person. Information of this kind will be
+                    anonymized statistically evaluated by us in order to optimize our website and the technology behind it.
+                    optimize.</p>
+                <h3 class="text-xl font-semibold text-gray-900 w-auto my-3">Legal basis and legitimate interest:</h3>
+                <p class="mb-4">The processing is carried out in accordance with Art. 6 para. 1 lit. f GDPR on the basis of our legitimate interest in the
+                    improving the stability and functionality of our website.</p>
+                <h3 class="text-xl font-semibold text-gray-900 w-auto my-3">Recipient:</h3>
+                <p class="mb-4">Recipients of the data may be technical service providers who act as processors for the operation and maintenance of our website.
+                    processors for the operation and maintenance of our website.</p>
+                <p class="mb-4"></p>
+                <h3 class="text-xl font-semibold text-gray-900 w-auto my-3">Storage period:</h3>
+                <p class="mb-4">The data is deleted as soon as it is no longer required for the purpose for which it was collected. This is the case for
+                    data used to provide the website, this is generally the case when the respective session has ended.
+                    is ended.</p>
+                <p class="mb-4">If the data is stored in log files, this is the case after 14 days at the latest. A
+                    storage beyond this period is possible. In this case, the IP addresses of the users are anonymized,
+                    so that an assignment of the calling client is no longer possible.</p>
+                <p class="mb-4"></p>
+                <h3 class="text-xl font-semibold text-gray-900 w-auto my-3">Provision prescribed or required:</h3>
+                <p class="mb-4">The provision of the aforementioned personal data is neither legally nor contractually required.
+                    However, without the IP address, the service and functionality of our website cannot be guaranteed. In addition
+                    individual services may not be available or may be restricted. For this reason, an
+                    objection is excluded.</p>
+                <p class="mb-4"></p>
+                <h2 class="text-2xl font-bold text-gray-900 w-auto my-3">Cookies</h2>
+                <p class="mb-4">Like many other websites, we also use so-called &quot;cookies&quot;. Cookies are small text files that are
+                    text files that are stored on your end device (laptop, tablet, smartphone, etc.) when you visit our website.
+                    visit our website.</p>
+                <p class="mb-4">You can delete individual cookies or the entire cookie inventory. You will also receive
+                    information and instructions on how to delete these cookies or block their storage in advance.
+                    Depending on your browser provider, you will find the necessary information under the following links:</p>
+                <ul>
+                    <li>Mozilla Firefox: <a href="https://support.mozilla.org/de/kb/cookies-loeschen-daten-von-websites-entfernen"
+                            target="_blank" class="underline"
+                            rel="nofollow noopener">https://support.mozilla.org/de/kb/cookies-loeschen-daten-von-websites-entfernen</a>
+                    </li>
+                    <li>Internet Explorer: <a
+                            href="https://support.microsoft.com/de-de/help/17442/windows-internet-explorer-delete-manage-cookies"
+                            target="_blank" class="underline"
+                            rel="nofollow noopener">https://support.microsoft.com/de-de/help/17442/windows-internet-explorer-delete-manage-cookies</a>
+                    </li>
+                    <li>Google Chrome: <a href="https://support.google.com/accounts/answer/61416?hl=de" target="_blank" class="underline"
+                            rel="nofollow noopener">https://support.google.com/accounts/answer/61416?hl=de</a></li>
+                    <li>Opera: <a href="http://www.opera.com/de/help" target="_blank" class="underline"
+                            rel="nofollow noopener">http://www.opera.com/de/help</a></li>
+                    <li>Safari: <a href="https://support.apple.com/kb/PH17191?locale=de_DE&viewlocale=de_DE" target="_blank" class="underline"
+                            rel="nofollow noopener">https://support.apple.com/kb/PH17191?locale=de_DE&viewlocale=de_DE</a></li>
+                </ul>
+                <h3 class="text-xl font-semibold text-gray-900 w-auto my-3">Storage duration and cookies used:</h3>
+                <p class="mb-4">If you allow us to use cookies through your browser settings or consent, the following cookies may be used on our websites
+                    the following cookies may be used on our websites:</p>
+                <p class="mb-4">
+                    <strong>Name:</strong> laravel_session
+                    <br/>
+                    <strong>Provider:</strong> lan.descentforum.de
+                    <br/>
+                    <strong>Purpose:</strong> Used to maintain the user's states across all page views
+                    <br/>
+                    <strong>Expiry:</strong> One hour
+                    <br/>
+                    <strong>Type:</strong> HTTP cookie
+                    <br/>
+                    <br/>
+                    <strong>Name:</strong> XSRF-TOKEN
+                    <br/>
+                    <strong>Provider:</strong> lan.descentforum.de
+                    <br/>
+                    <strong>Purpose:</strong> Serves the security of website visitors by preventing so-called "cross-site request forgery". Serves exclusively the security of the website visitor and the operator.
+                    <br/>
+                    <strong>Expiry:</strong> One hour
+                    <br/>
+                    <strong>Type:</strong> HTTP cookie
+                </p>
+                <h2 class="text-2xl font-bold text-gray-900 w-auto my-3">Technically necessary cookies</h2>
+                <h3 class="text-xl font-semibold text-gray-900 w-auto my-3">Nature and purpose of the processing:</h3>
+                <p class="mb-4">We use cookies to make our website more user-friendly. Some elements of our website
+                    require that the accessing browser can be identified even after a page change.</p>
+                <p class="mb-4">The purpose of using technically necessary cookies is to simplify the use of websites for users.
+                    simplify the use of websites for users. Some functions of our website cannot be offered without the use of cookies.
+                    be offered without the use of cookies. For these, it is necessary for the browser to be recognized even after a page change.</p>
+                <p class="mb-4"></p>
+                <h3 class="text-xl font-semibold text-gray-900 w-auto my-3">Legal basis and legitimate interest:</h3>
+                <p class="mb-4">The processing is carried out in accordance with Art. 6 para. 1 lit. f GDPR on the basis of our legitimate interest in a
+                    user-friendly design of our website.</p>
+                <h3 class="text-xl font-semibold text-gray-900 w-auto my-3">Recipient: </h3>
+                <p class="mb-4">Recipients of the data may be technical service providers who act as processors for the operation and maintenance of our website.
+                    processors for the operation and maintenance of our website.</p>
+                <p class="mb-4"></p>
+                <h3 class="text-xl font-semibold text-gray-900 w-auto my-3">Provision prescribed or required:</h3>
+                <p class="mb-4">The provision of the aforementioned personal data is neither legally nor contractually required.
+                    Without this data, however, the service and functionality of our website cannot be guaranteed. In addition
+                    individual services may not be available or may be restricted.</p>
+                <h3 class="text-xl font-semibold text-gray-900 w-auto my-3">Contradiction</h3>
+                <p class="mb-4">Please read the information on your right to object under Art. 21 GDPR below.</p>
+                <p class="mb-4"></p>
+                <h2 class="text-2xl font-bold text-gray-900 w-auto my-3">Registration on our website</h2>
+                <h3 class="text-xl font-semibold text-gray-900 w-auto my-3">Nature and purpose of the processing:</h3>
+                <p class="mb-4">To register on our website, we require some personal data, which is transmitted to uspan class="personal">{{ str_rot13(strrev(base64_decode('cmFrY2VOIG1hIG5lZ25pbHNzRSAwMzczNwo' . '='))) }}</span>
+                    <br />
+                <h2 class="text-2xl font-bold text-gray-900 w-auto my-3">Information about your right to object in accordance with Art. 21 GDPR</h2>
+                <h3 class="text-xl font-semibold text-gray-900 w-auto my-3">Individual right of objection</h3>
+                <p class="mb-4">You have the right to object, on grounds relating to your particular situation, at any time to the
+                    processing of personal data concerning you, which is based on Art. 6 para. 1 lit. f GDPR
+                    (data processing on the basis of a balancing of interests); this also applies to profiling based on this provision.
+                    to profiling based on this provision within the meaning of Art. 4 No. 4 GDPR.</p>
+                <p class="mb-4">If you file an objection, we will no longer process your personal data unless we can demonstrate compelling
+                    we can demonstrate compelling legitimate grounds for the processing which override your interests, rights and freedoms
+                    rights and freedoms, or the processing serves the establishment, exercise or defense of legal claims.
+                    legal claims.</p>
+                <h3 class="text-xl font-semibold text-gray-900 w-auto my-3">Recipient of an objection</h3>
+                <p class="mb-4">
+                    <span class="personal">{{ str_rot13(strrev(base64_decode('em5lcm9MIHBwaWxpaFAK'))) }}</span>
+                    <br />
+                    <span class="personal">{{ str_rot13(strrev(base64_decode('NDIgLnJ0UyByZXJhbWllVwo' . '='))) }}</span>
+                    <br />
+                    <span class="personal">{{ str_rot13(strrev(base64_decode('cmFrY2VOIG1hIG5lZ25pbHNzRSAwMzczNwo' . '='))) }}</span>
+                    <br />
+                    <span class="personal">{{ str_rot13(strrev(base64_decode('eW5hbXJlRyAvIGRuYWxoY3N0dWVE'))) }}</span>
+                    <br />
+                    <br />
+                    <span class="personal">{{ str_rot13(strrev(base64_decode('MjggNTMgMzQgMDUgMTE3ICkwKCA5NCsgOm5vZmVsZVQK'))) }}</span>
+                    <br />
+                    <span class="personal">{!! str_rot13(strrev(base64_decode('ZW0ub2gtem5lcm9sOzQ2IyZsb290bmFsIDpsaWFNLUUK'))) !!}</span>
+                </p>
+                <hr>
+                <h2 class="text-2xl font-bold text-gray-900 w-auto my-3">Changes to our privacy policy</h2>
+                <p class="mb-4">We reserve the right to adapt this data protection declaration so that it always complies with the current legal
+                    requirements or to implement changes to our services in the privacy policy, e.g. when introducing new services.
+                    the introduction of new services. The new privacy policy will then apply to your next visit.</p>
+                <p class="mb-4"><em>The privacy policy was created with the help of activeMind AG, the experts for <a
+                            href="https://www.activemind.de/datenschutz/datenschutzbeauftragter/" target="_blank"
+                            rel="noopener" class="underline">external data protection officers</a>
+                            <span class="personal">{!! str_rot13(strrev(base64_decode('KTAzLTkwLTAyMDIjIG5vaXNyZVYoCg' . '=='))) !!}</span>
+                            .</em></p>
+            </div>
+        </div>
+    </div>
+</div>
+@endif
 @endsection
 
 @section('footer')

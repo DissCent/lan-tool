@@ -7,7 +7,6 @@
                     class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                     aria-controls="mobile-menu" @click="open = !open" aria-expanded="false"
                     x-bind:aria-expanded="open.toString()">
-                    <span class="sr-only">Navigation öffnen</span>
                     <svg x-description="Icon when menu is closed. Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" class="block h-6 w-6"
                         :class="{ 'hidden': open, 'block': !(open) }" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -38,7 +37,10 @@
                 <!-- Profile dropdown -->
                 <div x-data="{ openContext: false }"
                     @keydown.escape.stop="openContext = false"
-                    class="ml-3 relative">
+                    class="ml-3 relative flex items-center">
+                    <div class="mr-4">
+                        @livewire('language-switcher')
+                    </div>
                     <div>
                         <button type="button"
                             class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
@@ -52,7 +54,6 @@
                             @guest
                             @click="window.location.href = '/login'">
                             @endguest
-                            <span class="sr-only">Benutzermenü öffnen</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 p-1.5 rounded-full bg-indigo-500 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                             </svg>
@@ -65,7 +66,7 @@
                         x-transition:leave="transition ease-in duration-75"
                         x-transition:leave-start="transform opacity-100 scale-100"
                         x-transition:leave-end="transform opacity-0 scale-95"
-                        class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                        class="origin-top-right absolute top-full right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                         x-ref="menu-items" x-description="Dropdown menu, show/hide based on menu state."
                         role="menu" aria-orientation="vertical"
                         aria-labelledby="user-menu-button" tabindex="-1" @keydown.arrow-up.prevent="onArrowUp()"
@@ -78,17 +79,17 @@
                             x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 0 }" role="menuitem"
                             tabindex="-1" i@mouseenter="activeIndex = 0"
                             @mouseleave="activeIndex = -1" d="user-menu-item-0" @mouseenter="activeIndex = 0"
-                            @mouseleave="activeIndex = -1" @click="openContext = false; focusButton()">Mein Profil</a>
+                            @mouseleave="activeIndex = -1" @click="openContext = false; focusButton()">{{ __('navigation-bar.my-profile') }}</a>
 
                         <a href="/registrations" class="block px-4 py-2 text-sm text-gray-700"
                             :class="{ 'bg-gray-100': activeIndex === 1 }" role="menuitem" tabindex="-1"
                             id="user-menu-item-1" @mouseenter="activeIndex = 1" @mouseleave="activeIndex = -1"
-                            @click="openContext = false; focusButton()">Meine Anmeldungen</a>
+                            @click="openContext = false; focusButton()">{{ __('navigation-bar.my-registrations') }}</a>
 
                         <a href="/logout" class="block px-4 py-2 text-sm text-gray-700"
                             :class="{ 'bg-gray-100': activeIndex === 2 }" role="menuitem" tabindex="-1"
                             id="user-menu-item-2" @mouseenter="activeIndex = 2" @mouseleave="activeIndex = -1"
-                            @click="openContext = false; focusButton()">Abmelden</a>
+                            @click="openContext = false; focusButton()">{{ __('navigation-bar.logout') }}</a>
                     </div>
                 </div>
             </div>

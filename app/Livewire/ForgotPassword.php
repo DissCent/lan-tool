@@ -28,7 +28,7 @@ class ForgotPassword extends Component
                 'username' => $user->username
             ], function($message) {
                 $message->to($this->email);
-                $message->subject('Deine Passwort-Anfrage auf ' . $_SERVER['HTTP_HOST']);
+                $message->subject(__('misc.subject-forgot-password') . ' ' . $_SERVER['HTTP_HOST']);
             });
         });
 

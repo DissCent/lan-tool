@@ -3,7 +3,7 @@
     <div class="w-full space-y-8">
         <div>
             <h1 class="text-center text-3xl font-extrabold text-gray-900">
-                Wartende Benutzer
+                {{ __('users-table.waiting-users') }}
             </h1>
         </div>
 
@@ -20,14 +20,13 @@
                                     </th>
                                     <th scope="col"
                                         class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Benutzer<span class="sm:hidden"> / E-Mail</span>
+                                        {{ __('users-table.user') }}<span class="sm:hidden"> / {{ __('users-table.user') }}</span>
                                     </th>
                                     <th scope="col"
                                         class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden sm:table-cell">
-                                        E-Mail
+                                        {{ __('users-table.email') }}
                                     </th>
                                     <th scope="col" class="relative px-6 py-3">
-                                        <span class="sr-only">Freischalten</span>
                                     </th>
                                 </tr>
                             </thead>
@@ -54,7 +53,7 @@
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                         <a href="#!" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" wire:click="unlock({{ $user->id }})">
-                                            OK
+                                            {{ __('users-table.ok') }}
                                         </a>
                                     </td>
                                 </tr>
@@ -69,6 +68,6 @@
 </div>
 @else
 <div>
-    Alle Benutzer sind freigeschaltet! 😀
+    {{ __('users-table.all-users-activated') }} 😀
 </div>
 @endif

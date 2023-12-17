@@ -49,18 +49,18 @@ class LoginRegister extends Component
             || substr(strtolower($this->username), 0, 5) == '<vex>'
             || substr(strtolower($this->username), 0, 2) == 'do'
             || substr(strtolower($this->username), 0, 4) == 'oots') {
-            $this->addError('username', 'Bitte keinen Clannamen im Namen!');
+            $this->addError('username', __('misc.no-clantag'));
             return;
         }
 
         $credentials = $this->only(['username', 'password']);
 
         if (! Auth::attempt($credentials, $this->remember_me)) {
-            $this->addError('password', 'Benutzername oder Passwort falsch!');
+            $this->addError('password', __('misc.login-wrong'));
         } else {
             if (Auth::user()->email_verified_at == null) {
                 Auth::logout();
-                $this->addError('username', 'Bestätige zuerst deine E-Mail-Adresse!');
+                $this->addError('username', __('misc.login-unvalidated'));
             } else {
                 $lan = Lan::whereRaw('id = (select max(`id`) from lans)')->get()[0];
 
@@ -82,18 +82,18 @@ class LoginRegister extends Component
             'new_password_confirm' => 'required|string|min:8',
             'clan_tag' => 'string|in:Do,OOTS,VEX,',
             'age' => 'integer|required',
-            'country_code' => 'required|string|in:AT,CH,DE,LU',
+            'country_code' => 'required|string|in:AT,CA,CH,DE,DK,LU,US',
             'zip' => 'required|string',
             'city' => 'required|string'
         ]);
 
         if (count(User::whereRaw('lower(username) = ?', [strtolower($this->new_username)])->get()) > 0) {
-            $this->addError('new_username', 'Dieser Benutzername ist bereits vergeben.');
+            $this->addError('new_username', __('misc.username-in-use'));
             return;
         }
 
         if (count(User::whereRaw('lower(email) = ?', [strtolower($this->email)])->get()) > 0) {
-            $this->addError('new_username', 'Diese E-Mail-Adresse ist schon registriert.');
+            $this->addError('new_username', __('misc.email-in-use'));
             return;
         }
 
@@ -101,7 +101,7 @@ class LoginRegister extends Component
             || substr(strtolower($this->new_username), 0, 5) == '<vex>'
             || substr(strtolower($this->new_username), 0, 2) == 'do'
             || substr(strtolower($this->new_username), 0, 4) == 'oots') {
-            $this->addError('new_username', 'Bitte keinen Clannamen im Namen!');
+            $this->addError('new_username', __('misc.no-clantag'));
             return;
         }
 
@@ -131,7 +131,7 @@ class LoginRegister extends Component
             'username' => $this->new_username
         ], function($message) {
             $message->to($this->email);
-            $message->subject('Deine Registrierung auf ' . $_SERVER['HTTP_HOST']);
+            $message->subject(__('misc.subject-registered') . ' ' . $_SERVER['HTTP_HOST']);
         });
 
         return redirect('/registered');

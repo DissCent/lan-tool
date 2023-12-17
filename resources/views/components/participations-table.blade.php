@@ -3,10 +3,10 @@
     <div class="w-full space-y-8" x-show="!showRegistration">
         <div>
             <h1 class="text-center text-3xl font-extrabold text-gray-900">
-                Teilnehmer
+                {{ __('participations-table.participants') }}
             </h1>
             <p class="mt-2 text-center text-sm text-gray-600">
-                der {{ $lan->name }}
+                {{ __('participations-table.of-the') }} {{ $lan->name }}
             </p>
         </div>
 
@@ -23,23 +23,23 @@
                                     </th>
                                     <th scope="col"
                                         class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Spieler
+                                        {{ __('participations-table.player') }}
                                     </th>
                                     <th scope="col"
                                         class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        von
+                                        {{ __('participations-table.from') }}
                                     </th>
                                     <th scope="col"
                                         class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        bis
+                                        {{ __('participations-table.until') }}
                                     </th>
                                     <th scope="col"
                                         class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">
-                                        PLZ
+                                        {{ __('participations-table.zip') }}
                                     </th>
                                     <th scope="col"
                                         class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">
-                                        Anreise
+                                        {{ __('participations-table.approach') }}
                                     </th>
                                 </tr>
                             </thead>
@@ -66,7 +66,7 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1 mt-1" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fill-rule="evenodd" d="M14.707 12.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                                             </svg>
-                                            interessiert
+                                            {{ __('participations-table.interested') }}
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1 mt-1" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fill-rule="evenodd" d="M14.707 12.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                                             </svg>
@@ -74,7 +74,7 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1 mt-1" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fill-rule="evenodd" d="M14.707 12.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                                             </svg>
-                                            abgesagt
+                                            {{ __('participations-table.canceled') }}
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1 mt-1" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fill-rule="evenodd" d="M14.707 12.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd" />
                                             </svg>
@@ -101,40 +101,52 @@
 										</div>
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-900">{{ (new DateTime($user->arrival_date))->format('d.m.Y') }}</div>
+                                        <div class="text-sm text-gray-900">
+                                            @if (Session::get('locale') == 'de')
+                                            {{ (new DateTime($user->arrival_date))->format('d.m.Y') }}
+                                            @else
+                                            {{ $user->arrival_date }}
+                                            @endif
+                                        </div>
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-900">{{ (new DateTime($user->departure_date))->format('d.m.Y') }}</div>
+                                        <div class="text-sm text-gray-900">
+                                            @if (Session::get('locale') == 'de')
+                                            {{ (new DateTime($user->departure_date))->format('d.m.Y') }}
+                                            @else
+                                            {{ $user->departure_date }}
+                                            @endif
+                                        </div>
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-sm hidden md:table-cell">
                                         @auth
                                             @if ($user->show_zip_public || ($user->show_zip_registered && $verified) || Auth::user()->isadmin || (Auth::check() && Auth::user()->id == $user->id && $user->show_zip_registered))
                                             {{ $user->country_code }}-{{ $user->zip }}
                                             @else
-                                            versteckt
+                                            {{ __('participations-table.hidden') }}
                                             @endif
                                         @else
                                             @if ($user->show_zip_public)
                                             {{ $user->country_code }}-{{ $user->zip }}
                                             @else
-                                            versteckt
+                                            {{ __('participations-table.hidden') }}
                                             @endif
                                         @endauth
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-sm hidden md:table-cell">
                                         <div class="text-sm text-gray-900">
                                             @if ($user->type_of_arrival == 'train_need_ride')
-                                            Zug (Abholung)
+                                            {{ __('participations-table.train-need-ride') }}
                                             @elseif ($user->type_of_arrival == 'train_no_ride')
-                                            Zug
+                                            {{ __('participations-table.train-no-ride') }}
                                             @elseif ($user->type_of_arrival == 'car_space')
-                                            Auto (bietet MFG)
+                                            {{ __('participations-table.car-space') }}
                                             @elseif ($user->type_of_arrival == 'car_no_space')
-                                            Auto (voll)
+                                            {{ __('participations-table.car-no-space') }}
                                             @elseif ($user->type_of_arrival == 'joining_other')
-                                            Auto (Mitfahrt)
+                                            {{ __('participations-table.joining-other') }}
                                             @elseif ($user->type_of_arrival == 'unknown')
-                                            Unbekannt
+                                            {{ __('participations-table.unknown') }}
                                             @endif
                                         </div>
                                     </td>
@@ -156,13 +168,13 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
-            CSV-Export
+            {{ __('participations-table.csv-export') }}
         </a>
     </div>
     @endif
 </div>
 @else
 <div>
-    Niemand ist angemeldet. 🙁
+    {{ __('participations-table.nobody-registered') }} 🙁
 </div>
 @endif

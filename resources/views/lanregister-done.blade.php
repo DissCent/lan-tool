@@ -8,12 +8,12 @@
 <div class="bg-white shadow overflow-hidden sm:rounded-lg">
     <div class="px-4 py-5 sm:px-6">
         <h3 class="text-lg leading-6 font-medium text-gray-900">
-            Daten gespeichert!
+            {{ __('lan-forms.registered-headline') }}
         </h3>
         <p class="mt-1 max-w-2xl text-sm text-gray-500">
-            Vielen Dank, deine Daten wurden gespeichert.
+            {{ __('lan-forms.registered-thank-you') }}
             <br/>
-            Bitte beachte, dass deine Anmeldung ggf. erst dann öffentlich sichtbar ist, wenn ein Administrator dein Benutzerkonto verifiziert hat.
+            {{ __('lan-forms.registered-hint') }}
         </p>
     </div>
 </div>

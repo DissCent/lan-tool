@@ -44,7 +44,7 @@ class ProfilePage extends Component
         $this->validate([
             'clan_tag' => 'string|in:Do,OOTS,VEX,',
             'age' => 'integer|required',
-            'country_code' => 'required|string|in:AT,CH,DE,LU',
+            'country_code' => 'required|string|in:AT,CA,CH,DE,DK,LU,US',
             'zip' => 'required|string',
             'city' => 'required|string'
         ]);

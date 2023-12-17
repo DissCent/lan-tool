@@ -182,6 +182,7 @@
     </div>
     --}}
 
+    @if (Session::get('locale') == 'de')
     <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
             <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
@@ -302,4 +303,126 @@
             </div>
         </div>
     </div>
+    @else
+    <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+        <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+                <a href="#!" class="block" @click="open = !open">
+                    General information
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!open">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="open">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                    </svg>
+                </a>
+            </h3>
+            <div class="mt-1 text-sm text-gray-500" x-show="open">
+                The <strong>{{ $lan->name }}</strong> will take place <strong>from {{ date('F d', strtotime($lan->date_begin)) }} until {{ date('F d Y', strtotime($lan->date_end)) }}</strong>.
+                <br/>
+                Costs depend on the number of participants. <u>A final estimate of the prices is still pending</u> - based on the costs of recent years, prices will approximately be:
+                <br/>
+                <br/>
+                <ul class="list-disc pl-6">
+                    <li>One day approx. <strong>20 €</strong></li>
+                    <li>Two days approx. <strong>40 €</strong></li>
+                    <li>Three days approx. <strong>60 €</strong></li>
+                    <li>Four days approx. <strong>80 €</strong></li>
+                </ul>
+                <br/>
+                Breakfast and dinner are included in the price, with the exception of Thursday evening - here we order from a delivery service, whereby everyone bears their own costs.
+                <br/>
+                Also included are electricity costs and seating. Please bring your own PC, cables and input/output devices, see "Checklist".
+                <br/>
+                <br/>
+                Drinks can be purchased on site. The bill will be settled before departure. Own drinks are also permitted.
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+        <div class="px-4 py-5 sm:px-6 relative" x-data="{ open: false }">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+                <a href="#!" class="block" @click="open = !open">
+                    Approach
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!open">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="open">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                    </svg>
+                </a>
+            </h3>
+            <div class="mt-1 text-sm text-gray-500" x-show="open">
+                Sportverein 1930 Erbach e.V.
+                <br/>
+                In der Fetz
+                <br/>
+                65520 Bad Camberg
+                <br/>
+                <br/>
+                GPS coordinates: 50.310158982441905, 8.25016724948831
+                <br/>
+                <br/>
+                <strong>Approach by car:</strong>
+                <br/>
+                <br/>
+                Autobahn/Highway A3 -&gt; Exit 44 (Raststätte Bad Camberg Ost)
+				<br/>
+				<br/>
+				<a class="underline" href="https://www.google.de/maps/dir//50.3101566,8.2501691/@50.3101178,8.2502251,20.5z/data=!4m2!4m1!3e0" target="_blank">Open route planner in Google Maps</a>
+				<br/>
+				<a class="underline" href="https://www.openstreetmap.org/directions?from=&to=50.31063%2C8.25054#map=18/50.30972/8.25077" target="_blank">Open route planner in OpenStreetMap</a>
+                <br/>
+                <br/>
+				Be careful when approaching: When entering the village via the L3030, the exit to the location is located directly behind the railroad overpass!
+                <br/>
+                There are several parking spaces directly in front of the location, which are freely available.
+                <br/>
+                <br/>
+                <strong>Approach by train:</strong>
+				<br/>
+				<br/>
+                The train station "Bad Camberg" is located about 1.5 km (about 1 mile) from the location. Collection is recommended and can also be arranged at short notice by other participants at any time.
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+        <div class="px-4 py-5 sm:px-6" x-data="{ open: false }">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+                <a href="#!" class="block" @click="open = !open">
+                    Checklist
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!open">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="open">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                    </svg>
+                </a>
+            </h3>
+            <div class="mt-1 text-sm text-gray-500" x-show="open">
+                A gigabyte switch will be available.
+                <br/>
+                An internet connection might be available, although we might block streaming sites, etc. to enable a better online playing experience.
+                <br/>
+                We will use the desks and chairs provided by the location. Bringing your own chairs is permitted.
+                <br/>
+                Bringing your own LAN cable(s) is not required - we will provide those for everyone. Please set your PC's network card to 'DHCP'.
+                <br/>
+                <br/>
+                <strong>Please be sure to bring:</strong>
+                <ul class="list-disc pl-6">
+                    <li>Power strip - with sufficient connections so that neighbors can also plug in if necessary</li>
+                    <li>Sleeping bag/field bed/air mattress - just what you need to be able to sleep on the ground (or above it)</li>
+                    <li>Headphones/headset - please refrain from bringing loudspeakers!</li>
+                    <li>PC/notebook with everything you need for gaming - ideally everything should be up to date</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    @endif
 </div>

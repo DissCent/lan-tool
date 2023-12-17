@@ -1,0 +1,27 @@
+<?php
+
+return [
+	'edit-profile' => 'Profil bearbeiten',
+	'change-password' => 'Passwort ändern (oder leer lassen)',
+	'password' => 'Passwort',
+	'repeat' => 'Wiederholung',
+	'clan-age-city' => 'Clan/Alter/Wohnort',
+	'no-clan' => 'Keinem Clan zugehörig',
+	'member-of' => 'Mitglied im',
+	'clan' => 'Clan',
+	'age' => 'Alter (Jahre)',
+	'living-in' => 'Wohnhaft in',
+	'germany' => 'Deutschland',
+	'luxemburg' => 'Luxemburg',
+	'austria' => 'Österreich',
+	'switzerland' => 'der Schweiz',
+	'denmark' => 'Dänemark',
+	'usa' => 'den USA',
+	'canada' => 'Kanada',
+	'zip' => 'Postleitzahl',
+	'city' => 'Ortschaft',
+	'show-zip-registered' => 'Meine PLZ verifizierten Benutzern anzeigen',
+	'show-zip-public' => 'Meine PLZ öffentlich anzeigen',
+	'save' => 'Speichern',
+	'saved' => 'Erfolgreich gespeichert!',
+];

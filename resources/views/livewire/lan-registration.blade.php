@@ -8,10 +8,10 @@
     }">
     <div>
         <h1 class="text-center text-3xl font-extrabold text-gray-900 w-auto sm:w-80">
-            Anmeldung
+            {{ __('lan-forms.registration') }}
         </h1>
         <p class="mt-2 text-center text-sm text-gray-600">
-            für die {{ $lan->name }}
+            {{ __('lan-forms.for-the') }} {{ $lan->name }}
         </p>
     </div>
     <form class="mt-8 space-y-6" action="#" method="POST" wire:submit="register">
@@ -288,10 +288,9 @@
 
             {{--
             <div>
-                <label for="descentforum_login" class="sr-only">DescentForum-Benutzername</label>
                 <input id="descentforum_login" descentforum_login="wish_games" type="text" wire:model.live="descentforum_login"
                     class="appearance-none rounded-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:z-10 sm:text-sm"
-                    placeholder="DescentForum-Benutzername" />
+                    placeholder="{{ __('lan-forms.descentforum-login') }}" />
             </div>
             --}}
 
@@ -363,10 +362,9 @@
             </div>
 
             <div>
-                <label for="comment" class="sr-only">Anmerkungen</label>
                 <input id="comment" name="comment" type="text" wire:model.live="comment"
                     class="appearance-none rounded-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:z-10 sm:text-sm"
-                    placeholder="Anmerkungen (optional)" />
+                    placeholder="{{ __('lan-forms.comment') }} ({{ __('lan-forms.optional') }})" />
             </div>
         </div>
 
@@ -377,20 +375,20 @@
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="allergies" class="font-medium text-gray-700 cursor-pointer">Ich habe Allergien</label>
+                    <label for="allergies" class="font-medium text-gray-700 cursor-pointer">{{ __('lan-forms.allergies') }}</label>
                 </div>
             </div>
         </div>
 
         <div class="mt-4 space-y-2">
-            <span class="text-sm">Ich übernehme den Küchendienst an<br/>folgenden Tagen:</span>
+            <span class="text-sm">{{ __('lan-forms.kitchen-1') }}<br/>{{ __('lan-forms.kitchen-2') }}:</span>
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="kitchen_duties_thu_ev" name="kitchen_duties_thu_ev" type="checkbox" checked wire:model.live="kitchen_duties_thu_ev"
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="kitchen_duties_thu_ev" class="font-medium text-gray-700 cursor-pointer">Donnerstag abends</label>
+                    <label for="kitchen_duties_thu_ev" class="font-medium text-gray-700 cursor-pointer">{{ __('lan-forms.thursday') }} {{ __('lan-forms.evening') }}</label>
                 </div>
             </div>
             <div class="flex items-start">
@@ -399,7 +397,7 @@
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="kitchen_duties_fri_mo" class="font-medium text-gray-700 cursor-pointer">Freitag früh</label>
+                    <label for="kitchen_duties_fri_mo" class="font-medium text-gray-700 cursor-pointer">{{ __('lan-forms.friday') }} {{ __('lan-forms.morning') }}</label>
                 </div>
             </div>
             <div class="flex items-start">
@@ -408,7 +406,7 @@
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="kitchen_duties_fri_ev" class="font-medium text-gray-700 cursor-pointer">Freitag abends</label>
+                    <label for="kitchen_duties_fri_ev" class="font-medium text-gray-700 cursor-pointer">{{ __('lan-forms.friday') }} {{ __('lan-forms.evening') }}</label>
                 </div>
             </div>
             <div class="flex items-start">
@@ -417,7 +415,7 @@
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="kitchen_duties_sat_mo" class="font-medium text-gray-700 cursor-pointer">Samstag früh</label>
+                    <label for="kitchen_duties_sat_mo" class="font-medium text-gray-700 cursor-pointer">{{ __('lan-forms.saturday') }} {{ __('lan-forms.morning') }}</label>
                 </div>
             </div>
             <div class="flex items-start">
@@ -426,7 +424,7 @@
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="kitchen_duties_sat_ev" class="font-medium text-gray-700 cursor-pointer">Samstag abends</label>
+                    <label for="kitchen_duties_sat_ev" class="font-medium text-gray-700 cursor-pointer">{{ __('lan-forms.saturday') }} {{ __('lan-forms.evening') }}</label>
                 </div>
             </div>
             <div class="flex items-start">
@@ -435,7 +433,7 @@
                         class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
-                    <label for="kitchen_duties_sun_mo" class="font-medium text-gray-700 cursor-pointer">Sonntag früh</label>
+                    <label for="kitchen_duties_sun_mo" class="font-medium text-gray-700 cursor-pointer">{{ __('lan-forms.sunday') }} {{ __('lan-forms.morning') }}</label>
                 </div>
             </div>
         </div>
@@ -448,32 +446,6 @@
             {{ $message }}
         </div>
         @enderror
-
-        @if ($lan->covid_restrictions)
-        <div class="mb-2 mt-2 space-y-2">
-            <span class="text-sm font-bold">Dies ist eine sogenannte "2G-Veranstaltung"!</span>
-            <div class="flex items-start">
-                <div class="flex items-center h-5">
-                    <input id="covid_consent" name="covid_consent" type="checkbox" required
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
-                </div>
-                <div class="ml-3 text-sm">
-                    <label for="covid_consent" class="font-medium text-gray-700 cursor-pointer">
-                        Ich bestätige, während meiner Anwesen&shy;heit bei der {{ $lan->name }} entweder den Genesenenstatus oder Geimpftenstatus
-                        gemäß der aktuellen
-                        <a class="text-indigo-600 hover:text-indigo-900" href="https://www.hessen.de/Handeln/Corona-in-Hessen" target="_blank">
-                            Corona-Verordnung des Landes Hessen
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 -mt-0.5 -ml-0.5 inline" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-                            </svg>
-                        </a> jederzeit nachweisen zu können. Ich bin mir dessen bewusst, dass die Veranstaltung aufgrund der aktuellen Lage
-                        kurzfristig abgesagt werden kann - in diesem Fall wirst du von uns benachrichtigt.
-                    </label>
-                </div>
-            </div>
-        </div>
-        @endif
 
         <div>
             @if (! $lanOver)
@@ -488,7 +460,7 @@
                             clip-rule="evenodd" />
                     </svg>
                 </span>
-                Absenden
+                {{ __('lan-forms.send') }}
             </button>
             @else
             <button type="button"
@@ -502,7 +474,7 @@
                             clip-rule="evenodd" />
                     </svg>
                 </span>
-                Anmeldung vorbei
+                {{ __('lan-forms.closed') }}
             </button>
             @endif
         </div>

@@ -1,10 +1,10 @@
 <div class="max-w-md w-full space-y-8">
     <div>
         <h1 class="text-center text-3xl font-extrabold text-gray-900 w-auto sm:w-80">
-            Neues Passwort vergeben
+            {{ __('reset-password.headline') }}
         </h1>
         <p class="mt-2 text-center text-sm text-gray-600">
-            Gib hier ein neues Passwort ein.
+            {{ __('reset-password.subheadline') }}
         </p>
     </div>
     <form class="mt-8 space-y-6" action="#" method="POST" wire:submit="submitForm">
@@ -28,22 +28,19 @@
             </div>
             @enderror
             <div>
-                <label for="email" class="sr-only">E-Mail-Adresse</label>
                 <input id="email" name="email" type="email" required wire:model.live="email"
                     class="appearance-none rounded-none rounded-t-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                    placeholder="E-Mail-Adresse" />
+                    placeholder="{{ __('reset-password.email') }}" />
             </div>
             <div>
-                <label for="password" class="sr-only">Neues Passwort</label>
                 <input id="password" name="password" type="password" required wire:model.live="password"
                     class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                    placeholder="Neues Passwort" />
+                    placeholder="{{ __('reset-password.new-password') }}" />
             </div>
             <div>
-                <label for="password_confirmation" class="sr-only">Neues Passwort (Wiederholung)</label>
                 <input id="password_confirmation" name="password_confirmation" type="password" required wire:model.live="password_confirmation"
                     class="appearance-none rounded-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                    placeholder="Neues Passwort (Wiederholung)" />
+                    placeholder="{{ __('reset-password.new-password') }} ({{ __('reset-password.repeat') }})" />
             </div>
         </div>
 
@@ -59,7 +56,7 @@
                             clip-rule="evenodd" />
                     </svg>
                 </span>
-                Passwort zurücksetzen
+                {{ __('reset-password.reset-password') }}
             </button>
         </div>
     </form>

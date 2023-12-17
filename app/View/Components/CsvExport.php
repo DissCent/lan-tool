@@ -6,6 +6,7 @@ use DateTime;
 use Illuminate\View\Component;
 use Illuminate\Support\Facades\DB;
 use App\Models\Lan;
+use Illuminate\Support\Facades\Session;
 
 class CsvExport extends Component
 {
@@ -56,85 +57,69 @@ class CsvExport extends Component
 
         $this->csv = '"';
         $this->csv .= implode('";"', [
-            'Spielername',
-            'Registrierungszeitpunkt',
-            'E-Mail-Adresse',
-            'Clan-Mitgliedschaft',
-            'Alter',
-            'Land',
-            'PLZ',
-            'Ortschaft',
-            'Art der Anmeldung',
-            'Anreise',
-            'Abreise',
-            'DescentForum-Benutzername'
+            __('csv-additional.player-name'),
+            __('csv-additional.registration-datetime'),
+            __('login-register.email'),
+            __('csv-additional.clan-info'),
+            __('login-register.age'),
+            __('csv-additional.country'),
+            __('login-register.zip'),
+            __('login-register.city'),
+            __('csv-additional.type'),
+            __('participations-table.approach'),
+            __('registrations-table.departure'),
             /*
-            'Küchendienst Do. Abend',
-            'Küchendienst Fr. früh',
-            'Küchendienst Fr. Abend',
-            'Küchendienst Sa. früh',
-            'Küchendienst Sa. Abend',
-            'Küchendienst So. früh',
-            'Art der Anreise',
-            'Ernährung',
-            'Allergien',
-            'Anmerkungen',
-            'Liga-Wunsch DXX-Rebirth',
-            'Liga-Wunsch Descent 3',
-            'Liga-Wunsch Overload',
-            'Liga-Wunsch Shootmania',
-            'Liga-Wunsch Rocket League',
-            'Liga-Wunsch CS: GO',
-            'Spielewunsch',
-            'Getränkewunsch'
+            __('lan-forms.descentforum-login')
             */
+            __('csv-additional.kitchen-service-1'),
+            __('csv-additional.kitchen-service-2'),
+            __('csv-additional.kitchen-service-3'),
+            __('csv-additional.kitchen-service-4'),
+            __('csv-additional.kitchen-service-5'),
+            __('csv-additional.kitchen-service-6'),
+            __('csv-additional.approach-type'),
+            __('csv-additional.nutrition-type'),
+            __('lan-forms.allergies'),
+            __('lan-forms.comment'),
         ]);
         $this->csv .= "\"\n";
 
         $arrivalValueTable = [
-            'train_need_ride' => 'Zug (Abholung benötigt)',
-            'train_no_ride' => 'Zug (keine Abholung)',
-            'car_space' => 'Auto (bietet MFG)',
-            'car_no_space' => 'Auto (voll)',
-            'joining_other' => 'Mitfahrt bei MFG',
-            'unknown' => 'unbekannt'
+            'train_need_ride' => __('lan-forms.approach-train-need-ride'),
+            'train_no_ride' => __('lan-forms.approach-train-no-ride'),
+            'car_space' => __('lan-forms.approach-car-space'),
+            'car_no_space' => __('lan-forms.approach-car-no-space'),
+            'joining_other' => __('lan-forms.approach-joining-other'),
+            'unknown' => __('lan-forms.approach-unknown'),
         ];
 
         foreach ($table as $row) {
             $this->csv .= '"';
             $this->csv .= implode('";"', [
                 $row->username,
-                (new DateTime($row->created_at))->format('d.m.Y H:i'),
+                Session::get('locale') == 'de' ? (new DateTime($row->created_at))->format('d.m.Y H:i') : (new DateTime($row->created_at))->format('Y-m-d H:i'),
                 $row->email,
                 $row->clan_tag,
                 $row->age,
                 $row->country_code,
                 $row->zip,
                 $row->city,
-                ($row->type == 'binding' ? 'Anmeldung' : ($row->type == 'interested' ? 'interessiert' : 'Absage')),
-                (new DateTime($row->arrival_date))->format('d.m.Y'),
-                (new DateTime($row->departure_date))->format('d.m.Y'),
-                $row->descentforum_login,
+                ($row->type == 'binding' ? __('lan-forms.type-binding') : ($row->type == 'interested' ? __('lan-forms.type-interested') : __('lan-forms.type-canceled'))),
+                Session::get('locale') == 'de' ? (new DateTime($row->arrival_date))->format('d.m.Y') : $row->arrival_date,
+                Session::get('locale') == 'de' ? (new DateTime($row->departure_date))->format('d.m.Y') : $row->departure_date,
                 /*
-                $row->kitchen_duties_thu_ev ? 'Ja' : 'Nein',
-                $row->kitchen_duties_fri_mo ? 'Ja' : 'Nein',
-                $row->kitchen_duties_fri_ev ? 'Ja' : 'Nein',
-                $row->kitchen_duties_sat_mo ? 'Ja' : 'Nein',
-                $row->kitchen_duties_sat_ev ? 'Ja' : 'Nein',
-                $row->kitchen_duties_sun_mo ? 'Ja' : 'Nein',
-                $arrivalValueTable[$row->type_of_arrival],
-                $row->meal_info == 'omnivorous' ? 'Allesesser' : ($row->meal_info == 'vegetarian' ? 'vegetarisch' : 'vegan'),
-                $row->allergies ? 'Ja' : 'Nein',
-                $row->comment,
-                $row->league_descent_rebirth ? 'Ja' : 'Nein',
-                $row->league_descent_3 ? 'Ja' : 'Nein',
-                $row->league_overload ? 'Ja' : 'Nein',
-                $row->league_shootmania ? 'Ja' : 'Nein',
-                $row->league_rocket_league ? 'Ja' : 'Nein',
-                $row->league_csgo ? 'Ja' : 'Nein',
-                $row->wish_games,
-                $row->wish_drinks
+                $row->descentforum_login,
                 */
+                $row->kitchen_duties_thu_ev ? __('misc.yes') : __('misc.no'),
+                $row->kitchen_duties_fri_mo ? __('misc.yes') : __('misc.no'),
+                $row->kitchen_duties_fri_ev ? __('misc.yes') : __('misc.no'),
+                $row->kitchen_duties_sat_mo ? __('misc.yes') : __('misc.no'),
+                $row->kitchen_duties_sat_ev ? __('misc.yes') : __('misc.no'),
+                $row->kitchen_duties_sun_mo ? __('misc.yes') : __('misc.no'),
+                $arrivalValueTable[$row->type_of_arrival],
+                $row->meal_info == 'omnivorous' ? __('csv-additional.mealtype-omnivorous') : ($row->meal_info == 'vegetarian' ? __('lan-forms.mealinfo-vegetarian') : __('lan-forms.mealinfo-vegan')),
+                $row->allergies ? __('misc.yes') : __('misc.no'),
+                $row->comment,
             ]);
             $this->csv .= "\"\n";
         }

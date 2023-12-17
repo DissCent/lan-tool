@@ -1,0 +1,27 @@
+<?php
+
+return [
+	'edit-profile' => 'Edit profile',
+	'change-password' => 'Change password (of leave empty)',
+	'password' => 'Password',
+	'repeat' => 'repeat',
+	'clan-age-city' => 'Clan/age/city',
+	'no-clan' => 'No clan member',
+	'member-of' => 'Member of the',
+	'clan' => 'Clan',
+	'age' => 'Age (years)',
+	'living-in' => 'Living in',
+	'germany' => 'Germany',
+	'luxemburg' => 'Luxemburg',
+	'austria' => 'Austria',
+	'switzerland' => 'Switzerland',
+	'denmark' => 'Denmark',
+	'usa' => 'the USA',
+	'canada' => 'Canada',
+	'zip' => 'ZIP code',
+	'city' => 'City',
+	'show-zip-registered' => 'Show zip code to registered users',
+	'show-zip-public' => 'Show zip code publicly',
+	'save' => 'Save',
+	'saved' => 'Successfully saved!',
+];

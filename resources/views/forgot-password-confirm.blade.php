@@ -8,14 +8,14 @@
 <div class="bg-white shadow overflow-hidden sm:rounded-lg">
     <div class="px-4 py-5 sm:px-6">
         <h3 class="text-lg leading-6 font-medium text-gray-900">
-            Anfrage erfolgreich!
+            {{ __('forgot-password.success-headline') }}
         </h3>
         <p class="mt-1 max-w-2xl text-sm text-gray-500">
-			<strong>In 1-2 Minuten</strong> erhältst du von uns eine E-Mail, sofern wir die eingegebene Adresse in unserem System finden konnten.
+			<strong>{{ __('forgot-password.success-few-minutes-1') }}</strong> {{ __('forgot-password.success-few-minutes-2') }}
             <br/>
-            In dieser E-Mail findest du einen Link zum Zurücksetzen deines Passworts.
+            {{ __('forgot-password.success-link') }}
             <br/>
-            Bitte prüfe auch deinen Spam-Ordner.
+            {{ __('forgot-password.success-spam') }}
         </p>
     </div>
 </div>

@@ -1,12 +1,12 @@
 <div class="max-w-md w-full space-y-8">
     <div>
         <h1 class="text-center text-3xl font-extrabold text-gray-900 w-auto sm:w-80">
-            Neues Passwort anfordern
+            {{ __('forgot-password.request-new-password') }}
         </h1>
         <p class="mt-2 text-center text-sm text-gray-600">
-            oder
+            {{ __('forgot-password.or') }}
             <a href="/login" class="font-medium text-indigo-600 hover:text-indigo-500">
-                zum Login zurückkehren
+                {{ __('forgot-password.return-to-login') }}
             </a>
         </p>
     </div>
@@ -23,10 +23,9 @@
             </div>
             @enderror
             <div>
-                <label for="email" class="sr-only">E-Mail-Adresse</label>
                 <input id="email" name="email" type="text" required wire:model.live="email"
                     class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                    placeholder="E-Mail-Adresse" />
+                    placeholder="{{ __('forgot-password.email-address') }}" />
             </div>
         </div>
 
@@ -42,7 +41,7 @@
                             clip-rule="evenodd" />
                     </svg>
                 </span>
-                Anfrage senden
+                {{ __('forgot-password.send-request') }}
             </button>
         </div>
     </form>
