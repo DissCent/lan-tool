@@ -30,6 +30,7 @@ class KitchenExport extends Component
         $plan = DB::table('users_lans')
             ->where('lan_id', $id)
             ->where('kitchen_duties_thu_ev', '1')
+            ->whereNot('type', 'cancelled')
             ->join('users', 'users_lans.user_id', '=', 'users.id')
             ->select('username')
             ->orderBy('username')
