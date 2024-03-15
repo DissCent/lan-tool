@@ -1,5 +1,6 @@
 <div>
     {{--
+    @if (Session::get('locale') == 'de')
     <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
             <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
@@ -174,14 +175,193 @@
                     <li>NIEMAND steckt sein Netzwerkkabel in den Switch, ohne Bescheid zu sagen (Do_Checkor betreut JEDEN Einzelnen persönlich bei der Konfiguration und Verkabelung)</li>
                     <li>Speisen und Getränke werden in der Regel beim Wirt abgenommen bzw. von uns besorgt. Das Mitbringen von Getränken und Speisen ist untersagt (sollte dem mal anders sein, wird dies explizit auf der LAN-Seite niedergeschrieben). Süßigkeiten, Knabberkram o.ä. ist erlaubt.</li>
                 </ul>
-
-                <br>
-                Die Teilnahme an Do_LANs ist erst ab 18 Jahren möglich und den Mitgliedern / Usern des DescentForums vorbehalten.
             </div>
         </div>
     </div>
-    --}}
+	@else
+    <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+        <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+                <a href="#!" class="block" @click="open = !open">
+                    Location &amp; Approach
 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!open">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="open">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                    </svg>
+                </a>
+            </h3>
+            <div class="mt-1 text-sm text-gray-500" x-show="open">
+                This year we are celebrating again in the "Schweier Krug" in northwest Germany - in the Wesermarsch - in Schwei (Stadland). We are currently assuming that we will be able to accommodate a good 20 people in the location.
+                <br/>
+                <br/>
+                <strong>Address:</strong>
+                <br/>
+                <br/>
+                Schweier Krug
+                <br/>
+                Lindenstr. 25
+                <br/>
+                26936 Schwei-Stadland
+                <br/>
+				Germany
+                <br/>
+                Tel.: <a class="underline" href="tel:+494737338">+49 04737 - 338</a>
+                <br/>
+                Website: <a class="underline" target="blank" href="https://schweierkrug.de">https://schweierkrug.de</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+        <div class="px-4 py-5 sm:px-6" x-data="{ open: false }">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+                <a href="#!" class="block" @click="open = !open">
+                    Facts
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!open">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="open">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                    </svg>
+                </a>
+            </h3>
+            <div class="mt-1 text-sm text-gray-500" x-show="open">
+				The rent is divided by the number of participants. With 25 people, for example, this resulted in €&nbsp;15.<br>
+                Drinks and food will again be provided by the restaurant.<br>
+                Their prices will hardly change. Details will be announced soon.<br>
+                Since we will probably have significantly fewer participants this year:<br>
+                We will probably be at ~€25 per diem for rent, showers, electricity and breakfast.<br>
+                In the morning there will be a breakfast buffet with bread rolls and co.<br>
+                If you need something to eat at lunchtime, you can either make yourself an extra roll at breakfast or eat out.<br>
+                We will announce various options on site, but they will involve a bit of a drive.<br>
+                In recent years, the lunch offer has remained almost unused, which is why we have abolished it.<br>
+                In the evening you can eat Greek / Mediterranean food in the restaurant (and pay directly in cash).<br>
+                <br>
+                More information is available on request or on site :-)<br>
+                <br>
+                As always, it's about a Descent LAN with a focus on Descent 3 and Overload.<br>
+                <br>
+				It looks like we have room for about 20 people.<br>
+				We will sleep in the hall, in a tent (bring your own) or in a hotel room (book and pay for yourself).
+				This means that everyone should bring their own (air) mattress or suitable mattress pad and sleeping bag etc.!
+				Camping in the back garden is possible!<br>
+                <br>
+				One difference to a previous year, when we were in the Schweier Krug, will probably be that we ONLY
+				have the large hall for playing AND sleeping.<br>
+				This means that we can probably accommodate a maximum of 20 participants - unless the weather
+				is great and some people camp out :)<br>
+                <br>
+				We have our own bar and will determine the consumption of drinks by means of a tally sheet on which each
+				participant enters their own consumption. We rely on the honesty of each of you / us. I have to pay 1:1
+				for everything that is not entered or entered incorrectly - so please be conscientious... :) This has also
+				worked very well in recent years. Some have added something to the payment because they didn't quite trust
+				themselves - in the end I went out without adding anything. Any overpayments (profits - whatever) then
+				flow into the <a href="http://www.descentforum.de/forum/viewtopic.php?t=1756" target="_blank">Descentforum.NET project</a>
+				(which is also looking for new members *hint* ;-) ).<br>
+                <br>
+                The shower issue will be arranged in such a way that some participants will make their hotel rooms available.<br>
+                The price for showering is included in the LAN flat rate.<br>
+                <br>
+                We don't get into discussions like "I don't want to shower or have breakfast - I want a discount".<br>
+                <br>
+				A group photo session is planned for Saturday evening around 18h (depending on the weather). It would be nice
+                if this can be organized quickly and smoothly. With over 20 people it will be VERY annoying for some,
+                if there are people who just can't get away. The first ones leave again and
+                get angry when the last ones arrive. It's ass - so please just come out...<br>
+                <br>
+                So then - I think this should be it...<br>
+                <br>
+                What you bring to play is basically up to you, just NO speakers!<br>
+                <br>
+                <br>
+                <strong>"da fonk is da fonk is da fonk!!!"</strong><br>
+                <br>
+                Do_Checkor
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+        <div class="px-4 py-5 sm:px-6" x-data="{ open: false }">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+                <a href="#!" class="block" @click="open = !open">
+                    Checklist
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!open">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="open">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                    </svg>
+                </a>
+            </h3>
+            <div class="mt-1 text-sm text-gray-500" x-show="open">
+                What you should bring with you (at least nothing equivalent is provided):
+                <br>
+                <br>
+                <ul class="list-disc pl-6">
+                    <li>Toiletry bag with shower things, toothbrush, toothpaste, comb or brush, deodorant, shaving things if necessary</li>
+                    <li>Shower towel, hand towel (several depending on the length of the LAN)</li>
+                </ul>
+                <br>
+
+                <strong>Ohne Hotelzimmer:</strong>
+                <br>
+                <br>
+                <ul class="list-disc pl-6">
+					<li>Air mattress - please only SMALL / narrow (i.e. max. 1m wide), if sleeping alone), or camp bed, or similar.</li>
+					<li>Sleeping bag, blanket, etc.</li>
+					<li>Sufficient clothing - also warm clothes to be able to sit outside in the evening (okay, I think at your age you know what you need - so: the same shirt or socks for 5 days doesn't come across as cool)</li>
+					<li>Computer + power cable (don't forget the power adapter for laptops - it's happened often enough)</li>
+					<li>Monitor + connection cable + power cable</li>
+					<li>Keyboard (if necessary + wireless receiver)</li>
+					<li>Mouse (if necessary + wireless receiver)</li>
+                </ul>
+                <br>
+                <strong>IMPORTANT:</strong>
+                <br>
+                <br>
+                <ul class="list-disc pl-6">
+					<li>Headset or at least headphones (no loudspeakers / speakers)</li>
+					<li>Network cable Cat. 5 (or higher/compatible) patch cable of at least 10m - BETTER even 20m long</li>
+					<li>Power distributor (multiple socket) BETTER 2 or 3 than 1 - there are never too many of them...</li>
+                </ul>
+
+                <br>
+                not mandatory, but ALWAYS good to have with you if you have / still have room NEBEN the above items:
+                <br>
+                <br>
+
+                <ul class="list-disc pl-6">
+					<li>2nd computer / server incl. peripherals according to configuration</li>
+					<li>Cable reel(s)</li>
+					<li>Multiple socket(s)</li>
+					<li>additional LANGE network cables</li>
+                </ul>
+
+                <br>
+                <strong>other IMPORTANT things to note:</strong>
+                <br>
+                <br>
+
+                <ul class="list-disc pl-6">
+					<li>NO FIXED IPs / DNS server addresses on the LAN network card, but DHCP, i.e. "addresses assigned by the server". If you have a server with you, please discuss the config personally before connecting.</li>
+					<li>This must be set BEFORE the LAN. The "DHCP client" service must be started automatically (Windows +R --&gt; services.msc --&gt; DHCP client --&gt; check startup type)</li>
+					<li>NOBODY except Do_Checkor is fiddling with the switches</li>
+					<li>NOBODY plugs their network cable into the switch without telling them (Do_Checkor personally supervises EVERY individual during configuration and cabling)</li>
+					<li>Food and drinks are usually taken from the host or provided by us. It is forbidden to bring food and drinks (should this not be the case, this will be explicitly stated on the LAN page). Sweets, snacks etc. are permitted.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+	@endif
+
+    {{--
     @if (Session::get('locale') == 'de')
     <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
@@ -425,4 +605,5 @@
         </div>
     </div>
     @endif
+    --}}
 </div>
