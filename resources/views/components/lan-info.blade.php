@@ -4,6 +4,26 @@
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
             <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
                 <a href="#!" class="block" @click="open = !open">
+                    Termin
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!open">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="open">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                    </svg>
+                </a>
+            </h3>
+            <div class="mt-1 text-sm text-gray-500" x-show="open">
+                Die <strong>{{ $lan->name }}</strong> findet <strong>vom {{ date('d.m.', strtotime($lan->date_begin)) }} - {{ date('d.m.Y', strtotime($lan->date_end)) }}</strong> statt.
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+        <div class="px-4 py-5 sm:px-6" x-data="{ open: false }">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+                <a href="#!" class="block" @click="open = !open">
                     Location &amp; Anfahrt
 
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!open">
@@ -178,6 +198,26 @@
         </div>
     </div>
 	@else
+    <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+        <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+                <a href="#!" class="block" @click="open = !open">
+                    Event date
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="!open">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute right-0 top-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="open">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                    </svg>
+                </a>
+            </h3>
+            <div class="mt-1 text-sm text-gray-500" x-show="open">
+                The <strong>{{ $lan->name }}</strong> will take place <strong>from {{ date('F d', strtotime($lan->date_begin)) }} until {{ date('F d Y', strtotime($lan->date_end)) }}</strong>.
+            </div>
+        </div>
+    </div>
+
     <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
             <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
@@ -377,7 +417,7 @@
                 </a>
             </h3>
             <div class="mt-1 text-sm text-gray-500" x-show="open">
-                Die <strong>{{ $lan->name }} ({{ date('Y', strtotime($lan->date_begin)) }})</strong> findet <strong>vom {{ date('d.m.', strtotime($lan->date_begin)) }} - {{ date('d.m.Y', strtotime($lan->date_end)) }}</strong> statt.
+                Die <strong>{{ $lan->name }}</strong> findet <strong>vom {{ date('d.m.', strtotime($lan->date_begin)) }} - {{ date('d.m.Y', strtotime($lan->date_end)) }}</strong> statt.
                 <br/>
                 Die Kosten hängen von der Teilnehmeranzahl ab. <u>Eine endgültige Schätzung der Preise steht noch aus</u> - basierend auf den Kosten der letzten Jahre belaufen sich diese aber in etwa auf:
                 <br/>
@@ -498,7 +538,7 @@
                 </a>
             </h3>
             <div class="mt-1 text-sm text-gray-500" x-show="open">
-                The <strong>{{ $lan->name }} ({{ date('Y', strtotime($lan->date_begin)) }})</strong> will take place <strong>from {{ date('F d', strtotime($lan->date_begin)) }} until {{ date('F d Y', strtotime($lan->date_end)) }}</strong>.
+                The <strong>{{ $lan->name }}</strong> will take place <strong>from {{ date('F d', strtotime($lan->date_begin)) }} until {{ date('F d Y', strtotime($lan->date_end)) }}</strong>.
                 <br/>
                 Costs depend on the number of participants. <u>A final estimate of the prices is still pending</u> - based on the costs of recent years, prices will approximately be:
                 <br/>
