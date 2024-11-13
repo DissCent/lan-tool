@@ -74,21 +74,17 @@ class CsvExport extends Component
             __('csv-additional.type'),
             __('participations-table.approach'),
             __('registrations-table.departure'),
-            __('lan-forms.descentforum-login'),
-			/*
+            //__('lan-forms.descentforum-login'),
             __('csv-additional.kitchen-service-1'),
             __('csv-additional.kitchen-service-2'),
             __('csv-additional.kitchen-service-3'),
             __('csv-additional.kitchen-service-4'),
             __('csv-additional.kitchen-service-5'),
             __('csv-additional.kitchen-service-6'),
-			*/
             __('csv-additional.approach-type'),
-			/*
             __('csv-additional.nutrition-type'),
             __('lan-forms.allergies'),
             __('lan-forms.comment'),
-			*/
         ]);
         $this->csv .= "\"\n";
 
@@ -115,21 +111,17 @@ class CsvExport extends Component
                 ($row->type == 'binding' ? __('lan-forms.type-binding') : ($row->type == 'interested' ? __('lan-forms.type-interested') : __('lan-forms.type-canceled'))),
                 Session::get('locale') == 'de' ? (new DateTime($row->arrival_date))->format('d.m.Y') : $row->arrival_date,
                 Session::get('locale') == 'de' ? (new DateTime($row->departure_date))->format('d.m.Y') : $row->departure_date,
-                $row->descentforum_login,
-				/*
+                //$row->descentforum_login,
                 $row->kitchen_duties_thu_ev ? __('misc.yes') : __('misc.no'),
                 $row->kitchen_duties_fri_mo ? __('misc.yes') : __('misc.no'),
                 $row->kitchen_duties_fri_ev ? __('misc.yes') : __('misc.no'),
                 $row->kitchen_duties_sat_mo ? __('misc.yes') : __('misc.no'),
                 $row->kitchen_duties_sat_ev ? __('misc.yes') : __('misc.no'),
                 $row->kitchen_duties_sun_mo ? __('misc.yes') : __('misc.no'),
-				*/
                 $arrivalValueTable[$row->type_of_arrival],
-				/*
                 $row->meal_info == 'omnivorous' ? __('csv-additional.mealtype-omnivorous') : ($row->meal_info == 'vegetarian' ? __('lan-forms.mealinfo-vegetarian') : __('lan-forms.mealinfo-vegan')),
                 $row->allergies ? __('misc.yes') : __('misc.no'),
                 $row->comment,
-				*/
             ]);
             $this->csv .= "\"\n";
         }

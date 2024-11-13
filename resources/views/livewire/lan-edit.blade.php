@@ -330,13 +330,14 @@
                 </div>
             </div>
 
+			{{--
             <div>
                 <input id="descentforum_login" name="descentforum_login" type="text" wire:model.live="descentforum_login"
                     class="appearance-none rounded-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="{{ __('lan-forms.descentforum-login') }}" />
             </div>
+			--}}
 
-			{{--
             <div>
                 @php
                     $selectedIndex = 0;
@@ -420,10 +421,8 @@
                     class="appearance-none rounded-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="{{ __('lan-forms.comment') }} ({{ __('lan-forms.optional') }})" />
             </div>
-			--}}
         </div>
 
-		{{--
         <div class="mt-4 space-y-4">
             <div class="flex items-start">
                 <div class="flex items-center h-5">
@@ -529,7 +528,6 @@
                 </div>
             </div>
         </div>
-		--}}
 
         @error('departure')
         <div class="p-2 mb-2 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 flex" role="alert">

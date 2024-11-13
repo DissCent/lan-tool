@@ -1,4 +1,5 @@
 <div>
+	{{--
     @if (Session::get('locale') == 'de')
     <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
@@ -397,10 +398,9 @@
             </div>
         </div>
     </div>
-
 	@endif
+	--}}
 
-    {{--
     @if (Session::get('locale') == 'de')
     <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
@@ -419,14 +419,14 @@
             <div class="mt-1 text-sm text-gray-500" x-show="open">
                 Die <strong>{{ $lan->name }}</strong> findet <strong>vom {{ date('d.m.', strtotime($lan->date_begin)) }} - {{ date('d.m.Y', strtotime($lan->date_end)) }}</strong> statt.
                 <br/>
-                Die Kosten hängen von der Teilnehmeranzahl ab. <u>Eine endgültige Schätzung der Preise steht noch aus</u> - basierend auf den Kosten der letzten Jahre belaufen sich diese aber in etwa auf:
+                Die Kosten hängen von der Teilnehmeranzahl ab. <u>Eine endgültige Schätzung der Preise steht noch aus</u>, allerdings werden die Kosten in diesem Jahr steigen, da die Miete für unsere Location angehoben wurde. Wir schätzen die Kosten pro Person ungefähr auf:
                 <br/>
                 <br/>
                 <ul class="list-disc pl-6">
-                    <li>Ein Tag ca. <strong>20 €</strong></li>
-                    <li>Zwei Tage ca. <strong>40 €</strong></li>
-                    <li>Drei Tage ca. <strong>60 €</strong></li>
-                    <li>Vier Tage ca. <strong>80 €</strong></li>
+                    <li>Ein Tag ca. <strong>25 €</strong></li>
+                    <li>Zwei Tage ca. <strong>45 €</strong></li>
+                    <li>Drei Tage ca. <strong>65 €</strong></li>
+                    <li>Vier Tage ca. <strong>85 €</strong></li>
                 </ul>
                 <br/>
                 Im Preis enthalten sind Frühstück und Abendessen, mit Ausnahme von Donnerstagabend - hier bestellen wir bei einem Lieferdienst, wobei jeder seine eigenen Kosten trägt.
@@ -434,7 +434,7 @@
                 Ebenfalls enthalten sind Stromkosten und Sitzplatz. PC, Kabel und Ein-/Ausgabegeräte sind selbst mitzubringen, siehe "Checkliste".
                 <br/>
                 <br/>
-                Getränke können vor Ort erworben werden. Vor der Abreise erfolgt dann die Abrechnung. Auch eigene Getränke sind gestattet.
+                Getränke können vor Ort erworben werden. Vor der Abreise erfolgt dann die Abrechnung, vorzugsweise in bar. Auch eigene Getränke sind gestattet.
             </div>
         </div>
     </div>
@@ -540,14 +540,14 @@
             <div class="mt-1 text-sm text-gray-500" x-show="open">
                 The <strong>{{ $lan->name }}</strong> will take place <strong>from {{ date('F d', strtotime($lan->date_begin)) }} until {{ date('F d Y', strtotime($lan->date_end)) }}</strong>.
                 <br/>
-                Costs depend on the number of participants. <u>A final estimate of the prices is still pending</u> - based on the costs of recent years, prices will approximately be:
+                Costs depend on the number of participants. <u>A final estimate of the prices is still pending</u>. However, we know that costs will increase this year since the rent for our location has been raised. We estimate the following prices per person:
                 <br/>
                 <br/>
                 <ul class="list-disc pl-6">
-                    <li>One day approx. <strong>20 €</strong></li>
-                    <li>Two days approx. <strong>40 €</strong></li>
-                    <li>Three days approx. <strong>60 €</strong></li>
-                    <li>Four days approx. <strong>80 €</strong></li>
+                    <li>One day approx. <strong>25 €</strong></li>
+                    <li>Two days approx. <strong>45 €</strong></li>
+                    <li>Three days approx. <strong>65 €</strong></li>
+                    <li>Four days approx. <strong>85 €</strong></li>
                 </ul>
                 <br/>
                 Breakfast and dinner are included in the price, with the exception of Thursday evening - here we order from a delivery service, whereby everyone bears their own costs.
@@ -555,7 +555,7 @@
                 Also included are electricity costs and seating. Please bring your own PC, cables and input/output devices, see "Checklist".
                 <br/>
                 <br/>
-                Drinks can be purchased on site. The bill will be settled before departure. Own drinks are also permitted.
+                Drinks can be purchased on site. The bill will be settled before departure - please pay cash if you can. Own drinks are also permitted.
             </div>
         </div>
     </div>
@@ -644,5 +644,4 @@
         </div>
     </div>
     @endif
-    --}}
 </div>
