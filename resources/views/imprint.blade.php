@@ -12,9 +12,16 @@
                 <h1 class="text-center text-3xl font-extrabold text-gray-900 w-auto mb-4">{{ __('imprint.imprint') }}</h1>
 
                 <h2 class="text-2xl font-bold text-gray-900 w-auto my-3">{{ __('imprint.details') }}</h2>
+
+				<h3 class="text-lg font-bold text-gray-900 w-auto my-3">{{ __('imprint.person') }} Person</h3>
+				
                 <p>
                     <span class="personal">{{ str_rot13(strrev(base64_decode('em5lcm9MIHBwaWxpaFAK'))) }}</span>
-                    <br />
+                </p>
+
+				<h3 class="text-lg font-bold text-gray-900 w-auto my-3">{{ __('imprint.postal_address') }}</h3>
+
+				<p>
                     <span class="personal">{{ str_rot13(strrev(base64_decode('NDIgLnJ0UyByZXJhbWllVwo' . '='))) }}</span>
                     <br />
                     <span class="personal">{{ str_rot13(strrev(base64_decode('cmFrY2VOIG1hIG5lZ25pbHNzRSAwMzczNwo' . '='))) }}</span>
@@ -24,9 +31,9 @@
 
                 <h2 class="text-2xl font-bold text-gray-900 w-auto my-3">{{ __('imprint.contact') }}</h2>
                 <p>
-                    <span class="personal">{{ str_rot13(strrev(base64_decode('MjggNTMgMzQgMDUgMTE3ICkwKCA5NCsgOm5vZmVsZVQK'))) }}</span>
-                    <br />
                     <span class="personal">{!! str_rot13(strrev(base64_decode('ZW0ub2gtem5lcm9sOzQ2IyZsb290bmFsIDpsaWFNLUUK'))) !!}</span>
+                    <br />
+                    <span class="personal">{{ str_rot13(strrev(base64_decode('MjggNTMgMzQgMDUgMTE3ICkwKCA5NCsgOm5vZmVsZVQK'))) }}</span>
                 </p>
             </div>
         </div>
