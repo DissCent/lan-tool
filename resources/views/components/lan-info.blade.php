@@ -1,5 +1,4 @@
 <div>
-	{{--
     @if (Session::get('locale') == 'de')
     <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
@@ -399,8 +398,8 @@
         </div>
     </div>
 	@endif
-	--}}
 
+	{{--
     @if (Session::get('locale') == 'de')
     <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
@@ -644,4 +643,5 @@
         </div>
     </div>
     @endif
+	--}}
 </div>
