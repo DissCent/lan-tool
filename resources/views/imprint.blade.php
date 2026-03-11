@@ -6,7 +6,7 @@
 
 @section('content')
 <div>
-    <div class="bg-white shadow overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+    <div class="bg-white shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6"">
             <div class="mt-1 text-sm text-gray-500" x-show="open">
                 <h1 class="text-center text-3xl font-extrabold text-gray-900 w-auto mb-4">{{ __('imprint.imprint') }}</h1>

@@ -4,7 +4,7 @@
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <!-- Mobile menu button-->
                 <button type="button"
-                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-white"
                     aria-controls="mobile-menu" @click="open = !open" aria-expanded="false"
                     x-bind:aria-expanded="open.toString()">
                     <svg x-description="Icon when menu is closed. Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" class="block h-6 w-6"
@@ -22,7 +22,7 @@
                 </button>
             </div>
             <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                <div class="flex-shrink-0 flex items-center">
+                <div class="shrink-0 flex items-center">
                     <div class="text-2xl font-extrabold text-white">
                         {{ $lan->name }}
                     </div>
@@ -43,7 +43,7 @@
                     </div>
                     <div>
                         <button type="button"
-                            class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                            class="bg-gray-800 cursor-pointer flex text-sm rounded-full focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                             id="user-menu-button" x-ref="button"
                             @keyup.space.prevent="onButtonEnter()" @keydown.enter.prevent="onButtonEnter()"
                             aria-expanded="false" aria-haspopup="true" x-bind:aria-expanded="openContext.toString()"
@@ -66,7 +66,7 @@
                         x-transition:leave="transition ease-in duration-75"
                         x-transition:leave-start="transform opacity-100 scale-100"
                         x-transition:leave-end="transform opacity-0 scale-95"
-                        class="origin-top-right absolute top-full right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                        class="origin-top-right absolute top-full right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white focus:outline-hidden"
                         x-ref="menu-items" x-description="Dropdown menu, show/hide based on menu state."
                         role="menu" aria-orientation="vertical"
                         aria-labelledby="user-menu-button" tabindex="-1" @keydown.arrow-up.prevent="onArrowUp()"

@@ -17,12 +17,12 @@
     <form class="mt-8 space-y-6" action="#" method="POST" wire:submit="register">
         @csrf
 
-        <div class="rounded-md shadow-sm -space-y-px mb-6">
+        <div class="rounded-md shadow-xs -space-y-px mb-6">
             <div>
                 <div class="relative"
                     x-data="{ open: false, activeIndex: null, selectedIndex: 0, label: '{{ array_key_first($typeValues) }}' }" wire:ignore>
                     <button type="button"
-                        class="relative w-full bg-white border border-gray-300 rounded-t-md shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+                        class="relative w-full bg-white border border-gray-300 rounded-t-md shadow-xs pl-3 pr-10 py-2 text-left cursor-pointer ring-inset focus:outline-hidden focus:ring-1 focus:ring-indigo-500 sm:text-sm"
                         x-ref="button" @click="open = !open" aria-haspopup="listbox" :aria-expanded="open"
                         aria-labelledby="listbox-label">
                         <span class="flex items-center">
@@ -41,7 +41,7 @@
 
                     <ul x-show="open" x-transition:leave="transition ease-in duration-100"
                         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-                        class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
+                        class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-black ring-opacity-5 overflow-auto focus:outline-hidden sm:text-sm"
                         x-max="1" @click.away="open = false"
                         x-description="Select popover, show/hide based on select state."
                         @keydown.escape="open = false" x-ref="listbox" tabindex="-1" role="listbox"
@@ -89,7 +89,7 @@
                 <div class="relative"
                     x-data="{ open: false, activeIndex: null, selectedIndex: 0, label: '{{ __('lan-forms.arrival') }}: {{ Session::get('locale') == 'de' ? array_key_first($landays) : $landays[array_key_first($landays)] }}' }" wire:ignore>
                     <button type="button"
-                        class="relative w-full bg-white border border-gray-300 rounded-none shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+                        class="relative w-full bg-white border border-gray-300 rounded-none shadow-xs pl-3 pr-10 py-2 text-left cursor-pointer ring-inset focus:outline-hidden focus:ring-1 focus:ring-indigo-500 sm:text-sm"
                         x-ref="button" @click="open = !open" aria-haspopup="listbox" :aria-expanded="open"
                         aria-labelledby="listbox-label">
                         <span class="flex items-center">
@@ -108,7 +108,7 @@
 
                     <ul x-show="open" x-transition:leave="transition ease-in duration-100"
                         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-                        class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
+                        class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base overflow-auto focus:outline-hidden sm:text-sm"
                         x-max="1" @click.away="open = false"
                         x-description="Select popover, show/hide based on select state."
                         @keydown.escape="open = false" x-ref="listbox" tabindex="-1" role="listbox"
@@ -156,7 +156,7 @@
                 <div class="relative"
                     x-data="{ open: false, activeIndex: null, selectedIndex: {{ (count($landays) - 1) }}, label: '{{ __('lan-forms.departure') }}: {{ Session::get('locale') == 'de' ? array_key_last($landays) : $landays[array_key_last($landays)] }}' }" wire:ignore>
                     <button type="button"
-                        class="relative w-full bg-white border border-gray-300 rounded-none shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+                        class="relative w-full bg-white border border-gray-300 rounded-none shadow-xs pl-3 pr-10 py-2 text-left cursor-pointer ring-inset focus:outline-hidden focus:ring-1 focus:ring-indigo-500 sm:text-sm"
                         x-ref="button" @click="open = !open" aria-haspopup="listbox" :aria-expanded="open"
                         aria-labelledby="listbox-label">
                         <span class="flex items-center">
@@ -175,7 +175,7 @@
 
                     <ul x-show="open" x-transition:leave="transition ease-in duration-100"
                         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-                        class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
+                        class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base overflow-auto focus:outline-hidden sm:text-sm"
                         x-max="1" @click.away="open = false"
                         x-description="Select popover, show/hide based on select state."
                         @keydown.escape="open = false" x-ref="listbox" tabindex="-1" role="listbox"
@@ -223,7 +223,7 @@
                 <div class="relative"
                     x-data="{ open: false, activeIndex: null, selectedIndex: 0, label: '{{ array_key_first($typeOfArrivalValues) }}' }" wire:ignore>
                     <button type="button"
-                        class="relative w-full bg-white border border-gray-300 rounded-none shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+                        class="relative w-full bg-white border border-gray-300 rounded-none shadow-xs pl-3 pr-10 py-2 text-left cursor-pointer ring-inset focus:outline-hidden focus:ring-1 focus:ring-indigo-500 sm:text-sm"
                         x-ref="button" @click="open = !open" aria-haspopup="listbox" :aria-expanded="open"
                         aria-labelledby="listbox-label">
                         <span class="flex items-center">
@@ -242,7 +242,7 @@
 
                     <ul x-show="open" x-transition:leave="transition ease-in duration-100"
                         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-                        class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
+                        class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base overflow-auto focus:outline-hidden sm:text-sm"
                         x-max="1" @click.away="open = false"
                         x-description="Select popover, show/hide based on select state."
                         @keydown.escape="open = false" x-ref="listbox" tabindex="-1" role="listbox"
@@ -288,7 +288,7 @@
 
             <div>
                 <input id="descentforum_login" descentforum_login="wish_games" type="text" wire:model.live="descentforum_login"
-                    class="appearance-none rounded-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:z-10 sm:text-sm"
+                    class="appearance-none bg-white rounded-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 ring-inset focus:outline-hidden focus:ring-1 focus:ring-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="{{ __('lan-forms.descentforum-login') }}" />
             </div>
 
@@ -297,7 +297,7 @@
                 <div class="relative"
                     x-data="{ open: false, activeIndex: null, selectedIndex: 0, label: '{{ array_key_first($mealInfoValues) }}' }" wire:ignore>
                     <button type="button"
-                        class="relative w-full bg-white border border-gray-300 rounded-none shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+                        class="relative w-full bg-white border border-gray-300 rounded-none shadow-xs pl-3 pr-10 py-2 text-left cursor-pointer ring-inset focus:outline-hidden focus:ring-1 focus:ring-indigo-500 sm:text-sm"
                         x-ref="button" @click="open = !open" aria-haspopup="listbox" :aria-expanded="open"
                         aria-labelledby="listbox-label">
                         <span class="flex items-center">
@@ -316,7 +316,7 @@
 
                     <ul x-show="open" x-transition:leave="transition ease-in duration-100"
                         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-                        class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
+                        class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base overflow-auto focus:outline-hidden sm:text-sm"
                         x-max="1" @click.away="open = false"
                         x-description="Select popover, show/hide based on select state."
                         @keydown.escape="open = false" x-ref="listbox" tabindex="-1" role="listbox"
@@ -362,7 +362,7 @@
 
             <div>
                 <input id="comment" name="comment" type="text" wire:model.live="comment"
-                    class="appearance-none rounded-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 ring-inset focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:z-10 sm:text-sm"
+                    class="appearance-none bg-white rounded-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 ring-inset focus:outline-hidden focus:ring-1 focus:ring-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="{{ __('lan-forms.comment') }} ({{ __('lan-forms.optional') }})" />
             </div>
             --}}
@@ -373,7 +373,7 @@
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="allergies" name="allergies" type="checkbox" checked wire:model.live="allergies"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded-sm cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
                     <label for="allergies" class="font-medium text-gray-700 cursor-pointer">{{ __('lan-forms.allergies') }}</label>
@@ -386,7 +386,7 @@
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="kitchen_duties_thu_ev" name="kitchen_duties_thu_ev" type="checkbox" checked wire:model.live="kitchen_duties_thu_ev"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded-sm cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
                     <label for="kitchen_duties_thu_ev" class="font-medium text-gray-700 cursor-pointer">
@@ -401,7 +401,7 @@
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="kitchen_duties_fri_mo" name="kitchen_duties_fri_mo" type="checkbox" checked wire:model.live="kitchen_duties_fri_mo"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded-sm cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
                     <label for="kitchen_duties_fri_mo" class="font-medium text-gray-700 cursor-pointer">
@@ -416,7 +416,7 @@
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="kitchen_duties_fri_ev" name="kitchen_duties_fri_ev" type="checkbox" checked wire:model.live="kitchen_duties_fri_ev"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded-sm cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
                     <label for="kitchen_duties_fri_ev" class="font-medium text-gray-700 cursor-pointer">
@@ -431,7 +431,7 @@
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="kitchen_duties_sat_mo" name="kitchen_duties_sat_mo" type="checkbox" checked wire:model.live="kitchen_duties_sat_mo"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded-sm cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
                     <label for="kitchen_duties_sat_mo" class="font-medium text-gray-700 cursor-pointer">
@@ -446,7 +446,7 @@
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="kitchen_duties_sat_ev" name="kitchen_duties_sat_ev" type="checkbox" checked wire:model.live="kitchen_duties_sat_ev"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded-sm cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
                     <label for="kitchen_duties_sat_ev" class="font-medium text-gray-700 cursor-pointer">
@@ -461,7 +461,7 @@
             <div class="flex items-start">
                 <div class="flex items-center h-5">
                     <input id="kitchen_duties_sun_mo" name="kitchen_duties_sun_mo" type="checkbox" checked wire:model.live="kitchen_duties_sun_mo"
-                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded cursor-pointer">
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded-sm cursor-pointer">
                 </div>
                 <div class="ml-3 text-sm">
                     <label for="kitchen_duties_sun_mo" class="font-medium text-gray-700 cursor-pointer">
@@ -488,7 +488,7 @@
         <div>
             @if (! $lanOver)
             <button type="submit"
-                class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-indigo-500">
+                class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-hidden focus:ring-1 focus:ring-offset-2 focus:ring-indigo-500">
                 <span class="absolute left-0 inset-y-0 flex items-center pl-3">
                     <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
@@ -502,7 +502,7 @@
             </button>
             @else
             <button type="button"
-                class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-red-500">
+                class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-hidden focus:ring-1 focus:ring-offset-2 focus:ring-red-500">
                 <span class="absolute left-0 inset-y-0 flex items-center pl-3">
                     <svg class="h-5 w-5 text-red-500 group-hover:text-red-400"
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
