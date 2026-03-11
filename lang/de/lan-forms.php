@@ -16,7 +16,7 @@ return [
 	'morning' => 'früh',
 	'evening' => 'abends',
 	'send' => 'Absenden',
-	'closed' => 'Anmeldung vorbei',
+	'closed' => 'Anmeldung geschlossen',
 	'registration' => 'Anmeldung',
     'arrival' => 'Anreise',
     'departure' => 'Abreise',

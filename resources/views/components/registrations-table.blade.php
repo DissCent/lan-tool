@@ -40,9 +40,6 @@
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap">
                                         <div class="text-sm font-medium text-gray-900">
                                             {{ $lan->name }}
-                                            <span class="hidden sm:inline">
-                                                ({{ date('Y', strtotime($lan->date_begin)) }})
-                                            </span>
                                         </div>
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap hidden md:table-cell">
