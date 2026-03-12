@@ -1,5 +1,5 @@
 <div>
-	@if (count($table) > 0)
+    @if (count($table) > 0)
     <div class="w-full space-y-8">
         <div>
             <h1 class="text-center text-3xl font-extrabold text-gray-900">
@@ -65,7 +65,7 @@
             </div>
         </div>
     </div>
-	@else
+    @else
     {{ __('users-table.all-users-activated') }} 😀
-	@endif
+    @endif
 </div>

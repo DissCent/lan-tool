@@ -13,15 +13,15 @@
 
                 <h2 class="text-2xl font-bold text-gray-900 w-auto my-3">{{ __('imprint.details') }}</h2>
 
-				<h3 class="text-lg font-bold text-gray-900 w-auto my-3">{{ __('imprint.person') }} Person</h3>
-				
+                <h3 class="text-lg font-bold text-gray-900 w-auto my-3">{{ __('imprint.person') }} Person</h3>
+                
                 <p>
                     <span class="personal">{{ str_rot13(strrev(base64_decode('em5lcm9MIHBwaWxpaFAK'))) }}</span>
                 </p>
 
-				<h3 class="text-lg font-bold text-gray-900 w-auto my-3">{{ __('imprint.postal_address') }}</h3>
+                <h3 class="text-lg font-bold text-gray-900 w-auto my-3">{{ __('imprint.postal_address') }}</h3>
 
-				<p>
+                <p>
                     <span class="personal">{{ str_rot13(strrev(base64_decode('NDIgLnJ0UyByZXJhbWllVwo' . '='))) }}</span>
                     <br />
                     <span class="personal">{{ str_rot13(strrev(base64_decode('cmFrY2VOIG1hIG5lZ25pbHNzRSAwMzczNwo' . '='))) }}</span>

@@ -11,7 +11,7 @@
             {{ __('forgot-password.success-headline') }}
         </h3>
         <p class="mt-1 max-w-2xl text-sm text-gray-500">
-			<strong>{{ __('forgot-password.success-few-minutes-1') }}</strong> {{ __('forgot-password.success-few-minutes-2') }}
+            <strong>{{ __('forgot-password.success-few-minutes-1') }}</strong> {{ __('forgot-password.success-few-minutes-2') }}
             <br/>
             {{ __('forgot-password.success-link') }}
             <br/>

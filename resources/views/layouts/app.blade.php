@@ -14,7 +14,7 @@
         {{-- Styles --}}
         @vite('resources/css/app.css')
 
-		@livewireStyles
+        @livewireStyles
     </head>
     <body class="flex flex-col min-h-screen bg-gray-100">
         @yield('header')
@@ -23,6 +23,6 @@
         </main>
         @yield('footer')
 
-		@livewireScripts
+        @livewireScripts
     </body>
 </html>

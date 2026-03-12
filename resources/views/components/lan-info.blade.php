@@ -197,7 +197,7 @@
             </div>
         </div>
     </div>
-	@else
+    @else
     <div class="bg-white shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
             <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
@@ -245,7 +245,7 @@
                 <br/>
                 26936 Schwei-Stadland
                 <br/>
-				Germany
+                Germany
                 <br/>
                 Tel.: <a class="underline" href="tel:+494737338">+49 04737 - 338</a>
                 <br/>
@@ -269,7 +269,7 @@
                 </a>
             </h3>
             <div class="mt-1 text-sm text-gray-500" x-show="open">
-				The rent is divided by the number of participants. With 25 people, for example, this resulted in €&nbsp;15.<br>
+                The rent is divided by the number of participants. With 25 people, for example, this resulted in €&nbsp;15.<br>
                 Drinks and food will again be provided by the restaurant.<br>
                 Their prices will hardly change. Details will be announced soon.<br>
                 Since we will probably have significantly fewer participants this year:<br>
@@ -284,30 +284,30 @@
                 <br>
                 As always, it's about a Descent LAN with a focus on Descent 3 and Overload.<br>
                 <br>
-				It looks like we have room for about 20 people.<br>
-				We will sleep in the hall, in a tent (bring your own) or in a hotel room (book and pay for yourself).
-				This means that everyone should bring their own (air) mattress or suitable mattress pad and sleeping bag etc.!
-				Camping in the back garden is possible!<br>
+                It looks like we have room for about 20 people.<br>
+                We will sleep in the hall, in a tent (bring your own) or in a hotel room (book and pay for yourself).
+                This means that everyone should bring their own (air) mattress or suitable mattress pad and sleeping bag etc.!
+                Camping in the back garden is possible!<br>
                 <br>
-				One difference to a previous year, when we were in the Schweier Krug, will probably be that we ONLY
-				have the large hall for playing AND sleeping.<br>
-				This means that we can probably accommodate a maximum of 20 participants - unless the weather
-				is great and some people camp out :)<br>
+                One difference to a previous year, when we were in the Schweier Krug, will probably be that we ONLY
+                have the large hall for playing AND sleeping.<br>
+                This means that we can probably accommodate a maximum of 20 participants - unless the weather
+                is great and some people camp out :)<br>
                 <br>
-				We have our own bar and will determine the consumption of drinks by means of a tally sheet on which each
-				participant enters their own consumption. We rely on the honesty of each of you / us. I have to pay 1:1
-				for everything that is not entered or entered incorrectly - so please be conscientious... :) This has also
-				worked very well in recent years. Some have added something to the payment because they didn't quite trust
-				themselves - in the end I went out without adding anything. Any overpayments (profits - whatever) then
-				flow into the <a href="http://www.descentforum.de/forum/viewtopic.php?t=1756" target="_blank">Descentforum.NET project</a>
-				(which is also looking for new members *hint* ;-) ).<br>
+                We have our own bar and will determine the consumption of drinks by means of a tally sheet on which each
+                participant enters their own consumption. We rely on the honesty of each of you / us. I have to pay 1:1
+                for everything that is not entered or entered incorrectly - so please be conscientious... :) This has also
+                worked very well in recent years. Some have added something to the payment because they didn't quite trust
+                themselves - in the end I went out without adding anything. Any overpayments (profits - whatever) then
+                flow into the <a href="http://www.descentforum.de/forum/viewtopic.php?t=1756" target="_blank">Descentforum.NET project</a>
+                (which is also looking for new members *hint* ;-) ).<br>
                 <br>
                 The shower issue will be arranged in such a way that some participants will make their hotel rooms available.<br>
                 The price for showering is included in the LAN flat rate.<br>
                 <br>
                 We don't get into discussions like "I don't want to shower or have breakfast - I want a discount".<br>
                 <br>
-				A group photo session is planned for Saturday evening around 18h (depending on the weather). It would be nice
+                A group photo session is planned for Saturday evening around 18h (depending on the weather). It would be nice
                 if this can be organized quickly and smoothly. With over 20 people it will be VERY annoying for some,
                 if there are people who just can't get away. The first ones leave again and
                 get angry when the last ones arrive. It's ass - so please just come out...<br>
@@ -352,22 +352,22 @@
                 <br>
                 <br>
                 <ul class="list-disc pl-6">
-					<li>Air mattress - please only SMALL / narrow (i.e. max. 1m wide), if sleeping alone), or camp bed, or similar.</li>
-					<li>Sleeping bag, blanket, etc.</li>
-					<li>Sufficient clothing - also warm clothes to be able to sit outside in the evening (okay, I think at your age you know what you need - so: the same shirt or socks for 5 days doesn't come across as cool)</li>
-					<li>Computer + power cable (don't forget the power adapter for laptops - it's happened often enough)</li>
-					<li>Monitor + connection cable + power cable</li>
-					<li>Keyboard (if necessary + wireless receiver)</li>
-					<li>Mouse (if necessary + wireless receiver)</li>
+                    <li>Air mattress - please only SMALL / narrow (i.e. max. 1m wide), if sleeping alone), or camp bed, or similar.</li>
+                    <li>Sleeping bag, blanket, etc.</li>
+                    <li>Sufficient clothing - also warm clothes to be able to sit outside in the evening (okay, I think at your age you know what you need - so: the same shirt or socks for 5 days doesn't come across as cool)</li>
+                    <li>Computer + power cable (don't forget the power adapter for laptops - it's happened often enough)</li>
+                    <li>Monitor + connection cable + power cable</li>
+                    <li>Keyboard (if necessary + wireless receiver)</li>
+                    <li>Mouse (if necessary + wireless receiver)</li>
                 </ul>
                 <br>
                 <strong>IMPORTANT:</strong>
                 <br>
                 <br>
                 <ul class="list-disc pl-6">
-					<li>Headset or at least headphones (no loudspeakers / speakers)</li>
-					<li>Network cable Cat. 5 (or higher/compatible) patch cable of at least 10m - BETTER even 20m long</li>
-					<li>Power distributor (multiple socket) BETTER 2 or 3 than 1 - there are never too many of them...</li>
+                    <li>Headset or at least headphones (no loudspeakers / speakers)</li>
+                    <li>Network cable Cat. 5 (or higher/compatible) patch cable of at least 10m - BETTER even 20m long</li>
+                    <li>Power distributor (multiple socket) BETTER 2 or 3 than 1 - there are never too many of them...</li>
                 </ul>
 
                 <br>
@@ -376,10 +376,10 @@
                 <br>
 
                 <ul class="list-disc pl-6">
-					<li>2nd computer / server incl. peripherals according to configuration</li>
-					<li>Cable reel(s)</li>
-					<li>Multiple socket(s)</li>
-					<li>additional LANGE network cables</li>
+                    <li>2nd computer / server incl. peripherals according to configuration</li>
+                    <li>Cable reel(s)</li>
+                    <li>Multiple socket(s)</li>
+                    <li>additional LANGE network cables</li>
                 </ul>
 
                 <br>
@@ -388,18 +388,18 @@
                 <br>
 
                 <ul class="list-disc pl-6">
-					<li>NO FIXED IPs / DNS server addresses on the LAN network card, but DHCP, i.e. "addresses assigned by the server". If you have a server with you, please discuss the config personally before connecting.</li>
-					<li>This must be set BEFORE the LAN. The "DHCP client" service must be started automatically (Windows +R --&gt; services.msc --&gt; DHCP client --&gt; check startup type)</li>
-					<li>NOBODY except Do_Checkor is fiddling with the switches</li>
-					<li>NOBODY plugs their network cable into the switch without telling them (Do_Checkor personally supervises EVERY individual during configuration and cabling)</li>
-					<li>Food and drinks are usually taken from the host or provided by us. It is forbidden to bring food and drinks (should this not be the case, this will be explicitly stated on the LAN page). Sweets, snacks etc. are permitted.</li>
+                    <li>NO FIXED IPs / DNS server addresses on the LAN network card, but DHCP, i.e. "addresses assigned by the server". If you have a server with you, please discuss the config personally before connecting.</li>
+                    <li>This must be set BEFORE the LAN. The "DHCP client" service must be started automatically (Windows +R --&gt; services.msc --&gt; DHCP client --&gt; check startup type)</li>
+                    <li>NOBODY except Do_Checkor is fiddling with the switches</li>
+                    <li>NOBODY plugs their network cable into the switch without telling them (Do_Checkor personally supervises EVERY individual during configuration and cabling)</li>
+                    <li>Food and drinks are usually taken from the host or provided by us. It is forbidden to bring food and drinks (should this not be the case, this will be explicitly stated on the LAN page). Sweets, snacks etc. are permitted.</li>
                 </ul>
             </div>
         </div>
     </div>
-	@endif
+    @endif
 
-	{{--
+    {{--
     @if (Session::get('locale') == 'de')
     <div class="bg-white shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
@@ -467,22 +467,22 @@
                 <br/>
                 <br/>
                 Autobahn A3 -&gt; Ausfahrt 44 (Raststätte Bad Camberg Ost)
-				<br/>
-				<br/>
-				<a class="underline" href="https://www.google.de/maps/dir//50.3101566,8.2501691/@50.3101178,8.2502251,20.5z/data=!4m2!4m1!3e0" target="_blank">Zur Routenplanung mit Google Maps</a>
-				<br/>
-				<a class="underline" href="https://www.openstreetmap.org/directions?from=&to=50.31063%2C8.25054#map=18/50.30972/8.25077" target="_blank">Zur Routenplanung mit OpenStreetMap</a>
                 <br/>
                 <br/>
-				Vorsicht bei der Anfahrt: Bei der Einfahrt in den Ort über die L3030 befindet sich die Ausfahrt zum Sportverein direkt hinter der Bahnüberführung!
+                <a class="underline" href="https://www.google.de/maps/dir//50.3101566,8.2501691/@50.3101178,8.2502251,20.5z/data=!4m2!4m1!3e0" target="_blank">Zur Routenplanung mit Google Maps</a>
+                <br/>
+                <a class="underline" href="https://www.openstreetmap.org/directions?from=&to=50.31063%2C8.25054#map=18/50.30972/8.25077" target="_blank">Zur Routenplanung mit OpenStreetMap</a>
+                <br/>
+                <br/>
+                Vorsicht bei der Anfahrt: Bei der Einfahrt in den Ort über die L3030 befindet sich die Ausfahrt zum Sportverein direkt hinter der Bahnüberführung!
                 <br/>
                 Direkt vor dem Vereinshaus befinden sich einige Parkplätze, welche zur freien Verfügung stehen.
                 <br/>
                 <br/>
                 <strong>Anreise mit dem Zug:</strong>
-				<br/>
-				<br/>
-				Der Bahnhof "Bad Camberg" befindet sich gute 1500 Meter vom Vereinshaus entfernt. Eine Abholung wird empfohlen und kann auch jederzeit durch andere Teilnehmer kurzfristig eingerichtet werden.
+                <br/>
+                <br/>
+                Der Bahnhof "Bad Camberg" befindet sich gute 1500 Meter vom Vereinshaus entfernt. Eine Abholung wird empfohlen und kann auch jederzeit durch andere Teilnehmer kurzfristig eingerichtet werden.
             </div>
         </div>
     </div>
@@ -504,7 +504,7 @@
             <div class="mt-1 text-sm text-gray-500" x-show="open">
                 Ein Gigabit-Switch wird organisiert.
                 <br/>
-				Ggf. ist eine Internet-Anbindung möglich, wobei eventuell Streaming-Seiten, etc. ausgesperrt werden, um die Leitung für Spiele brauchbarer zu halten.
+                Ggf. ist eine Internet-Anbindung möglich, wobei eventuell Streaming-Seiten, etc. ausgesperrt werden, um die Leitung für Spiele brauchbarer zu halten.
                 <br/>
                 Wir verwenden die Tische und Stühle des Vereinshauses, allerdings können auch eigene Stühle mitgebracht werden.
                 <br/>
@@ -588,21 +588,21 @@
                 <br/>
                 <br/>
                 Autobahn/Highway A3 -&gt; Exit 44 (Raststätte Bad Camberg Ost)
-				<br/>
-				<br/>
-				<a class="underline" href="https://www.google.de/maps/dir//50.3101566,8.2501691/@50.3101178,8.2502251,20.5z/data=!4m2!4m1!3e0" target="_blank">Open route planner in Google Maps</a>
-				<br/>
-				<a class="underline" href="https://www.openstreetmap.org/directions?from=&to=50.31063%2C8.25054#map=18/50.30972/8.25077" target="_blank">Open route planner in OpenStreetMap</a>
                 <br/>
                 <br/>
-				Be careful when arriving: When entering the village via the L3030, the exit to the location is located directly behind the railroad overpass!
+                <a class="underline" href="https://www.google.de/maps/dir//50.3101566,8.2501691/@50.3101178,8.2502251,20.5z/data=!4m2!4m1!3e0" target="_blank">Open route planner in Google Maps</a>
+                <br/>
+                <a class="underline" href="https://www.openstreetmap.org/directions?from=&to=50.31063%2C8.25054#map=18/50.30972/8.25077" target="_blank">Open route planner in OpenStreetMap</a>
+                <br/>
+                <br/>
+                Be careful when arriving: When entering the village via the L3030, the exit to the location is located directly behind the railroad overpass!
                 <br/>
                 There are several parking spaces directly in front of the location, which are freely available.
                 <br/>
                 <br/>
                 <strong>Approach by train:</strong>
-				<br/>
-				<br/>
+                <br/>
+                <br/>
                 The train station "Bad Camberg" is located about 1.5 km (about 1 mile) from the location. Collection is recommended and can also be arranged at short notice by other participants at any time.
             </div>
         </div>
@@ -643,5 +643,5 @@
         </div>
     </div>
     @endif
-	--}}
+    --}}
 </div>

@@ -11,7 +11,7 @@
             {{ __('login-register.registered-headline') }}
         </h3>
         <p class="mt-1 max-w-2xl text-sm text-gray-500">
-			<strong>{{ __('login-register.registered-few-minutes-1') }}</strong> {{ __('login-register.registered-few-minutes-2') }}
+            <strong>{{ __('login-register.registered-few-minutes-1') }}</strong> {{ __('login-register.registered-few-minutes-2') }}
             <br/>
             {{ __('login-register.registered-hint') }}
         </p>
