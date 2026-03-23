@@ -16,9 +16,9 @@
 
         @livewireStyles
     </head>
-    <body class="flex flex-col min-h-screen bg-gray-100">
+    <body class="flex flex-col min-h-screen bg-gray-100 dark:bg-gray-900">
         @yield('header')
-        <main class="flex-auto flex flex-col items-center justify-center">
+        <main class="flex-auto flex flex-col items-center justify-center px-2 sm:px-6 lg:px-8">
             @yield('content')
         </main>
         @yield('footer')

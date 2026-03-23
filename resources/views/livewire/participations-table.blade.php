@@ -1,14 +1,14 @@
 <div>
     <div class="w-full space-y-8">
         <div>
-            <h1 class="text-center text-3xl font-extrabold text-gray-900">
+            <h1 class="text-center text-3xl font-extrabold text-gray-900 dark:text-white">
                 {{ __('participations-table.participants') }}
             </h1>
-            <p class="mt-2 text-center text-sm text-gray-600">
+            <p class="mt-2 text-center text-sm text-gray-600 dark:text-gray-300">
                 <div class="relative max-w-fit mx-auto"
                     x-data="{ open: false, activeIndex: null, selectedIndex: 0, label: '{{ array_values($lans)[0] }}' }" wire:ignore>
                     <button type="button"
-                        class="relative w-full bg-white border border-gray-300 rounded-md shadow-xs pl-3 pr-10 py-2 text-left cursor-pointer ring-inset focus:outline-hidden focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+                        class="grid min-w-[200px] cursor-default grid-cols-1 rounded-md bg-white py-1.5 pr-2 pl-3 text-left text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:focus-visible:outline-indigo-500 cursor-pointer"
                         x-ref="button" @click="open = !open" aria-haspopup="listbox" :aria-expanded="open"
                         aria-labelledby="listbox-label">
                         <span class="flex items-center">
@@ -27,7 +27,7 @@
 
                     <ul x-show="open" x-transition:leave="transition ease-in duration-100"
                         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-                        class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base overflow-auto focus:outline-hidden sm:text-sm"
+                        class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base overflow-auto focus:outline-hidden sm:text-sm outline-1 outline-black/5 dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10"
                         x-max="1" @click.away="open = false"
                         x-description="Select popover, show/hide based on select state."
                         @keydown.escape="open = false" x-ref="listbox" tabindex="-1" role="listbox"
@@ -38,12 +38,12 @@
                         @endphp
 
                         @foreach ($lans as $value => $label)
-                        <li class="text-gray-900 select-none relative py-2 pl-3 pr-9 cursor-pointer"
+                        <li class="text-gray-900 dark:text-white select-none relative py-2 pl-3 pr-9 cursor-pointer"
                             id="listbox-option-{{ $entryCount }}" role="option"
                             @click="label='{{ $label }}'; selectedIndex = {{ $entryCount }}; open = false"
                             wire:click="changeLan({{ $value }})"
                             @mouseenter="activeIndex = {{ $entryCount }}" @mouseleave="activeIndex = null"
-                            :class="{ 'text-white bg-indigo-600': activeIndex === {{ $entryCount }}, 'text-gray-900': !(activeIndex === {{ $entryCount }}) }">
+                            :class="{ 'text-white bg-indigo-600 dark:bg-indigo-500': activeIndex === {{ $entryCount }}, 'text-gray-900': !(activeIndex === {{ $entryCount }}) }">
                             <div class="flex items-center">
                                 <span x-state:on="Selected" x-state:off="Not Selected"
                                     class="font-normal block truncate"
@@ -52,8 +52,8 @@
                                 </span>
                             </div>
 
-                            <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600"
-                                :class="{ 'text-white': activeIndex === {{ $entryCount }}, 'text-indigo-600': !(activeIndex === {{ $entryCount }}) }"
+                            <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600 dark:text-indigo-500"
+                                :class="{ 'text-white': activeIndex === {{ $entryCount }}, 'text-indigo-600 dark:text-indigo-500': !(activeIndex === {{ $entryCount }}) }"
                                 x-show="selectedIndex === {{ $entryCount }}" style="display: none;">
                                 <svg class="h-5 w-5" x-description="Heroicon name: solid/check"
                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
@@ -77,37 +77,37 @@
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                    <div class="shadow-sm overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                        <table class="min-w-full divide-y divide-gray-200">
-                            <thead class="bg-gray-50">
+                    <div class="shadow-sm overflow-hidden border-b border-gray-200 dark:border-gray-700 sm:rounded-lg">
+                        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                            <thead class="bg-gray-50 dark:bg-gray-800">
                                 <tr>
                                     <th scope="col"
-                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                         #
                                     </th>
                                     <th scope="col"
-                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                         {{ __('participations-table.player') }}
                                     </th>
                                     <th scope="col"
-                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                         {{ __('participations-table.from') }}
                                     </th>
                                     <th scope="col"
-                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                         {{ __('participations-table.until') }}
                                     </th>
                                     <th scope="col"
-                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">
+                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider hidden md:table-cell">
                                         {{ __('participations-table.zip') }}
                                     </th>
                                     <th scope="col"
-                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">
+                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider hidden md:table-cell">
                                         {{ __('participations-table.approach') }}
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody class="bg-white divide-y divide-gray-200">
+                            <tbody class="bg-white dark:bg-gray-800/50 divide-y divide-gray-200 dark:divide-gray-700">
                                 @php
                                     $usercount = 0;
                                     $rowcount = 0;
@@ -123,9 +123,9 @@
                                     ++$rowcount;
                                 @endphp
                                 @if ($curType != $user->type)
-                                <tr class="@if ($rowcount % 2 == 0) bg-gray-50 @endif">
+                                <tr class="@if ($rowcount % 2 == 0) bg-gray-50 dark:bg-gray-800/50 @endif">
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap" colspan="6">
-                                        <div class="text-sm font-medium text-gray-900 flex justify-center">
+                                        <div class="text-sm font-medium text-gray-900 dark:text-white flex justify-center">
                                             @if ($user->type == 'interested')
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1 mt-1" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fill-rule="evenodd" d="M14.707 12.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd" />
@@ -150,14 +150,14 @@
                                     ++$rowcount;
                                 @endphp
                                 @endif
-                                <tr class="@if ($rowcount % 2 == 0) bg-gray-50 @endif">
+                                <tr class="@if ($rowcount % 2 == 0) bg-gray-50 dark:bg-gray-800/50 @endif">
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm font-medium text-gray-900">
+                                        <div class="text-sm font-medium text-gray-900 dark:text-white">
                                             {{ $usercount }}
                                         </div>
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-900">
+                                        <div class="text-sm text-gray-900 dark:text-white">
                                             @if ($user->clan_tag != '')
                                             <span class="hidden sm:inline">[{{ $user->clan_tag }}]</span>
                                             @endif
@@ -165,7 +165,7 @@
                                         </div>
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-900">
+                                        <div class="text-sm text-gray-900 dark:text-white">
                                             @if (Session::get('locale') == 'de')
                                             {{ (new DateTime($user->arrival_date))->format('d.m.Y') }}
                                             @else
@@ -174,7 +174,7 @@
                                         </div>
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-900">
+                                        <div class="text-sm text-gray-900 dark:text-white">
                                             @if (Session::get('locale') == 'de')
                                             {{ (new DateTime($user->departure_date))->format('d.m.Y') }}
                                             @else
@@ -182,7 +182,7 @@
                                             @endif
                                         </div>
                                     </td>
-                                    <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-sm hidden md:table-cell">
+                                    <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-sm hidden md:table-cell text-gray-900 dark:text-white">
                                         @auth
                                             @if ($user->show_zip_public || ($user->show_zip_registered && $verified) || Auth::user()->isadmin || (Auth::check() && Auth::user()->id == $user->id && $user->show_zip_registered))
                                             {{ $user->country_code }}-{{ $user->zip }}
@@ -198,7 +198,7 @@
                                         @endauth
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-sm hidden md:table-cell">
-                                        <div class="text-sm text-gray-900">
+                                        <div class="text-sm text-gray-900 dark:text-white">
                                             @if ($user->type_of_arrival == 'train_need_ride')
                                             {{ __('participations-table.train-need-ride') }}
                                             @elseif ($user->type_of_arrival == 'train_no_ride')
@@ -226,20 +226,20 @@
             </div>
         </div>
         @else
-        <div>
+        <div class="dark:text-white">
             {{ __('participations-table.nobody-registered') }} 🙁
         </div>
         @endif
     </div>
     @if (Auth::check() && Auth::user()->isadmin && count($table) > 0)
     <div class="text-center mt-8 flex flex-col">
-        <a href="/csv?id={{ $id }}" class="mx-auto inline-flex justify-center py-2 px-4 border border-transparent shadow-xs text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <a href="/csv?id={{ $id }}" class="group relative inline-flex justify-center items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:shadow-none dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500 mx-auto cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
             {{ __('participations-table.csv-export') }}
         </a>
-        <a href="/kitchen?id={{ $id }}" class="mx-auto mt-4 inline-flex justify-center py-2 px-4 border border-transparent shadow-xs text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <a href="/kitchen?id={{ $id }}" class="mt-4 group relative inline-flex justify-center items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:shadow-none dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500 mx-auto cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>

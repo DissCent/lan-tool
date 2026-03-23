@@ -1,5 +1,9 @@
 import './bootstrap';
 
+import.meta.glob([
+	'../fonts/**',
+]);
+
 window.rotate = function(str) {
     var input     = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
     var output    = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';

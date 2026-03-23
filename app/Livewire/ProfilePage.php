@@ -30,8 +30,8 @@ class ProfilePage extends Component
         $this->country_code = $user->country_code;
         $this->zip = $user->zip;
         $this->city = $user->city;
-        $this->show_zip_registered = $user->show_zip_registered;
-        $this->show_zip_public = $user->show_zip_public;
+        $this->show_zip_registered = (bool)$user->show_zip_registered;
+        $this->show_zip_public = (bool)$user->show_zip_public;
     }
 
     public function render()

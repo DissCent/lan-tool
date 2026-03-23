@@ -1,6 +1,6 @@
-<nav x-data="{ open: false, openContext: false, activeIndex: -1 }" class="bg-gray-800">
+<nav x-data="{ open: false, openContext: false, activeIndex: -1 }" class="relative bg-gray-800 dark:bg-gray-800/50 dark:after:pointer-events-none dark:after:absolute dark:after:inset-x-0 dark:after:bottom-0 dark:after:h-px dark:after:bg-white/10">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-        <div class="relative flex items-center justify-between h-16">
+        <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <!-- Mobile menu button-->
                 <button type="button"
@@ -19,10 +19,10 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
                         </path>
                     </svg>
-                </button>
+                </svg>
             </div>
-            <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                <div class="shrink-0 flex items-center">
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                <div class="flex shrink-0 items-center">
                     <div class="text-2xl font-extrabold text-white">
                         {{ $lan->name }}
                     </div>
@@ -66,7 +66,7 @@
                         x-transition:leave="transition ease-in duration-75"
                         x-transition:leave-start="transform opacity-100 scale-100"
                         x-transition:leave-end="transform opacity-0 scale-95"
-                        class="origin-top-right absolute top-full right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white focus:outline-hidden"
+                        class="origin-top-right absolute top-full right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white focus:outline-hidden outline outline-black/5 [--anchor-gap:--spacing(2)] dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10 z-1"
                         x-ref="menu-items" x-description="Dropdown menu, show/hide based on menu state."
                         role="menu" aria-orientation="vertical"
                         aria-labelledby="user-menu-button" tabindex="-1" @keydown.arrow-up.prevent="onArrowUp()"
@@ -75,19 +75,19 @@
                         @keyup.space.prevent="openContext = false; focusButton()"
                         @click.away="openContext = false" style="display: none;">
 
-                        <a href="/profile" class="block px-4 py-2 text-sm text-gray-700" x-state:on="Active"
-                            x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 0 }" role="menuitem"
+                        <a href="/profile" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden dark:text-gray-300 dark:focus:bg-white/5" x-state:on="Active"
+                            x-state:off="Not Active" :class="{ 'bg-gray-100': activeIndex === 0, 'dark:bg-white/5': activeIndex === 0 }" role="menuitem"
                             tabindex="-1" i@mouseenter="activeIndex = 0"
                             @mouseleave="activeIndex = -1" d="user-menu-item-0" @mouseenter="activeIndex = 0"
                             @mouseleave="activeIndex = -1" @click="openContext = false; focusButton()">{{ __('navigation-bar.my-profile') }}</a>
 
-                        <a href="/registrations" class="block px-4 py-2 text-sm text-gray-700"
-                            :class="{ 'bg-gray-100': activeIndex === 1 }" role="menuitem" tabindex="-1"
+                        <a href="/registrations" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden dark:text-gray-300 dark:focus:bg-white/5"
+                            :class="{ 'bg-gray-100': activeIndex === 1, 'dark:bg-white/5': activeIndex === 1 }" role="menuitem" tabindex="-1"
                             id="user-menu-item-1" @mouseenter="activeIndex = 1" @mouseleave="activeIndex = -1"
                             @click="openContext = false; focusButton()">{{ __('navigation-bar.my-registrations') }}</a>
 
-                        <a href="/logout" class="block px-4 py-2 text-sm text-gray-700"
-                            :class="{ 'bg-gray-100': activeIndex === 2 }" role="menuitem" tabindex="-1"
+                        <a href="/logout" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-hidden dark:text-gray-300 dark:focus:bg-white/5"
+                            :class="{ 'bg-gray-100': activeIndex === 2, 'dark:bg-white/5': activeIndex === 2 }" role="menuitem" tabindex="-1"
                             id="user-menu-item-2" @mouseenter="activeIndex = 2" @mouseleave="activeIndex = -1"
                             @click="openContext = false; focusButton()">{{ __('navigation-bar.logout') }}</a>
                     </div>

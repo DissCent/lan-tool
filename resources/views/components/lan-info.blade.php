@@ -1,8 +1,8 @@
 <div>
     @if (Session::get('locale') == 'de')
-    <div class="bg-white shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+    <div class="bg-white dark:bg-gray-800 shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
-            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white relative">
                 <a href="#!" class="block" @click="open = !open">
                     Termin
 
@@ -14,15 +14,15 @@
                     </svg>
                 </a>
             </h3>
-            <div class="mt-1 text-sm text-gray-500" x-show="open">
+            <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" x-show="open">
                 Die <strong>{{ $lan->name }}</strong> findet <strong>vom {{ date('d.m.', strtotime($lan->date_begin)) }} - {{ date('d.m.Y', strtotime($lan->date_end)) }}</strong> statt.
             </div>
         </div>
     </div>
 
-    <div class="bg-white shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+    <div class="bg-white dark:bg-gray-800 shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: false }">
-            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white relative">
                 <a href="#!" class="block" @click="open = !open">
                     Location &amp; Anfahrt
 
@@ -34,7 +34,7 @@
                     </svg>
                 </a>
             </h3>
-            <div class="mt-1 text-sm text-gray-500" x-show="open">
+            <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" x-show="open">
                 Dieses Jahr feiern wir wieder im "Schweier Krug" in Nordwest-Deutschland - in der Wesermarsch - in Schwei (Stadland). Derzeit gehen wir davon aus, dass wir in der Location gut 20 Leute unterbekommen.
                 <br/>
                 <br/>
@@ -54,9 +54,9 @@
         </div>
     </div>
 
-    <div class="bg-white shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+    <div class="bg-white dark:bg-gray-800 shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: false }">
-            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white relative">
                 <a href="#!" class="block" @click="open = !open">
                     Facts
 
@@ -68,7 +68,7 @@
                     </svg>
                 </a>
             </h3>
-            <div class="mt-1 text-sm text-gray-500" x-show="open">
+            <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" x-show="open">
                 Die Saalmiete wird durch die Anzahl der Teilnehmer geteilt. Bei 25 Leuten kamen z.B. dabei 15&nbsp;€ heraus.<br>
                 Getränke und Speisen werden diesmal wieder von der Wirtschaft bezogen.<br>
                 Deren Preise werden sich auch kaum ändern. Details werden demnächst bekannt gegeben.<br>
@@ -124,9 +124,9 @@
         </div>
     </div>
 
-    <div class="bg-white shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+    <div class="bg-white dark:bg-gray-800 shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: false }">
-            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white relative">
                 <a href="#!" class="block" @click="open = !open">
                     Checkliste
 
@@ -138,7 +138,7 @@
                     </svg>
                 </a>
             </h3>
-            <div class="mt-1 text-sm text-gray-500" x-show="open">
+            <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" x-show="open">
                 Was man mitbringen sollte (zumindest wird Äquivalentes nicht gestellt):
                 <br>
                 <br>
@@ -198,9 +198,9 @@
         </div>
     </div>
     @else
-    <div class="bg-white shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+    <div class="bg-white dark:bg-gray-800 shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
-            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white relative">
                 <a href="#!" class="block" @click="open = !open">
                     Event date
 
@@ -212,15 +212,15 @@
                     </svg>
                 </a>
             </h3>
-            <div class="mt-1 text-sm text-gray-500" x-show="open">
+            <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" x-show="open">
                 The <strong>{{ $lan->name }}</strong> will take place <strong>from {{ date('F d', strtotime($lan->date_begin)) }} until {{ date('F d Y', strtotime($lan->date_end)) }}</strong>.
             </div>
         </div>
     </div>
 
-    <div class="bg-white shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+    <div class="bg-white dark:bg-gray-800 shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
-            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white relative">
                 <a href="#!" class="block" @click="open = !open">
                     Location &amp; Approach
 
@@ -232,7 +232,7 @@
                     </svg>
                 </a>
             </h3>
-            <div class="mt-1 text-sm text-gray-500" x-show="open">
+            <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" x-show="open">
                 This year we are celebrating again in the "Schweier Krug" in northwest Germany - in the Wesermarsch - in Schwei (Stadland). We are currently assuming that we will be able to accommodate a good 20 people in the location.
                 <br/>
                 <br/>
@@ -254,9 +254,9 @@
         </div>
     </div>
 
-    <div class="bg-white shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+    <div class="bg-white dark:bg-gray-800 shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: false }">
-            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white relative">
                 <a href="#!" class="block" @click="open = !open">
                     Facts
 
@@ -268,7 +268,7 @@
                     </svg>
                 </a>
             </h3>
-            <div class="mt-1 text-sm text-gray-500" x-show="open">
+            <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" x-show="open">
                 The rent is divided by the number of participants. With 25 people, for example, this resulted in €&nbsp;15.<br>
                 Drinks and food will again be provided by the restaurant.<br>
                 Their prices will hardly change. Details will be announced soon.<br>
@@ -324,9 +324,9 @@
         </div>
     </div>
 
-    <div class="bg-white shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+    <div class="bg-white dark:bg-gray-800 shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: false }">
-            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white relative">
                 <a href="#!" class="block" @click="open = !open">
                     Checklist
 
@@ -338,7 +338,7 @@
                     </svg>
                 </a>
             </h3>
-            <div class="mt-1 text-sm text-gray-500" x-show="open">
+            <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" x-show="open">
                 What you should bring with you (at least nothing equivalent is provided):
                 <br>
                 <br>
@@ -401,9 +401,9 @@
 
     {{--
     @if (Session::get('locale') == 'de')
-    <div class="bg-white shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+    <div class="bg-white dark:bg-gray-800 shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
-            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white relative">
                 <a href="#!" class="block" @click="open = !open">
                     Generelle Infos
 
@@ -415,7 +415,7 @@
                     </svg>
                 </a>
             </h3>
-            <div class="mt-1 text-sm text-gray-500" x-show="open">
+            <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" x-show="open">
                 Die <strong>{{ $lan->name }}</strong> findet <strong>vom {{ date('d.m.', strtotime($lan->date_begin)) }} - {{ date('d.m.Y', strtotime($lan->date_end)) }}</strong> statt.
                 <br/>
                 Die Kosten hängen von der Teilnehmeranzahl ab. <u>Eine endgültige Schätzung der Preise steht noch aus</u>, allerdings werden die Kosten in diesem Jahr steigen, da die Miete für unsere Location angehoben wurde. Wir schätzen die Kosten pro Person ungefähr auf:
@@ -438,9 +438,9 @@
         </div>
     </div>
 
-    <div class="bg-white shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+    <div class="bg-white dark:bg-gray-800 shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6 relative" x-data="{ open: false }">
-            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white relative">
                 <a href="#!" class="block" @click="open = !open">
                     Anfahrt
 
@@ -452,7 +452,7 @@
                     </svg>
                 </a>
             </h3>
-            <div class="mt-1 text-sm text-gray-500" x-show="open">
+            <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" x-show="open">
                 Sportverein 1930 Erbach e.V.
                 <br/>
                 In der Fetz
@@ -487,9 +487,9 @@
         </div>
     </div>
 
-    <div class="bg-white shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+    <div class="bg-white dark:bg-gray-800 shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: false }">
-            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white relative">
                 <a href="#!" class="block" @click="open = !open">
                     Checkliste
 
@@ -501,7 +501,7 @@
                     </svg>
                 </a>
             </h3>
-            <div class="mt-1 text-sm text-gray-500" x-show="open">
+            <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" x-show="open">
                 Ein Gigabit-Switch wird organisiert.
                 <br/>
                 Ggf. ist eine Internet-Anbindung möglich, wobei eventuell Streaming-Seiten, etc. ausgesperrt werden, um die Leitung für Spiele brauchbarer zu halten.
@@ -522,9 +522,9 @@
         </div>
     </div>
     @else
-    <div class="bg-white shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+    <div class="bg-white dark:bg-gray-800 shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
-            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white relative">
                 <a href="#!" class="block" @click="open = !open">
                     General information
 
@@ -536,7 +536,7 @@
                     </svg>
                 </a>
             </h3>
-            <div class="mt-1 text-sm text-gray-500" x-show="open">
+            <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" x-show="open">
                 The <strong>{{ $lan->name }}</strong> will take place <strong>from {{ date('F d', strtotime($lan->date_begin)) }} until {{ date('F d Y', strtotime($lan->date_end)) }}</strong>.
                 <br/>
                 Costs depend on the number of participants. <u>A final estimate of the prices is still pending</u>. However, we know that costs will increase this year since the rent for our location has been raised. We estimate the following prices per person:
@@ -559,9 +559,9 @@
         </div>
     </div>
 
-    <div class="bg-white shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+    <div class="bg-white dark:bg-gray-800 shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6 relative" x-data="{ open: false }">
-            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white relative">
                 <a href="#!" class="block" @click="open = !open">
                     Approach
 
@@ -573,7 +573,7 @@
                     </svg>
                 </a>
             </h3>
-            <div class="mt-1 text-sm text-gray-500" x-show="open">
+            <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" x-show="open">
                 Sportverein 1930 Erbach e.V.
                 <br/>
                 In der Fetz
@@ -608,9 +608,9 @@
         </div>
     </div>
 
-    <div class="bg-white shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
+    <div class="bg-white dark:bg-gray-800 shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: false }">
-            <h3 class="text-lg leading-6 font-medium text-gray-900 relative">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white relative">
                 <a href="#!" class="block" @click="open = !open">
                     Checklist
 
@@ -622,7 +622,7 @@
                     </svg>
                 </a>
             </h3>
-            <div class="mt-1 text-sm text-gray-500" x-show="open">
+            <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" x-show="open">
                 A gigabyte switch will be available.
                 <br/>
                 An internet connection might be available, although we might block streaming sites, etc. to enable a better online playing experience.

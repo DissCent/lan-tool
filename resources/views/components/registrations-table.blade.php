@@ -2,7 +2,7 @@
 <div>
     <div class="w-full space-y-8" x-show="!showRegistration">
         <div>
-            <h1 class="text-center text-3xl font-extrabold text-gray-900">
+            <h1 class="text-center text-3xl font-extrabold text-gray-900 dark:text-white">
                 {{ __('registrations-table.your-registrations') }}
             </h1>
         </div>
@@ -10,40 +10,40 @@
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                    <div class="shadow-sm overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                        <table class="min-w-full divide-y divide-gray-200">
-                            <thead class="bg-gray-50">
+                    <div class="shadow-sm overflow-hidden border-b border-gray-200 dark:border-gray-700 sm:rounded-lg">
+                        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                            <thead class="bg-gray-50 dark:bg-gray-800">
                                 <tr>
                                     <th scope="col"
-                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                         {{ __('registrations-table.lan') }}
                                     </th>
                                     <th scope="col"
-                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">
+                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider hidden md:table-cell">
                                         {{ __('registrations-table.approach') }}
                                     </th>
                                     <th scope="col"
-                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">
+                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider hidden md:table-cell">
                                         {{ __('registrations-table.departure') }}
                                     </th>
                                     <th scope="col"
-                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                                         {{ __('registrations-table.status') }}
                                     </th>
                                     <th scope="col" class="relative px-6 py-3">
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody class="bg-white divide-y divide-gray-200">
+                            <tbody class="bg-white dark:bg-gray-800/50 divide-y divide-gray-200 dark:divide-gray-700">
                                 @foreach ($table as $lan)
                                 <tr>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm font-medium text-gray-900">
+                                        <div class="text-sm font-medium text-gray-900 dark:text-white">
                                             {{ $lan->name }}
                                         </div>
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap hidden md:table-cell">
-                                        <div class="text-sm text-gray-900">
+                                        <div class="text-sm text-gray-900 dark:text-white">
                                             @if (Session::get('locale') == 'de')
                                             {{ (new DateTime($lan->arrival_date))->format('d.m.Y') }}
                                             @else
@@ -52,7 +52,7 @@
                                         </div>
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap hidden md:table-cell">
-                                        <div class="text-sm text-gray-900">
+                                        <div class="text-sm text-gray-900 dark:text-white">
                                             @if (Session::get('locale') == 'de')
                                             {{ (new DateTime($lan->departure_date))->format('d.m.Y') }}
                                             @else
@@ -60,24 +60,24 @@
                                             @endif
                                         </div>
                                     </td>
-                                    <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-white">
                                         @if ($lan->type == 'binding')
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 dark:bg-teal-900/50 dark:text-green-300">
                                             {{ __('registrations-table.confirmed') }}
                                         </span>
                                         @elseif ($lan->type == 'interested')
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800 dark:bg-olive-700 dark:text-yellow-100">
                                             {{ __('registrations-table.interested') }}
                                         </span>
                                         @elseif ($lan->type == 'cancelled')
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800 dark:bg-rose-900/50 dark:text-rose-200">
                                             {{ __('registrations-table.canceled') }}
                                         </span>
                                         @endif
                                     </td>
                                     <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                         @if ($lan->date_begin > date('Y-m-d'))
-                                        <a href="/lanedit" class="text-indigo-600 hover:text-indigo-900">{{ __('registrations-table.change') }}</a>
+                                        <a href="/lanedit" class="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300">{{ __('registrations-table.change') }}</a>
                                         @endif
                                     </td>
                                 </tr>
