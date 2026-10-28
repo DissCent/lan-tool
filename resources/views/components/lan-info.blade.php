@@ -427,6 +427,7 @@
                     <li>Zwei Tage ca. <strong>45 €</strong></li>
                     <li>Drei Tage ca. <strong>65 €</strong></li>
                     <li>Vier Tage ca. <strong>85 €</strong></li>
+                    <li>Fünf Tage ca. <strong>105 €</strong></li>
                 </ul>
                 <br/>
                 Im Preis enthalten sind Frühstück und Abendessen, mit Ausnahme von Donnerstagabend - hier bestellen wir bei einem Lieferdienst, wobei jeder seine eigenen Kosten trägt.
@@ -548,6 +549,7 @@
                     <li>Two days approx. <strong>45 €</strong></li>
                     <li>Three days approx. <strong>65 €</strong></li>
                     <li>Four days approx. <strong>85 €</strong></li>
+                    <li>Five days approx. <strong>105 €</strong></li>
                 </ul>
                 <br/>
                 Breakfast and dinner are included in the price, with the exception of Thursday evening - here we order from a delivery service, whereby everyone bears their own costs.
