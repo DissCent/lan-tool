@@ -286,13 +286,14 @@
                 </div>
             </div>
 
+            {{--
             <div>
                 <input id="descentforum_login" name="descentforum_login" type="text" wire:model.live="descentforum_login"
                     class="appearance-none block w-full rounded-none rounded-b-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
                     placeholder="{{ __('lan-forms.descentforum-login') }}" />
             </div>
+            --}}
 
-            {{--
             <div>
                 <div class="relative -mt-px"
                     x-data="{ open: false, activeIndex: null, selectedIndex: 0, label: '{{ array_key_first($mealInfoValues) }}' }" wire:ignore>
@@ -365,10 +366,8 @@
                     class="appearance-none block w-full rounded-none rounded-b-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
                     placeholder="{{ __('lan-forms.comment') }} ({{ __('lan-forms.optional') }})" />
             </div>
-            --}}
         </div>
 
-        {{--
         <div class="mt-4 space-y-4">
             <div class="flex gap-3">
                 <div class="flex h-6 shrink-0 items-center">
@@ -498,7 +497,6 @@
                 </div>
             </div>
         </div>
-        --}}
 
         @error('departure')
         <div class="p-2 mb-2 text-sm text-red-700 bg-red-100 rounded-lg flex dark:bg-rose-900/50 dark:text-rose-200" role="alert">

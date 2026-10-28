@@ -1,4 +1,5 @@
 <div>
+    {{--
     @if (Session::get('locale') == 'de')
     <div class="bg-white dark:bg-gray-800 shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
@@ -398,8 +399,8 @@
         </div>
     </div>
     @endif
+    --}}
 
-    {{--
     @if (Session::get('locale') == 'de')
     <div class="bg-white dark:bg-gray-800 shadow-sm overflow-hidden max-w-xs sm:max-w-lg md:max-w-2xl w-screen sm:rounded-lg mb-4">
         <div class="px-4 py-5 sm:px-6" x-data="{ open: true }">
@@ -418,7 +419,7 @@
             <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" x-show="open">
                 Die <strong>{{ $lan->name }}</strong> findet <strong>vom {{ date('d.m.', strtotime($lan->date_begin)) }} - {{ date('d.m.Y', strtotime($lan->date_end)) }}</strong> statt.
                 <br/>
-                Die Kosten hängen von der Teilnehmeranzahl ab. <u>Eine endgültige Schätzung der Preise steht noch aus</u>, allerdings werden die Kosten in diesem Jahr steigen, da die Miete für unsere Location angehoben wurde. Wir schätzen die Kosten pro Person ungefähr auf:
+                Die Kosten hängen von der Teilnehmeranzahl ab. Wir schätzen die Kosten pro Person ungefähr auf:
                 <br/>
                 <br/>
                 <ul class="list-disc pl-6">
@@ -539,7 +540,7 @@
             <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" x-show="open">
                 The <strong>{{ $lan->name }}</strong> will take place <strong>from {{ date('F d', strtotime($lan->date_begin)) }} until {{ date('F d Y', strtotime($lan->date_end)) }}</strong>.
                 <br/>
-                Costs depend on the number of participants. <u>A final estimate of the prices is still pending</u>. However, we know that costs will increase this year since the rent for our location has been raised. We estimate the following prices per person:
+                Costs depend on the number of participants. We estimate the following prices per person:
                 <br/>
                 <br/>
                 <ul class="list-disc pl-6">
@@ -643,5 +644,4 @@
         </div>
     </div>
     @endif
-    --}}
 </div>
