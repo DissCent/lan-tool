@@ -29,6 +29,8 @@ class UsersLans extends Model
         'kitchen_duties_sat_mo',
         'kitchen_duties_sat_ev',
         'kitchen_duties_sun_mo',
+        'kitchen_duties_sun_ev',
+        'kitchen_duties_mon_mo',
         'league_descent_rebirth',
         'league_descent_3',
         'league_overload',

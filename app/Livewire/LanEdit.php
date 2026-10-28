@@ -36,6 +36,8 @@ class LanEdit extends Component
     public $kitchen_duties_sat_mo;
     public $kitchen_duties_sat_ev;
     public $kitchen_duties_sun_mo;
+    public $kitchen_duties_sun_ev;
+    public $kitchen_duties_mon_mo;
     public $descentforum_login;
 
     public function mount()
@@ -106,6 +108,8 @@ class LanEdit extends Component
             $this->kitchen_duties_sat_mo = (bool)$lan->kitchen_duties_sat_mo;
             $this->kitchen_duties_sat_ev = (bool)$lan->kitchen_duties_sat_ev;
             $this->kitchen_duties_sun_mo = (bool)$lan->kitchen_duties_sun_mo;
+            $this->kitchen_duties_sun_ev = (bool)$lan->kitchen_duties_sun_ev;
+            $this->kitchen_duties_mon_mo = (bool)$lan->kitchen_duties_mon_mo;
             $this->descentforum_login = $lan->descentforum_login;
         }
 
@@ -115,6 +119,8 @@ class LanEdit extends Component
         $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_sat_mo');
         $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_sat_ev');
         $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_sun_mo');
+        $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_sun_ev');
+        $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_mon_mo');
     }
 
     public function render()
@@ -168,6 +174,8 @@ class LanEdit extends Component
         $lan->kitchen_duties_sat_mo = $this->kitchen_duties_sat_mo;
         $lan->kitchen_duties_sat_ev = $this->kitchen_duties_sat_ev;
         $lan->kitchen_duties_sun_mo = $this->kitchen_duties_sun_mo;
+        $lan->kitchen_duties_sun_ev = $this->kitchen_duties_sun_ev;
+        $lan->kitchen_duties_mon_mo = $this->kitchen_duties_mon_mo;
         $lan->league_descent_rebirth = 0;
         $lan->league_descent_3 = 0;
         $lan->league_overload = 0;

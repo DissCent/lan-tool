@@ -13,6 +13,8 @@ return [
 	'kitchen-service-4' => 'Küchendienst Sa. früh',
 	'kitchen-service-5' => 'Küchendienst Sa. Abend',
 	'kitchen-service-6' => 'Küchendienst So. früh',
+	'kitchen-service-7' => 'Küchendienst So. Abend',
+	'kitchen-service-8' => 'Küchendienst Mo. früh',
 	'nutrition-type' => 'Ernährung',
 	'mealtype-omnivorous' => 'Allesesser',
 ];

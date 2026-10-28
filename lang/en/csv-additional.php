@@ -13,6 +13,8 @@ return [
 	'kitchen-service-4' => 'Kitchen duties Sat. morning',
 	'kitchen-service-5' => 'Kitchen duties Sat. evening',
 	'kitchen-service-6' => 'Kitchen duties Sun. morning',
+	'kitchen-service-7' => 'Kitchen duties Sun. evening',
+	'kitchen-service-8' => 'Kitchen duties Mon. morning',
 	'nutrition-type' => 'Nutrition type',
 	'mealtype-omnivorous' => 'omnivorous',
 ];

@@ -140,6 +140,44 @@ class KitchenExport extends Component
         }
 
         $this->csv .= '"' . implode("\n", $users) . '"' . "\n";
+
+
+        $plan = DB::table('users_lans')
+            ->where('lan_id', $id)
+            ->where('kitchen_duties_sun_ev', '1')
+            ->join('users', 'users_lans.user_id', '=', 'users.id')
+            ->select('username')
+            ->orderBy('username')
+            ->get();
+
+        $this->csv .= 'Sonntagabend / Sunday evening;';
+
+        $users = [];
+
+        foreach ($plan as $entry) {
+            $users[] = $entry->username;
+        }
+
+        $this->csv .= '"' . implode("\n", $users) . '"' . "\n";
+
+
+        $plan = DB::table('users_lans')
+            ->where('lan_id', $id)
+            ->where('kitchen_duties_mon_mo', '1')
+            ->join('users', 'users_lans.user_id', '=', 'users.id')
+            ->select('username')
+            ->orderBy('username')
+            ->get();
+
+        $this->csv .= 'Montagmorgen / Monday morning;';
+
+        $users = [];
+
+        foreach ($plan as $entry) {
+            $users[] = $entry->username;
+        }
+
+        $this->csv .= '"' . implode("\n", $users) . '"' . "\n";
     }
 
     /**

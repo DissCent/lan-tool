@@ -36,6 +36,8 @@ class LanRegistration extends Component
     public $kitchen_duties_sat_mo = false;
     public $kitchen_duties_sat_ev = false;
     public $kitchen_duties_sun_mo = false;
+    public $kitchen_duties_sun_ev = false;
+    public $kitchen_duties_mon_mo = false;
     public $descentforum_login = '';
 
     public function mount()
@@ -91,6 +93,8 @@ class LanRegistration extends Component
         $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_sat_mo');
         $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_sat_ev');
         $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_sun_mo');
+        $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_sun_ev');
+        $this->kitchen_duty_count[] = UsersLans::where('lan_id', $this->lan->id)->whereNot('user_id', Auth::user()->id)->whereNot('type', 'cancelled')->sum('kitchen_duties_mon_mo');
     }
 
     public function render()
@@ -139,6 +143,8 @@ class LanRegistration extends Component
             'kitchen_duties_sat_mo' => $this->kitchen_duties_sat_mo,
             'kitchen_duties_sat_ev' => $this->kitchen_duties_sat_ev,
             'kitchen_duties_sun_mo' => $this->kitchen_duties_sun_mo,
+            'kitchen_duties_sun_ev' => $this->kitchen_duties_sun_ev,
+            'kitchen_duties_mon_mo' => $this->kitchen_duties_mon_mo,
             'league_descent_rebirth' => 0,
             'league_descent_3' => 0,
             'league_overload' => 0,

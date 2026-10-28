@@ -13,6 +13,7 @@ return [
 	'friday' => 'Freitag',
 	'saturday' => 'Samstag',
 	'sunday' => 'Sonntag',
+	'monday' => 'Montag',
 	'morning' => 'früh',
 	'evening' => 'abends',
 	'send' => 'Absenden',
