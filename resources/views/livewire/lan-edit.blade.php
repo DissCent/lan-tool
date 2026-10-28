@@ -562,7 +562,7 @@
                     </div>
                 </div>
                 <div class="text-sm/6">
-                    <label for="kitchen_duties_sun_ev" class="font-medium text-gray-900 dark:text-white cursor-pointer">{{ __('lan-forms.sunday') }} {{ __('lan-forms.morning') }}</label>
+                    <label for="kitchen_duties_sun_ev" class="font-medium text-gray-900 dark:text-white cursor-pointer">{{ __('lan-forms.sunday') }} {{ __('lan-forms.evening') }}</label>
                     <br/>
                     <span class="@if ($kitchen_duty_count[6] == 0) text-red-500 @elseif ($kitchen_duty_count[6] < 3) text-yellow-600 dark:text-yellow-400 @else text-green-600 @endif">
                         {{ trans_choice('lan-forms.volunteers', $kitchen_duty_count[6]) }}
@@ -580,7 +580,7 @@
                     </div>
                 </div>
                 <div class="text-sm/6">
-                    <label for="kitchen_duties_mon_mo" class="font-medium text-gray-900 dark:text-white cursor-pointer">{{ __('lan-forms.sunday') }} {{ __('lan-forms.morning') }}</label>
+                    <label for="kitchen_duties_mon_mo" class="font-medium text-gray-900 dark:text-white cursor-pointer">{{ __('lan-forms.monday') }} {{ __('lan-forms.morning') }}</label>
                     <br/>
                     <span class="@if ($kitchen_duty_count[7] == 0) text-red-500 @elseif ($kitchen_duty_count[7] < 3) text-yellow-600 dark:text-yellow-400 @else text-green-600 @endif">
                         {{ trans_choice('lan-forms.volunteers', $kitchen_duty_count[7]) }}
