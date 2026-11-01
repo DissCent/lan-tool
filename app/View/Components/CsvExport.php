@@ -45,7 +45,7 @@ class CsvExport extends Component
                 'users_lans.kitchen_duties_sat_mo',
                 'users_lans.kitchen_duties_sat_ev',
                 'users_lans.kitchen_duties_sun_mo',
-                'users_lans.kitchen_duties_sun_en',
+                'users_lans.kitchen_duties_sun_ev',
                 'users_lans.kitchen_duties_mon_mo',
                 'users_lans.type_of_arrival',
                 'users_lans.meal_info',
